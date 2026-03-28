@@ -1,0 +1,38 @@
+# Substrate — pinned requirements
+# Resolved for: Python 3.12, CPU-only, RAGAS + sentence-transformers compatibility
+
+# Core ML
+torch==2.3.1
+numpy==1.26.4
+
+# HuggingFace stack — pinned together to avoid conflicts 
+huggingface-hub==0.24.6
+tokenizers==0.19.1
+transformers==4.43.3
+sentence-transformers==3.0.1
+safetensors==0.4.3
+
+# Vector store 
+chromadb==1.5.5
+pinecone==4.1.0
+
+# Retrieval 
+rank-bm25==0.2.2
+
+# Parsing 
+tree-sitter==0.21.3
+tree-sitter-python==0.21.0
+gitpython==3.1.43
+
+# Evaluation 
+ragas==0.1.21
+
+# App + UI 
+gradio==4.39.0
+
+# Utilities 
+python-dotenv==1.0.1
+pyyaml==6.0.3
+tqdm==4.66.4
+requests==2.32.3
+pydantic==2.8.2

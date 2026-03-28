@@ -1,0 +1,159 @@
+# config.yaml
+# Substrate - Single control panel for all experiments.
+# Change settings here, not in code.
+# Used by: embed_and_upsert.py, retrieval.py, generation.py, eval scripts
+
+# Active experiment profile 
+# Change this to switch between ablation configurations
+# Options: A1, A2, A3, A4, A5, baseline
+active_profile: A5
+
+profiles:
+  baseline:
+    description: "No RAG - raw LLM only, no retrieval"
+    chunking: null
+    retrieval: null
+    rag_enabled: false
+
+  A1:
+    description: "Fixed chunking + semantic-only retrieval"
+    chunking: fixed
+    retrieval: semantic
+    rag_enabled: true
+
+  A2:
+    description: "Recursive chunking + semantic-only retrieval"
+    chunking: recursive
+    retrieval: semantic
+    rag_enabled: true
+
+  A3:
+    description: "Function-level chunking + semantic-only retrieval"
+    chunking: function
+    retrieval: semantic
+    rag_enabled: true
+
+  A4:
+    description: "Fixed chunking + hybrid retrieval + reranking"
+    chunking: fixed
+    retrieval: hybrid
+    rag_enabled: true
+
+  A5:
+    description: "Function-level chunking + hybrid retrieval + reranking (BEST)"
+    chunking: function
+    retrieval: hybrid
+    rag_enabled: true
+
+# Chunking settings 
+chunking:
+  function:
+    strategy: function_boundary   # tree-sitter based
+    min_lines: 3
+    max_lines: 500
+    include_docstring: true
+
+  fixed:
+    strategy: fixed_tokens
+    chunk_size: 512
+    chunk_overlap: 64
+
+  recursive:
+    strategy: recursive_character
+    chunk_size: 512
+    chunk_overlap: 64
+    separators: ["\nclass ", "\ndef ", "\n\n", "\n", " "]
+
+# Embedding 
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  dimension: 384
+  batch_size: 64
+  # Text field sent to the embedding model:
+  # "{function_name}\n{docstring}\n{raw_code}"
+  text_template: "{function_name}\n{docstring}\n{raw_code}"
+
+# Vector store 
+vector_store:
+  backend: chroma          # "chroma" for local, "pinecone" for cloud
+  chroma:
+    persist_directory: data/chroma_db
+    collection_name: substrate-{chunking}   # one collection per chunking strategy
+  pinecone:
+    index_name: substrate-mvp
+    dimension: 384
+    metric: cosine
+
+# BM25 
+bm25:
+  index_path: data/bm25_{chunking}.pkl     # one index per chunking strategy
+  top_k: 20
+
+# Retrieval 
+retrieval:
+  semantic:
+    top_k: 20
+
+  hybrid:
+    bm25_top_k: 20
+    dense_top_k: 20
+    rrf_k: 60              # RRF constant - 60 is standard default
+    rerank: true
+    rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+    rerank_top_k: 5        # final number of chunks passed to LLM
+
+  final_top_k: 5           # chunks shown in UI and passed to LLM
+
+# Generation 
+generation:
+  provider: hf_inference_api   # "hf_inference_api" or "local"
+  model: mistralai/Mistral-7B-Instruct-v0.2
+  fallback_model: meta-llama/Meta-Llama-3-8B-Instruct
+  max_new_tokens: 512
+  temperature: 0.1             # low temp for factual code questions
+  system_prompt: |
+    You are Substrate, an expert code reasoning assistant with deep knowledge
+    of Python scientific and ML libraries including numpy, scipy, pandas,
+    scikit-learn, PyTorch, and HuggingFace transformers.
+
+    Answer questions using ONLY the provided code context. If the context does
+    not contain enough information to answer confidently, say so explicitly.
+    Do not hallucinate function names, parameters, or behaviors.
+
+    When referencing code, cite the source repo and file path.
+
+# Evaluation 
+evaluation:
+  test_queries_path: eval/test_queries.yaml
+  results_dir: eval/results
+  use_ragas: true
+  ragas_model: mistralai/Mistral-7B-Instruct-v0.2
+
+  # Retrieval-only evaluation (no LLM needed)
+  retrieval_eval:
+    # A query "passes" if must_retrieve functions appear in top_k results
+    top_k_cutoff: 10
+
+  # Thresholds for pass/fail
+  thresholds:
+    faithfulness: 0.7      # RAGAS faithfulness score
+    relevancy: 0.7         # RAGAS answer relevancy score
+    retrieval_hit_rate: 0.6  # % of must_retrieve items found in top-10
+
+# Repos 
+repos:
+  data_dir: data/repos
+  chunks_dir: data/chunks
+  names:
+    - numpy
+    - scipy
+    - pandas
+    - scikit-learn
+    - pytorch
+    - transformers
+
+# Sampling (Pinecone free tier cap) 
+sampling:
+  enabled: true
+  max_vectors: 80000
+  strategy: stratified    # keeps proportions across repos
