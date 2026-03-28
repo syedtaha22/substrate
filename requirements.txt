@@ -1,11 +1,11 @@
-# Substrate — pinned requirements
+# Substrate - pinned requirements
 # Resolved for: Python 3.12, CPU-only, RAGAS + sentence-transformers compatibility
 
 # Core ML
 torch==2.3.1
 numpy==1.26.4
 
-# HuggingFace stack — pinned together to avoid conflicts 
+# HuggingFace stack - pinned together to avoid conflicts 
 huggingface-hub==0.24.6
 tokenizers==0.19.1
 transformers==4.43.3

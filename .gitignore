@@ -4,7 +4,7 @@
 .env
 .env.*
 
-# Data — repos are large, never commit them
+# Data - repos are large, never commit them
 data/
 
 # Python

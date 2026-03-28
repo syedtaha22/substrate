@@ -1,6 +1,6 @@
 # Substrate
 
-> Cross-repo code reasoning via advanced RAG — function-boundary chunking,
+> Cross-repo code reasoning via advanced RAG - function-boundary chunking,
 > hybrid BM25+dense retrieval, cross-encoder re-ranking, and LLM-as-Judge evaluation.
 
 **Demo query:**
@@ -25,22 +25,22 @@ pip install -r requirements.txt
 
 # 4. Configure environment
 cp .env.example .env
-# Edit .env — add your Pinecone API key and HF token
+# Edit .env - add your Pinecone API key and HF token
 ```
 
 ## Pipeline (run once, offline)
 
 ```bash
-# Step 1 — Clone all 6 target repos (sparse, ~800MB)
+# Step 1: Clone all 6 target repos (sparse, ~800MB)
 python pipeline/clone_repos.py
 
-# Step 2 — Parse functions with tree-sitter
+# Step 2: Parse functions with tree-sitter
 python pipeline/parse_functions.py
 
-# Step 3 — Embed and upsert to Pinecone or ChromaDB
+# Step 3: Embed and upsert to Pinecone or ChromaDB
 python pipeline/embed_and_upsert.py
 
-# Step 4 — Build BM25 index
+# Step 4: Build BM25 index
 python pipeline/build_bm25.py
 ```
 
