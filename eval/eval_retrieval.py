@@ -2,11 +2,18 @@
 eval/eval_retrieval.py
 
 Evaluates retrieval quality WITHOUT any LLM involvement.
-Loads test queries from eval/test_queries.yaml, runs each through
-BM25, dense (ChromaDB), and hybrid retrieval, then checks whether
-the expected functions appear in the top-K results.
 
-This is the fastest feedback loop - pure retrieval signal, no API calls.
+Scoring approach (v2 - keyword-in-context):
+  - Retrieve top-K chunks for each query
+  - Concatenate retrieved chunk text into a context string
+  - Check what % of context_keywords appear in that context
+  - Pass if keyword coverage >= threshold (default 0.5)
+  - must_retrieve kept as optional strict secondary check
+
+This measures "does the retrieved context contain the right concepts?"
+rather than "did we find these exact function names?" - a much more
+meaningful signal for a corpus of 81k chunks.
+
 
 Usage:
     python eval/eval_retrieval.py                      # all queries, all methods
@@ -20,6 +27,7 @@ import argparse
 import json
 import logging
 import pickle
+import re
 import sys
 import time
 from pathlib import Path
@@ -52,7 +60,7 @@ def load_bm25(cfg: dict) -> tuple:
     with path.open("rb") as f:
         payload = pickle.load(f)
     log.info("  BM25 index ready (%d documents)", len(payload["chunks"]))
-    return payload["bm25"], payload["chunks"], payload["texts"]
+    return payload["bm25"], payload["chunks"]
 
 def load_chroma(cfg: dict):
     import chromadb
@@ -73,7 +81,6 @@ def load_embed_model(cfg: dict) -> SentenceTransformer:
 
 # Tokenizer (must match build_bm25.py) 
 def tokenize(text: str) -> list[str]:
-    import re
     tokens = re.split(r"[\s\(\)\[\]\{\}\.,;:\"'=\+\-\*/<>!@#\$%\^&\|\\`~]+", text.lower())
     return [t for t in tokens if len(t) > 1]
 
@@ -123,6 +130,12 @@ def retrieve_dense(
         chunks.append(chunk)
     return chunks
 
+def get_id(chunk: dict) -> str:
+    return chunk.get("chunk_id") or (
+        f"{chunk.get('repo','')}::{chunk.get('filepath','')}::"
+        f"{chunk.get('function_name','')}::{chunk.get('line_start','')}"
+    )
+
 def rrf_fusion(
     bm25_results: list[dict],
     dense_results: list[dict],
@@ -134,12 +147,6 @@ def rrf_fusion(
     Uses chunk_id as the deduplication key.
     Falls back to function_name::filepath if chunk_id missing.
     """
-    def get_id(chunk: dict) -> str:
-        if "chunk_id" in chunk:
-            return chunk["chunk_id"]
-        # Fallback key from metadata fields
-        return f"{chunk.get('repo','')}::{chunk.get('filepath','')}::{chunk.get('function_name','')}::{chunk.get('line_start','')}"
-
     scores: dict[str, float] = {}
     chunk_map: dict[str, dict] = {}
 
@@ -162,7 +169,6 @@ def rrf_fusion(
         fused.append(chunk)
     return fused
 
-
 def retrieve_hybrid(
     query: str,
     bm25,
@@ -172,121 +178,146 @@ def retrieve_hybrid(
     cfg: dict,
     top_k: int = 10,
 ) -> list[dict]:
-    ret_cfg = cfg["retrieval"]
-    bm25_results = retrieve_bm25(query, bm25, bm25_chunks, top_k=ret_cfg["hybrid"]["bm25_top_k"])
-    dense_results = retrieve_dense(query, collection, model, top_k=ret_cfg["hybrid"]["dense_top_k"])
-    fused = rrf_fusion(bm25_results, dense_results, k=ret_cfg["hybrid"]["rrf_k"])
-    return fused[:top_k]
+    ret_cfg = cfg["retrieval"]["hybrid"]
+    bm25_results = retrieve_bm25(query, bm25, bm25_chunks, top_k=ret_cfg["bm25_top_k"])
+    dense_results = retrieve_dense(query, collection, model, top_k=ret_cfg["dense_top_k"])
+    return rrf_fusion(bm25_results, dense_results, k=ret_cfg["rrf_k"])[:top_k]
 
-# Evaluation logic 
+# Evaluation logic
+def build_context(chunks: list[dict]) -> str:
+    """Concatenate all retrieved chunk text into one searchable string."""
+    parts = []
+    for c in chunks:
+        parts.append(f"{c.get('function_name','')} "
+                     f"{c.get('docstring','')} "
+                     f"{c.get('raw_code', c.get('_text',''))}")
+    return " ".join(parts).lower()
+
 def evaluate_query(
     query_obj: dict,
-    results: list[dict],
+    chunks: list[dict],
     top_k: int,
+    kw_threshold: float = 0.5,
 ) -> dict:
     """
-    Check if must_retrieve functions appear in the top-K results.
-    Returns a result dict with hit/miss details.
+    Primary metric - keyword-in-context:
+        Does the retrieved context contain the query's expected concepts?
+        context_keywords field in test_queries.yaml defines what to look for.
+        Falls back to keywords field if context_keywords not present.
+        Score = found / total. Pass if score >= kw_threshold.
+
+    Secondary metric - must_retrieve (strict):
+        Are specific function names present in retrieved function names?
+        Reported but NOT the pass/fail criterion.
     """
-    must_retrieve = query_obj.get("must_retrieve", [])
-    retrieved_functions = [r.get("function_name", "") for r in results[:top_k]]
-    retrieved_repos = [r.get("repo", "") for r in results[:top_k]]
+    context = build_context(chunks[:top_k])
+    retrieved_fns = [c.get("function_name", "") for c in chunks[:top_k]]
+    retrieved_repos = [c.get("repo", "") for c in chunks[:top_k]]
 
-    hits = []
-    misses = []
-    for fn in must_retrieve:
-        if fn in retrieved_functions:
-            hits.append(fn)
-        else:
-            misses.append(fn)
+    # Primary: keyword-in-context
+    # Use context_keywords if defined, fall back to keywords
+    kws = query_obj.get("context_keywords") or query_obj.get("keywords", [])
+    kw_found = [kw for kw in kws if kw.lower() in context]
+    kw_missed = [kw for kw in kws if kw.lower() not in context]
 
-    if not must_retrieve:
-        # No must_retrieve specified - mark as "unverifiable" (needs human/LLM judge)
-        passed = None
-        hit_rate = None
+    if kws:
+        kw_score = len(kw_found) / len(kws)
+        kw_passed = kw_score >= kw_threshold
     else:
-        hit_rate = len(hits) / len(must_retrieve)
-        passed = hit_rate >= cfg_threshold
+        kw_score = None
+        kw_passed = None
+
+    # Secondary: must_retrieve
+    must = query_obj.get("must_retrieve", [])
+    mr_hits = [fn for fn in must if fn in retrieved_fns]
+    mr_misses = [fn for fn in must if fn not in retrieved_fns]
+    mr_score = len(mr_hits) / len(must) if must else None
+
+    # Anti-keywords (hallucination check, used in LLM eval later)
+    anti = query_obj.get("anti_keywords", [])
+    anti_hits = [kw for kw in anti if kw.lower() in context]
 
     return {
         "query_id": query_obj["id"],
         "tier": query_obj["tier"],
         "repos": query_obj["repos"],
-        "must_retrieve": must_retrieve,
-        "hits": hits,
-        "misses": misses,
-        "hit_rate": hit_rate,
-        "passed": passed,
-        "retrieved_functions": retrieved_functions[:top_k],
-        "retrieved_repos": retrieved_repos[:top_k],
+        "query": query_obj["query"],
+        # Primary
+        "kw_score": kw_score,
+        "kw_passed": kw_passed,
+        "kw_found": kw_found,
+        "kw_missed": kw_missed,
+        # Secondary
+        "mr_score": mr_score,
+        "mr_hits": mr_hits,
+        "mr_misses": mr_misses,
+        # Metadata
+        "anti_hits": anti_hits,
+        "retrieved_functions": retrieved_fns,
+        "retrieved_repos": retrieved_repos,
     }
 
 
-cfg_threshold = 0.5   # module-level so evaluate_query can access it
-
-# Report 
-def print_report(
-    method: str,
-    query_results: list[dict],
-    verbose: bool = False,
-    retrieval_results: dict | None = None,
-) -> dict:
-    """Print a formatted report and return summary stats."""
+def print_report(method, query_results, verbose=False, retrieval_details=None) -> dict:
     log.info("")
     log.info("=" * 70)
-    log.info("Retrieval Evaluation - Method: %s", method.upper())
+    log.info("Retrieval Evaluation - Method: %s  (keyword-in-context)", method.upper())
     log.info("=" * 70)
 
-    verifiable = [r for r in query_results if r["passed"] is not None]
-    unverifiable = [r for r in query_results if r["passed"] is None]
-    passed = [r for r in verifiable if r["passed"]]
-    failed = [r for r in verifiable if not r["passed"]]
+    verifiable = [r for r in query_results if r["kw_passed"] is not None]
+    unverifiable = [r for r in query_results if r["kw_passed"] is None]
+    passed = [r for r in verifiable if r["kw_passed"]]
+    failed = [r for r in verifiable if not r["kw_passed"]]
 
-    # Per-tier breakdown
-    tiers = sorted(set(r["tier"] for r in query_results))
-    for tier in tiers:
-        tier_queries = [r for r in verifiable if r["tier"] == tier]
-        if not tier_queries:
+    for tier in sorted(set(r["tier"] for r in query_results)):
+        tv = [r for r in verifiable if r["tier"] == tier]
+        if not tv:
             continue
-        tier_pass = sum(1 for r in tier_queries if r["passed"])
-        log.info(
-            "  Tier %d: %d/%d passed (%.0f%%)",
-            tier, tier_pass, len(tier_queries),
-            100 * tier_pass / len(tier_queries) if tier_queries else 0,
-        )
+        tp = sum(1 for r in tv if r["kw_passed"])
+        avg = np.mean([r["kw_score"] for r in tv])
+        log.info("  Tier %d: %d/%d passed (%.0f%%)  avg coverage %.2f",
+                 tier, tp, len(tv), 100 * tp / len(tv), avg)
 
     log.info("")
-    log.info("  Total verifiable : %d queries", len(verifiable))
-    log.info("  Passed           : %d (%.0f%%)",
+    log.info("  Verifiable  : %d", len(verifiable))
+    log.info("  Passed      : %d (%.1f%%)",
              len(passed), 100 * len(passed) / len(verifiable) if verifiable else 0)
-    log.info("  Failed           : %d", len(failed))
-    log.info("  Unverifiable     : %d (no must_retrieve defined - needs LLM judge)", 
-             len(unverifiable))
+    log.info("  Failed      : %d", len(failed))
+    log.info("  Unverifiable: %d (no keywords - needs LLM judge)", len(unverifiable))
 
-    if failed and verbose:
+    if failed:
         log.info("")
-        log.info("  Failed queries:")
+        log.info("  Failed:")
         for r in failed:
-            log.info("    [%s] Tier %d - missed: %s", r["query_id"], r["tier"], r["misses"])
+            log.info("    [%s] T%d  score=%.2f  missed=%s",
+                     r["query_id"], r["tier"], r["kw_score"] or 0, r["kw_missed"])
 
-    if verbose and retrieval_results:
+    if verbose and retrieval_details:
         log.info("")
-        log.info("  Per-query detail:")
-        for qid, chunks in retrieval_results.items():
-            log.info("    %s - top 5 retrieved:", qid)
+        log.info("  Per-query chunks:")
+        for qid, chunks in retrieval_details.items():
+            r = next(x for x in query_results if x["query_id"] == qid)
+            log.info("    %s  kw=%.2f  found=%s",
+                     qid, r["kw_score"] or 0, r["kw_found"])
             for i, c in enumerate(chunks[:5], 1):
-                log.info(
-                    "      %d. [%.4f] %s::%s::%s",
-                    i, c.get("_score", 0),
-                    c.get("repo", ""), c.get("filepath", "")[:40],
-                    c.get("function_name", ""),
-                )
+                log.info("      %d. [%.4f] %s::%s::%s",
+                         i, c.get("_score", 0),
+                         c.get("repo",""), c.get("filepath","")[:35],
+                         c.get("function_name",""))
 
-    overall_hit_rate = (
-        np.mean([r["hit_rate"] for r in verifiable if r["hit_rate"] is not None]) if verifiable else 0.0
-    )
+    avg_kw = np.mean([r["kw_score"] for r in verifiable
+                      if r["kw_score"] is not None]) if verifiable else 0.0
+    mr_v = [r for r in query_results if r["mr_score"] is not None]
+    avg_mr = np.mean([r["mr_score"] for r in mr_v]) if mr_v else 0.0
 
-    summary = {
+    log.info("")
+    log.info("  Avg keyword coverage : %.3f  (primary)", avg_kw)
+    log.info("  Avg must_retrieve    : %.3f  (secondary)", avg_mr)
+    log.info("  Pass rate            : %.1f%%",
+             100 * len(passed) / len(verifiable) if verifiable else 0)
+    log.info("=" * 70)
+
+    return {
         "method": method,
         "total": len(query_results),
         "verifiable": len(verifiable),
@@ -294,118 +325,94 @@ def print_report(
         "failed": len(failed),
         "unverifiable": len(unverifiable),
         "pass_rate": len(passed) / len(verifiable) if verifiable else 0.0,
-        "avg_hit_rate": float(overall_hit_rate),
+        "avg_kw_score": float(avg_kw),
+        "avg_mr_score": float(avg_mr),
     }
 
-    log.info("")
-    log.info("  Overall hit rate : %.3f", overall_hit_rate)
-    log.info("  Pass rate        : %.1f%%", 100 * summary["pass_rate"])
-    log.info("=" * 70)
 
-    return summary
-
-def save_results(results: dict, output_dir: Path) -> None:
+def save_results(results, output_dir):
     output_dir.mkdir(parents=True, exist_ok=True)
     path = output_dir / "retrieval_eval.json"
     with path.open("w") as f:
-        json.dump(results, f, indent=2)
-    log.info("Results saved to %s", path)
+        json.dump(results, f, indent=2, default=str)
+    log.info("Saved to %s", path)
 
-# Main 
-def main() -> None:
-    global cfg_threshold
 
-    parser = argparse.ArgumentParser(description="Evaluate retrieval quality (no LLM)")
-    parser.add_argument("--method", choices=["bm25", "dense", "hybrid", "all"],
-                        default="all")
-    parser.add_argument("--tier", type=int, default=None,
-                        help="Filter to a specific query tier (1–4)")
-    parser.add_argument("--query", type=str, default=None,
-                        help="Run a single query by ID (e.g. T2-001)")
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--method", choices=["bm25","dense","hybrid","all"], default="all")
+    parser.add_argument("--tier", type=int, default=None)
+    parser.add_argument("--query", type=str, default=None)
     parser.add_argument("--top-k", type=int, default=10)
-    parser.add_argument("--verbose", action="store_true",
-                        help="Show retrieved chunks per query")
+    parser.add_argument("--kw-threshold", type=float, default=0.5)
+    parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
-    cfg = load_config()
-    cfg_threshold = cfg["evaluation"]["thresholds"]["retrieval_hit_rate"]
+    from dotenv import load_dotenv
+    load_dotenv()
 
-    # Load test queries
+    cfg = load_config()
     queries = load_test_queries(cfg["evaluation"]["test_queries_path"])
     if args.tier:
         queries = [q for q in queries if q["tier"] == args.tier]
     if args.query:
         queries = [q for q in queries if q["id"] == args.query]
     if not queries:
-        log.error("No queries matched filters.")
+        log.error("No queries matched.")
         sys.exit(1)
 
-    log.info("Running retrieval eval on %d queries (top_k=%d)", len(queries), args.top_k)
+    log.info("Eval: %d queries | top_k=%d | kw_threshold=%.1f",
+             len(queries), args.top_k, args.kw_threshold)
 
-    # Load indexes
-    bm25, bm25_chunks, bm25_texts = load_bm25(cfg)
+    bm25, bm25_chunks = load_bm25(cfg)
     collection = load_chroma(cfg)
     model = load_embed_model(cfg)
 
-    methods_to_run = (
-        ["bm25", "dense", "hybrid"] if args.method == "all" else [args.method]
-    )
+    methods = ["bm25","dense","hybrid"] if args.method == "all" else [args.method]
+    summaries = []
+    output = {}
 
-    all_summaries = []
-    output_data = {}
-
-    for method in methods_to_run:
-        log.info("\nRunning method: %s", method)
-        query_results = []
-        retrieval_details = {}
+    for method in methods:
+        log.info("\nRunning: %s", method)
+        results = []
+        details = {}
         t0 = time.time()
 
         for q in queries:
             if method == "bm25":
-                results = retrieve_bm25(q["query"], bm25, bm25_chunks, top_k=args.top_k)
+                chunks = retrieve_bm25(q["query"], bm25, bm25_chunks, args.top_k)
             elif method == "dense":
-                results = retrieve_dense(q["query"], collection, model, top_k=args.top_k)
+                chunks = retrieve_dense(q["query"], collection, model, args.top_k)
             else:
-                results = retrieve_hybrid(
-                    q["query"], bm25, bm25_chunks, collection, model, cfg, top_k=args.top_k
-                )
+                chunks = retrieve_hybrid(q["query"], bm25, bm25_chunks,
+                                          collection, model, cfg, args.top_k)
+            results.append(evaluate_query(q, chunks, args.top_k, args.kw_threshold))
+            details[q["id"]] = chunks
 
-            eval_result = evaluate_query(q, results, args.top_k)
-            query_results.append(eval_result)
-            retrieval_details[q["id"]] = results
+        dur = time.time() - t0
+        log.info("  %.1fs (%.2fs/query)", dur, dur / len(queries))
 
-        duration = time.time() - t0
-        log.info("  Completed in %.1fs (%.2fs/query)", duration, duration / len(queries))
+        s = print_report(method, results, verbose=args.verbose,
+                         retrieval_details=details if args.verbose else None)
+        summaries.append(s)
+        output[method] = {"summary": s, "per_query": results}
 
-        summary = print_report(
-            method, query_results,
-            verbose=args.verbose,
-            retrieval_results=retrieval_details if args.verbose else None,
-        )
-        all_summaries.append(summary)
-        output_data[method] = {
-            "summary": summary,
-            "per_query": query_results,
-        }
-
-    # Final comparison table
-    if len(all_summaries) > 1:
+    if len(summaries) > 1:
         log.info("")
         log.info("=" * 70)
-        log.info("Comparison Summary")
+        log.info("Comparison")
         log.info("=" * 70)
-        log.info("  %-10s  %8s  %10s  %10s", "Method", "Passed", "Pass Rate", "Hit Rate")
-        log.info("  " + "-" * 45)
-        for s in all_summaries:
-            log.info(
-                "  %-10s  %8d  %9.1f%%  %9.3f",
-                s["method"], s["passed"],
-                100 * s["pass_rate"], s["avg_hit_rate"],
-            )
+        log.info("  %-10s  %8s  %10s  %12s  %10s",
+                 "Method","Passed","Pass Rate","KW Coverage","MR Score")
+        log.info("  " + "-"*55)
+        for s in summaries:
+            log.info("  %-10s  %8d  %9.1f%%  %11.3f  %9.3f",
+                     s["method"], s["passed"],
+                     100*s["pass_rate"], s["avg_kw_score"], s["avg_mr_score"])
         log.info("=" * 70)
 
-    save_results(output_data, Path(cfg["evaluation"]["results_dir"]))
-    log.info("\nNext step: python eval/eval_baseline.py  (test raw LLM with no RAG)")
+    save_results(output, Path(cfg["evaluation"]["results_dir"]))
+    log.info("\nNext: python eval/eval_baseline.py")
 
 
 if __name__ == "__main__":
