@@ -2,7 +2,7 @@
 pipeline/parse_functions.py
 
 Parses all cloned repositories using tree-sitter and extracts
-function-level chunks — the core research contribution of Substrate.
+function-level chunks - the core research contribution of Substrate.
 
 Each chunk contains:
   - raw source code of the function
@@ -35,7 +35,7 @@ CHUNKS_DIR  = Path("data/chunks")
 # Repos in dependency order (bottom of stack -> top)
 REPO_NAMES = ["numpy", "scipy", "pandas", "scikit-learn", "pytorch", "transformers"]
 
-# We skip files in these directories — they add noise without signal
+# We skip files in these directories - they add noise without signal
 SKIP_DIRS = {
     "test", "tests", "testing",
     "benchmarks", "bench",
@@ -174,7 +174,7 @@ def extract_functions_from_file(
 
             # Apply filters
             if line_count < MIN_LINES or line_count > MAX_LINES:
-                # Still recurse — nested functions inside valid ones are fine
+                # Still recurse - nested functions inside valid ones are fine
                 for child in node.children:
                     walk(child, class_name=class_name)
                 return
@@ -224,7 +224,7 @@ def parse_repo(repo_name: str, parser: Parser) -> dict:
     """
     repo_dir = REPOS_DIR / repo_name
     if not repo_dir.exists():
-        log.error("Repo not found: %s — run clone_repos.py first", repo_dir)
+        log.error("Repo not found: %s - run clone_repos.py first", repo_dir)
         return {}
 
     CHUNKS_DIR.mkdir(parents=True, exist_ok=True)
@@ -368,7 +368,7 @@ def main() -> None:
         for repo_name in repos:
             out_path = CHUNKS_DIR / f"{repo_name}.jsonl"
             if not out_path.exists():
-                log.warning("No chunks file for %s — parse it first.", repo_name)
+                log.warning("No chunks file for %s - parse it first.", repo_name)
                 continue
             count = sum(1 for _ in out_path.open())
             size_mb = out_path.stat().st_size / (1024 * 1024)
@@ -392,7 +392,7 @@ def main() -> None:
             return
 
     log.info("=" * 65)
-    log.info("Substrate — Function Parser")
+    log.info("Substrate - Function Parser")
     log.info("Repos   : %s", ", ".join(repos))
     log.info("Output  : %s/", CHUNKS_DIR)
     log.info("=" * 65)
