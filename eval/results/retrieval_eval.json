@@ -1,0 +1,4208 @@
+{
+  "bm25": {
+    "summary": {
+      "method": "bm25",
+      "total": 33,
+      "verifiable": 26,
+      "passed": 2,
+      "failed": 24,
+      "unverifiable": 7,
+      "pass_rate": 0.07692307692307693,
+      "avg_hit_rate": 0.2115384615384615
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "clip",
+          "clipn"
+        ],
+        "hits": [
+          "clip"
+        ],
+        "misses": [
+          "clipn"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "resize",
+          "ravel_multi_index",
+          "argrelextrema",
+          "take",
+          "argrelmax",
+          "argrelmin",
+          "_boolrelextrema",
+          "clip",
+          "whosmat",
+          "put"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "_wrapreduction"
+        ],
+        "hits": [],
+        "misses": [
+          "_wrapreduction"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "clean_column_name",
+          "_xp_copy_to_numpy",
+          "amax",
+          "amin",
+          "__RandomState_ctor",
+          "_convert_to_numpy",
+          "_asarray_with_order",
+          "lazy_xp_function",
+          "xp_result_device",
+          "_clean_nans"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "scipy",
+          "numpy",
+          "numpy",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_argcheck_rvs",
+          "_broadcast_shape",
+          "broadcast_symbolic_shapes",
+          "take",
+          "xp_promote",
+          "_get_adapter_from_container",
+          "_",
+          "_broadcast_shapes"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "pytorch",
+          "pandas",
+          "scipy",
+          "scikit-learn",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "minimize"
+        ],
+        "hits": [],
+        "misses": [
+          "minimize"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "show_options",
+          "_check_optimize_result",
+          "fallback_lbfgs_solve",
+          "brent",
+          "fmin_ncg",
+          "fminbound",
+          "fmin",
+          "fixed_point",
+          "_constrained_optimization",
+          "_constrained_optimization"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "fft"
+        ],
+        "hits": [],
+        "misses": [
+          "fft"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "set_global_backend",
+          "register_backend",
+          "_backend_from_arg",
+          "skip_backend",
+          "set_backend",
+          "prev_fast_len",
+          "fftfreq",
+          "set_workers",
+          "rfft2",
+          "rfftfreq"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "GroupBy",
+          "aggregate",
+          "agg"
+        ],
+        "hits": [
+          "aggregate"
+        ],
+        "misses": [
+          "GroupBy",
+          "agg"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "_groupby_op",
+          "_groupby_op",
+          "_groupby_and_aggregate",
+          "aggregate",
+          "_groupby_op",
+          "groupby",
+          "groupby",
+          "_groupby_op",
+          "get_resampler_for_grouping",
+          "retrieve_const_key"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "merge"
+        ],
+        "hits": [],
+        "misses": [
+          "merge"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_assert_all_finite_element_wise",
+          "dropna",
+          "dropna",
+          "na_value",
+          "dropna",
+          "bfill",
+          "ffill",
+          "factorize",
+          "dropna",
+          "_values_for_factorize"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "StandardScaler",
+          "fit"
+        ],
+        "hits": [
+          "fit"
+        ],
+        "misses": [
+          "StandardScaler"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "make_pipeline",
+          "_get_adapter_from_container",
+          "__setstate__",
+          "check_f_contiguous_array_estimator",
+          "fit",
+          "_assert_all_finite_element_wise",
+          "get_data_home",
+          "get_config",
+          "is_valid_sparse_matrix",
+          "right_multiply"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "train_test_split"
+        ],
+        "hits": [
+          "train_test_split"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "is_usable_for",
+          "evaluate",
+          "from_estimator",
+          "from_predictions",
+          "_clone_parametrized",
+          "from_estimator",
+          "train_test_split",
+          "from_estimator",
+          "from_predictions",
+          "from_predictions"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Adam",
+          "step"
+        ],
+        "hits": [
+          "step"
+        ],
+        "misses": [
+          "Adam"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "_get_adamw_apex_fused",
+          "_register_fused_optim",
+          "set_optimizer",
+          "_get_adamw_torch",
+          "step",
+          "get_state_dict",
+          "__init__",
+          "dim",
+          "_apply_optimizer_in_backward",
+          "deepspeed_optim_sched"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "grad_fn",
+          "backward"
+        ],
+        "hits": [],
+        "misses": [
+          "grad_fn",
+          "backward"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "handle_autograd_grad",
+          "_aot_stage2a_partition",
+          "recompute_mean_var",
+          "first_slice_copy_with_grad",
+          "register_autograd",
+          "get_gradient_edge",
+          "method_backward",
+          "register_autograd",
+          "check_undefined_grad_support",
+          "check"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "tokenize",
+          "encode"
+        ],
+        "hits": [],
+        "misses": [
+          "tokenize",
+          "encode"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "add_tokens",
+          "get_missing_alphabet_tokens",
+          "from_pretrained",
+          "from_pretrained",
+          "_add_tokens",
+          "save_vocabulary",
+          "_add_tokens",
+          "vocab_size",
+          "get_vocab",
+          "save_vocabulary"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "BertModel",
+          "forward"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "BertModel"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "setup_context",
+          "clean_column_name",
+          "keys",
+          "no_sync",
+          "get_cb_kwargs",
+          "get_cb_kwargs",
+          "forward",
+          "forward",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pandas",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "must_retrieve": [
+          "NDFrame",
+          "Block",
+          "array"
+        ],
+        "hits": [],
+        "misses": [
+          "NDFrame",
+          "Block",
+          "array"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_from_arrays",
+          "from_spmatrix",
+          "explode",
+          "_liac_arff_parser",
+          "create_dataframe_from_blocks",
+          "_pandas_arff_parser",
+          "merge",
+          "merge",
+          "load_arff_from_gzip_file",
+          "itertuples"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "check_array",
+          "validate_data"
+        ],
+        "hits": [],
+        "misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "broadcast_shapes",
+          "_get_adapter_from_container",
+          "_single_array_device",
+          "_from_arrays",
+          "get_config",
+          "fit",
+          "_asarray_with_order",
+          "raise_build_error",
+          "fit",
+          "_assert_all_finite_element_wise"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "inv",
+          "solve"
+        ],
+        "hits": [
+          "inv",
+          "solve"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "solve",
+          "inv",
+          "pinv",
+          "_logpdf",
+          "_mode",
+          "vec",
+          "from_eigendecomposition",
+          "_mean",
+          "pinv",
+          "_var"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "numpy"
+        ],
+        "hits": [],
+        "misses": [
+          "numpy"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_to_tensor",
+          "to_numpy",
+          "as_tensor",
+          "process_images",
+          "process_images",
+          "process_images",
+          "_from_numpy_array",
+          "to_numpy",
+          "resize",
+          "make_np"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "numpy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Trainer",
+          "DataLoader",
+          "get_train_dataloader"
+        ],
+        "hits": [
+          "get_train_dataloader"
+        ],
+        "misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "get_train_dataloader",
+          "get_steps_per_epoch",
+          "create_rng",
+          "thread_safe_generator",
+          "num_examples",
+          "tpu_spmd_dataloader",
+          "get_worker_info",
+          "__init__",
+          "set_initial_training_values",
+          "extract_hyperparameters_from_trainer"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "Rolling",
+          "apply"
+        ],
+        "hits": [],
+        "misses": [
+          "Rolling",
+          "apply"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_groupby_op",
+          "aggregate",
+          "mean",
+          "_groupby_op",
+          "sum",
+          "std",
+          "var",
+          "quantile",
+          "aggregate",
+          "pipe"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hits": [],
+        "misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_single_array_device",
+          "__setstate__",
+          "_assert_all_finite_element_wise",
+          "_asarray_with_order",
+          "is_usable_for",
+          "_get_adapter_from_container",
+          "check_f_contiguous_array_estimator",
+          "get_data_home",
+          "_use_interchange_protocol",
+          "get_config"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hits": [],
+        "misses": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "as_tensor",
+          "_get_is_as_tensor_fns",
+          "to_cpu_and_numpy",
+          "_to_tensor",
+          "cond",
+          "fill",
+          "pairwise_distances_argmin",
+          "pdist",
+          "paired_distances",
+          "_preprocess_input"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hits": [],
+        "misses": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "can_generate",
+          "method_backward",
+          "_forward_process_and_sample",
+          "load_custom_generate",
+          "_has_self_referential_shape",
+          "__init_subclass__",
+          "forward",
+          "forward",
+          "graph",
+          "codegen_sync"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "corr",
+          "nancorr"
+        ],
+        "hits": [
+          "corr"
+        ],
+        "misses": [
+          "nancorr"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "corr",
+          "autocorr",
+          "corr",
+          "corr",
+          "corr",
+          "corr",
+          "corrwith",
+          "corr",
+          "corrwith",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hits": [],
+        "misses": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "is_usable_for",
+          "set_config",
+          "_check_large_sparse",
+          "config_context",
+          "_asarray_with_order",
+          "pairwise_distances_argmin",
+          "is_valid_sparse_matrix",
+          "_fit_full",
+          "__setstate__",
+          "_assert_all_finite_element_wise"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "attention",
+          "BertSelfAttention",
+          "forward"
+        ],
+        "hits": [],
+        "misses": [
+          "attention",
+          "BertSelfAttention",
+          "forward"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "can_produce",
+          "enable_flash_sdp",
+          "enable_math_sdp",
+          "enable_cudnn_sdp",
+          "enable_mem_efficient_sdp",
+          "cudnn_sdp_enabled",
+          "math_sdp_enabled",
+          "flash_sdp_enabled",
+          "mem_efficient_sdp_enabled",
+          "allow_fp16_bf16_reduction_math_sdp"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "hits": [],
+        "misses": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "pairwise_distances_argmin",
+          "pairwise_distances_argmin_min",
+          "__setstate__",
+          "is_usable_for",
+          "pairwise_distances",
+          "silhouette_samples",
+          "kmeans",
+          "_get_expected_failed_checks",
+          "set_config",
+          "check_f_contiguous_array_estimator"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "set_default_dtype",
+          "fit",
+          "obj2sctype",
+          "_transform",
+          "_promote",
+          "_prep_values",
+          "_validate_array_cls",
+          "getdtype",
+          "fill_value",
+          "as_float_array"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "pandas",
+          "scipy",
+          "scipy",
+          "numpy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "set_config",
+          "parametrize_with_checks",
+          "__get__",
+          "config_context",
+          "_single_array_device",
+          "check_f_contiguous_array_estimator",
+          "__setstate__",
+          "func",
+          "is_usable_for",
+          "array"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "print_bt",
+          "save",
+          "nested_tensor",
+          "enable_propagation",
+          "_contains_nan",
+          "guard_size_oblivious",
+          "traverse",
+          "forward",
+          "default_device",
+          "call_module"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "scipy",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "scikit-learn",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "estimate_rank",
+          "_validate_array_cls",
+          "svd",
+          "from_precision",
+          "estimate_spectral_norm_diff",
+          "_check_scalar",
+          "interp_decomp",
+          "inv",
+          "cholesky",
+          "estimate_spectral_norm"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "create_dataframe_from_blocks",
+          "round",
+          "_liac_arff_parser",
+          "aggregate",
+          "read_table",
+          "maybe_prepare_scalar_for_op",
+          "astype_array_safe",
+          "_safe_indexing",
+          "_validate_array_cls",
+          "aggregate"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "scipy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "forward",
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "forward",
+          "forward",
+          "forward",
+          "freeze_embeddings_and_language_adapters",
+          "forward",
+          "forward",
+          "jit_code_filter",
+          "get_fixed_layout_without_freezing",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "parametrize_with_checks",
+          "check_random_state",
+          "check_random_state",
+          "_van_der_corput_permutations",
+          "generate_noise",
+          "check_f_contiguous_array_estimator",
+          "set_config",
+          "rvs",
+          "_init_arpack_v0",
+          "directed_hausdorff"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "transformers",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy"
+        ]
+      }
+    ]
+  },
+  "dense": {
+    "summary": {
+      "method": "dense",
+      "total": 33,
+      "verifiable": 26,
+      "passed": 3,
+      "failed": 23,
+      "unverifiable": 7,
+      "pass_rate": 0.11538461538461539,
+      "avg_hit_rate": 0.3012820512820512
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "clip",
+          "clipn"
+        ],
+        "hits": [
+          "clip"
+        ],
+        "misses": [
+          "clipn"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "clip",
+          "clip",
+          "_clip_with_one_bound",
+          "_check_clip_x",
+          "_sf",
+          "_call",
+          "clip",
+          "validate_clip_with_axis",
+          "_clip_with_scalar",
+          "trimmed_var"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "numpy",
+          "pandas",
+          "scipy",
+          "scipy",
+          "pytorch",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "_wrapreduction"
+        ],
+        "hits": [],
+        "misses": [
+          "_wrapreduction"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "wrap_function",
+          "__array_wrap__",
+          "_wrapfunc",
+          "wrap",
+          "wrapped",
+          "_wrap_min_count_reduction_result",
+          "_wrap_function",
+          "around",
+          "numpy_dtype",
+          "_generate_wrapped_number"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "numpy",
+          "scipy",
+          "pytorch",
+          "pandas",
+          "scipy",
+          "numpy",
+          "pandas",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_broadcast_shape",
+          "broadcast_to",
+          "broadcast_shapes",
+          "_broadcast_shapes",
+          "_broadcast_array_shapes_remove_axis",
+          "__maybe_broadcast",
+          "_broadcast_arrays",
+          "broadcastable"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "numpy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "pytorch",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "minimize"
+        ],
+        "hits": [],
+        "misses": [
+          "minimize"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_check_optimize_result",
+          "__init__",
+          "fallback_lbfgs_solve",
+          "_constrained_optimization",
+          "_constrained_optimization",
+          "_solve_W",
+          "__init__",
+          "__init__",
+          "_minimize_powell",
+          "solve"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "fft"
+        ],
+        "hits": [
+          "fft"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "fft",
+          "ifft",
+          "hfft2",
+          "_fft_helper",
+          "fft_mode",
+          "ihfft2",
+          "_fftconv_faster",
+          "irfft2",
+          "rfft2",
+          "hfft"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "GroupBy",
+          "aggregate",
+          "agg"
+        ],
+        "hits": [
+          "aggregate"
+        ],
+        "misses": [
+          "GroupBy",
+          "agg"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "groupby",
+          "groupby",
+          "_wrap_aggregated_output",
+          "get_groupby",
+          "aggregate",
+          "__init__",
+          "cumsum",
+          "__iter__",
+          "aggregate",
+          "expanding"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "merge"
+        ],
+        "hits": [],
+        "misses": [
+          "merge"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_replace_nans",
+          "combine",
+          "na_value",
+          "ffill",
+          "isna",
+          "hasnans",
+          "fillna",
+          "ne",
+          "bfill",
+          "fillna"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "StandardScaler",
+          "fit"
+        ],
+        "hits": [
+          "fit"
+        ],
+        "misses": [
+          "StandardScaler"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "variance",
+          "standard_deviation",
+          "_is_constant_feature",
+          "mean",
+          "variance",
+          "variance",
+          "fit",
+          "mean_variance_axis",
+          "_update_mean_variance",
+          "sem"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "scipy",
+          "scikit-learn",
+          "transformers",
+          "pytorch",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "train_test_split"
+        ],
+        "hits": [
+          "train_test_split"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "split",
+          "_split",
+          "__init__",
+          "split",
+          "split",
+          "split",
+          "_split",
+          "split",
+          "train_test_split",
+          "_check_input_parameters"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Adam",
+          "step"
+        ],
+        "hits": [],
+        "misses": [
+          "Adam",
+          "step"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "sparse_adam",
+          "__init__",
+          "adam",
+          "set_optimizer",
+          "__init__",
+          "adamw",
+          "adamax",
+          "_get_adamw_torch",
+          "forward",
+          "_get_adamw_anyprecision"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "transformers",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "grad_fn",
+          "backward"
+        ],
+        "hits": [
+          "backward"
+        ],
+        "misses": [
+          "grad_fn"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "_extract_parameters_and_gradients",
+          "backward",
+          "backward",
+          "register_autograd",
+          "backward",
+          "register_autograd",
+          "_root_post_backward_final_callback",
+          "vjp_fn",
+          "vjp_fn",
+          "_track_module_params_and_buffers"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "tokenize",
+          "encode"
+        ],
+        "hits": [
+          "tokenize"
+        ],
+        "misses": [
+          "encode"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "add_tokens",
+          "_add_tokens",
+          "_add_tokens",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "_tokenize",
+          "_wrap_decode_method_backend_tokenizer"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "BertModel",
+          "forward"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "BertModel"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "must_retrieve": [
+          "NDFrame",
+          "Block",
+          "array"
+        ],
+        "hits": [
+          "array"
+        ],
+        "misses": [
+          "NDFrame",
+          "Block"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "array",
+          "array",
+          "array",
+          "_from_arrays",
+          "array",
+          "column_data_lengths",
+          "column_data_offsets",
+          "primitive_column_to_ndarray",
+          "to_arrays",
+          "create_dataframe"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "check_array",
+          "validate_data"
+        ],
+        "hits": [],
+        "misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "fit",
+          "_asarray_validated",
+          "fit",
+          "_validate_vector",
+          "assert_allclose",
+          "check_array_indexer",
+          "validate",
+          "check_X_y",
+          "fit",
+          "matdims"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "pandas",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "inv",
+          "solve"
+        ],
+        "hits": [
+          "inv"
+        ],
+        "misses": [
+          "solve"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "inv",
+          "I",
+          "inv",
+          "dot",
+          "affine_transform",
+          "tensorinv",
+          "matdims",
+          "invpascal",
+          "transpose",
+          "_fractional_matrix_power"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "numpy"
+        ],
+        "hits": [],
+        "misses": [
+          "numpy"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_to_tensor",
+          "to_numpy_helper",
+          "numpy_to_tensor",
+          "as_tensor",
+          "_to_numpy_array",
+          "_to_numpy",
+          "to_numpy",
+          "_get_is_as_tensor_fns",
+          "to_py_obj",
+          "make_np"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Trainer",
+          "DataLoader",
+          "get_train_dataloader"
+        ],
+        "hits": [
+          "get_train_dataloader"
+        ],
+        "misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "__init__",
+          "__init__",
+          "set_dataloader",
+          "__init__",
+          "get_train_dataloader",
+          "to",
+          "__init__",
+          "__next__",
+          "getstate",
+          "__init__"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "Rolling",
+          "apply"
+        ],
+        "hits": [],
+        "misses": [
+          "Rolling",
+          "apply"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "roll",
+          "rollaxis",
+          "nunique",
+          "roll_apply",
+          "mean",
+          "count",
+          "first",
+          "sum",
+          "var",
+          "std"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hits": [],
+        "misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "svdvals",
+          "_solve_svd",
+          "_svds_lobpcg_doc",
+          "_get_first_singular_vectors_svd",
+          "pca_lowrank",
+          "_multi_svd_norm",
+          "_svd",
+          "svdvals",
+          "_get_first_singular_vectors_power_method",
+          "diagsvd"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "pytorch",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hits": [],
+        "misses": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "to_numpy_helper",
+          "to_tvm_tensor",
+          "pre_flatten_transform",
+          "_to_tensor",
+          "_to_numpy_array",
+          "pow_by_natural",
+          "_to_numpy",
+          "to_torch_tensor",
+          "get_mm_tensors",
+          "numpy_to_tensor"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hits": [],
+        "misses": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "all_tensors",
+          "get_state_as_tensor",
+          "method_detach_",
+          "gen_fake_args",
+          "gen_fn",
+          "inner",
+          "codegen_scalar_to_tensor",
+          "_register_woq_mm_int8_pattern4",
+          "convert_arg_type_and_name",
+          "create_functionalized_rng_ops_wrapper"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "corr",
+          "nancorr"
+        ],
+        "hits": [
+          "corr"
+        ],
+        "misses": [
+          "nancorr"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "corr",
+          "corrwith",
+          "corr",
+          "corrwith",
+          "corr",
+          "corr",
+          "corr",
+          "corrcoef",
+          "_corr",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "scipy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hits": [],
+        "misses": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_svds_lobpcg_doc",
+          "svds",
+          "is_valid_sparse_matrix",
+          "_sparse_fit",
+          "svdvals",
+          "_svds_propack_doc",
+          "_sparse_encode_precomputed",
+          "eye",
+          "_svds_arpack_doc",
+          "svdvals"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "attention",
+          "BertSelfAttention",
+          "forward"
+        ],
+        "hits": [
+          "attention",
+          "forward"
+        ],
+        "misses": [
+          "BertSelfAttention"
+        ],
+        "hit_rate": 0.6666666666666666,
+        "passed": true,
+        "retrieved_functions": [
+          "_unmask_unattended",
+          "_scaled_dot_product_attention_quantized",
+          "flex_attention",
+          "aten_scaled_dot_product_attention_23",
+          "sdpa_kernel",
+          "_in_projection_packed",
+          "forward",
+          "can_use_efficient_attention",
+          "attention",
+          "_attention_scale"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "hits": [
+          "euclidean_distances"
+        ],
+        "misses": [
+          "KMeans",
+          "_lloyd_iter"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "_kmeans",
+          "kneighbors_graph",
+          "kmeans2",
+          "paired_distances",
+          "_compute_core_distances_",
+          "_kmeans_plusplus",
+          "kmeans",
+          "euclidean_distances",
+          "_kmeans_single_elkan",
+          "radius_neighbors_graph"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "check_int_infer_dtype",
+          "default_dtypes",
+          "default_dtypes",
+          "set_default_dtype",
+          "_standardize_dtype",
+          "float_numpy_dtype",
+          "_get_dtype",
+          "_get_dtype",
+          "convert_dtypes",
+          "convert_dtypes"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "numpy",
+          "scikit-learn",
+          "pytorch",
+          "pandas",
+          "pandas",
+          "scipy",
+          "scipy",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_bool_arith_check",
+          "_is_boolean",
+          "is_bool",
+          "is_scalar_nan",
+          "_with_pandas",
+          "is_bool_dtype",
+          "np_find_common_type",
+          "_isnan",
+          "__init__",
+          "_has_bool_dtype"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pytorch",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_no_grad_wrapper",
+          "wrapper",
+          "_apply",
+          "__repr__",
+          "generate_single_level_function",
+          "wrapped",
+          "_no_grad",
+          "forward",
+          "wrapper",
+          "_set_tensor_requires_grad"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "__new__",
+          "__array__",
+          "empty",
+          "_asarray_validated",
+          "to_numpy",
+          "is_numpy",
+          "matvec",
+          "__array_finalize__",
+          "array_namespace",
+          "__init_subclass__"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "pytorch",
+          "numpy",
+          "scipy",
+          "transformers",
+          "pytorch",
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_wrapfunc",
+          "diff",
+          "_convert_to_ndarray",
+          "_astype_float_to_int_nansafe",
+          "_maybe_convert",
+          "_cast_to_stata_types",
+          "nansum",
+          "_bool_arith_check",
+          "_get_fill_value",
+          "_is_int_type"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "pandas",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "forward",
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "_forward",
+          "_sticky_export",
+          "forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_use_post_forward_mesh",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_single_array_device",
+          "check_estimator",
+          "_average",
+          "get_tags",
+          "evaluate_error",
+          "_van_der_corput_permutations",
+          "_set_random_states",
+          "__str__",
+          "estimator_checks_generator",
+          "_random"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      }
+    ]
+  },
+  "hybrid": {
+    "summary": {
+      "method": "hybrid",
+      "total": 33,
+      "verifiable": 26,
+      "passed": 3,
+      "failed": 23,
+      "unverifiable": 7,
+      "pass_rate": 0.11538461538461539,
+      "avg_hit_rate": 0.3141025641025641
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "clip",
+          "clipn"
+        ],
+        "hits": [
+          "clip"
+        ],
+        "misses": [
+          "clipn"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "clip",
+          "clip",
+          "clip",
+          "resize",
+          "ravel_multi_index",
+          "argrelextrema",
+          "_clip_with_one_bound",
+          "take",
+          "_check_clip_x",
+          "argrelmax"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "numpy",
+          "scikit-learn",
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "numpy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [
+          "_wrapreduction"
+        ],
+        "hits": [],
+        "misses": [
+          "_wrapreduction"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "amin",
+          "clean_column_name",
+          "wrap_function",
+          "_xp_copy_to_numpy",
+          "__array_wrap__",
+          "amax",
+          "_wrapfunc",
+          "wrap",
+          "__RandomState_ctor",
+          "wrapped"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "pandas",
+          "pandas",
+          "scipy",
+          "pandas",
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_broadcast_shape",
+          "_broadcast_array_shapes_remove_axis",
+          "_broadcast_shapes",
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_argcheck_rvs",
+          "broadcast_to",
+          "broadcast_symbolic_shapes"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "pytorch",
+          "scikit-learn",
+          "scipy",
+          "numpy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "minimize"
+        ],
+        "hits": [],
+        "misses": [
+          "minimize"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_check_optimize_result",
+          "fallback_lbfgs_solve",
+          "_constrained_optimization",
+          "_constrained_optimization",
+          "_solve_W",
+          "_solve_lbfgs",
+          "show_options",
+          "__init__",
+          "brent",
+          "fmin_ncg"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "must_retrieve": [
+          "fft"
+        ],
+        "hits": [
+          "fft"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "hfft2",
+          "rfft2",
+          "_fft_helper",
+          "rfftfreq",
+          "set_global_backend",
+          "fft",
+          "register_backend",
+          "ifft",
+          "_backend_from_arg",
+          "skip_backend"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "GroupBy",
+          "aggregate",
+          "agg"
+        ],
+        "hits": [
+          "aggregate"
+        ],
+        "misses": [
+          "GroupBy",
+          "agg"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "groupby",
+          "groupby",
+          "aggregate",
+          "_groupby_op",
+          "cumsum",
+          "_groupby_op",
+          "_groupby_op",
+          "_groupby_and_aggregate",
+          "_wrap_aggregated_output",
+          "get_groupby"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "must_retrieve": [
+          "merge"
+        ],
+        "hits": [],
+        "misses": [
+          "merge"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "na_value",
+          "ffill",
+          "bfill",
+          "isna",
+          "fillna",
+          "_assert_all_finite_element_wise",
+          "_replace_nans",
+          "dropna",
+          "combine",
+          "dropna"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "StandardScaler",
+          "fit"
+        ],
+        "hits": [
+          "fit"
+        ],
+        "misses": [
+          "StandardScaler"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "fit",
+          "partial_fit",
+          "make_pipeline",
+          "variance",
+          "_get_adapter_from_container",
+          "standard_deviation",
+          "__setstate__",
+          "_is_constant_feature",
+          "check_f_contiguous_array_estimator",
+          "mean"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "transformers",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "train_test_split"
+        ],
+        "hits": [
+          "train_test_split"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "train_test_split",
+          "is_usable_for",
+          "split",
+          "evaluate",
+          "_split",
+          "from_estimator",
+          "__init__",
+          "from_predictions",
+          "split",
+          "_clone_parametrized"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Adam",
+          "step"
+        ],
+        "hits": [
+          "step"
+        ],
+        "misses": [
+          "Adam"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "set_optimizer",
+          "_get_adamw_torch",
+          "_get_adamw_anyprecision",
+          "_get_adamw_apex_fused",
+          "sparse_adam",
+          "_register_fused_optim",
+          "__init__",
+          "adam",
+          "step",
+          "__init__"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "grad_fn",
+          "backward"
+        ],
+        "hits": [
+          "backward"
+        ],
+        "misses": [
+          "grad_fn"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "register_autograd",
+          "register_autograd",
+          "backward",
+          "backward",
+          "_track_module_params_and_buffers",
+          "stage_backward",
+          "_wrap_tensor_autograd_backward",
+          "handle_autograd_grad",
+          "_extract_parameters_and_gradients",
+          "_aot_stage2a_partition"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "tokenize",
+          "encode"
+        ],
+        "hits": [
+          "tokenize"
+        ],
+        "misses": [
+          "encode"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "add_tokens",
+          "_add_tokens",
+          "_add_tokens",
+          "get_vocab",
+          "get_missing_alphabet_tokens",
+          "from_pretrained",
+          "from_pretrained",
+          "tokenize",
+          "tokenize",
+          "save_vocabulary"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "must_retrieve": [
+          "BertModel",
+          "forward"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "BertModel"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "setup_context",
+          "forward",
+          "clean_column_name",
+          "forward",
+          "keys",
+          "forward",
+          "no_sync",
+          "forward",
+          "get_cb_kwargs",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "transformers",
+          "pandas",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "must_retrieve": [
+          "NDFrame",
+          "Block",
+          "array"
+        ],
+        "hits": [
+          "array"
+        ],
+        "misses": [
+          "NDFrame",
+          "Block"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "_from_arrays",
+          "create_dataframe_from_blocks",
+          "array",
+          "from_spmatrix",
+          "array",
+          "explode",
+          "array",
+          "_liac_arff_parser",
+          "array",
+          "_pandas_arff_parser"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "check_array",
+          "validate_data"
+        ],
+        "hits": [],
+        "misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "fit",
+          "fit",
+          "fit",
+          "_single_array_device",
+          "fit",
+          "broadcast_shapes",
+          "_get_adapter_from_container",
+          "_asarray_validated",
+          "_from_arrays",
+          "_validate_vector"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "pandas",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "inv",
+          "solve"
+        ],
+        "hits": [
+          "inv",
+          "solve"
+        ],
+        "misses": [],
+        "hit_rate": 1.0,
+        "passed": true,
+        "retrieved_functions": [
+          "inv",
+          "inv",
+          "pinv",
+          "inv",
+          "solve",
+          "I",
+          "_logpdf",
+          "dot",
+          "_mode",
+          "affine_transform"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "numpy"
+        ],
+        "hits": [],
+        "misses": [
+          "numpy"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_to_tensor",
+          "as_tensor",
+          "to_numpy",
+          "_get_is_as_tensor_fns",
+          "_from_numpy_array",
+          "make_np",
+          "to_py_obj",
+          "to_numpy_helper",
+          "numpy_to_tensor",
+          "process_images"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "Trainer",
+          "DataLoader",
+          "get_train_dataloader"
+        ],
+        "hits": [
+          "get_train_dataloader"
+        ],
+        "misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "get_train_dataloader",
+          "__init__",
+          "get_steps_per_epoch",
+          "__init__",
+          "create_rng",
+          "set_dataloader",
+          "thread_safe_generator",
+          "__init__",
+          "num_examples",
+          "tpu_spmd_dataloader"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "Rolling",
+          "apply"
+        ],
+        "hits": [],
+        "misses": [
+          "Rolling",
+          "apply"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "mean",
+          "sum",
+          "std",
+          "var",
+          "expanding",
+          "_groupby_op",
+          "roll",
+          "aggregate",
+          "rollaxis",
+          "nunique"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "numpy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hits": [],
+        "misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_single_array_device",
+          "svdvals",
+          "__setstate__",
+          "_solve_svd",
+          "_assert_all_finite_element_wise",
+          "_svds_lobpcg_doc",
+          "_asarray_with_order",
+          "_get_first_singular_vectors_svd",
+          "is_usable_for",
+          "pca_lowrank"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hits": [],
+        "misses": [
+          "EvalPrediction",
+          "compute_metrics"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_to_tensor",
+          "as_tensor",
+          "to_numpy_helper",
+          "_get_is_as_tensor_fns",
+          "to_tvm_tensor",
+          "to_cpu_and_numpy",
+          "pre_flatten_transform",
+          "cond",
+          "_to_numpy_array",
+          "fill"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hits": [],
+        "misses": [
+          "generate",
+          "GenerationMixin"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "can_generate",
+          "all_tensors",
+          "method_backward",
+          "get_state_as_tensor",
+          "_forward_process_and_sample",
+          "method_detach_",
+          "load_custom_generate",
+          "gen_fake_args",
+          "_has_self_referential_shape",
+          "gen_fn"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [
+          "corr",
+          "nancorr"
+        ],
+        "hits": [
+          "corr"
+        ],
+        "misses": [
+          "nancorr"
+        ],
+        "hit_rate": 0.5,
+        "passed": false,
+        "retrieved_functions": [
+          "corr",
+          "corr",
+          "corr",
+          "corrwith",
+          "corrwith",
+          "autocorr",
+          "corr",
+          "corr",
+          "corr",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hits": [],
+        "misses": [
+          "SVC",
+          "fit",
+          "libsvm"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "is_valid_sparse_matrix",
+          "is_usable_for",
+          "_svds_lobpcg_doc",
+          "set_config",
+          "svds",
+          "_check_large_sparse",
+          "config_context",
+          "_sparse_fit",
+          "_asarray_with_order",
+          "svdvals"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "must_retrieve": [
+          "attention",
+          "BertSelfAttention",
+          "forward"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "attention",
+          "BertSelfAttention"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "_scaled_dot_product_attention_quantized",
+          "sdpa_kernel",
+          "flex_attention",
+          "forward",
+          "can_produce",
+          "_unmask_unattended",
+          "enable_flash_sdp",
+          "enable_math_sdp",
+          "enable_cudnn_sdp",
+          "aten_scaled_dot_product_attention_23"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "must_retrieve": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "hits": [],
+        "misses": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "hit_rate": 0.0,
+        "passed": false,
+        "retrieved_functions": [
+          "_kmeans",
+          "kmeans",
+          "compute_optics_graph",
+          "pairwise_distances_argmin",
+          "pairwise_distances_argmin_min",
+          "kneighbors_graph",
+          "__setstate__",
+          "kmeans2",
+          "is_usable_for",
+          "paired_distances"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "set_default_dtype",
+          "check_int_infer_dtype",
+          "fit",
+          "default_dtypes",
+          "obj2sctype",
+          "default_dtypes",
+          "_transform",
+          "_promote",
+          "_standardize_dtype",
+          "_prep_values"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pandas",
+          "scikit-learn",
+          "numpy",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_use_interchange_protocol",
+          "set_config",
+          "_bool_arith_check",
+          "parametrize_with_checks",
+          "_is_boolean",
+          "__get__",
+          "is_bool",
+          "config_context",
+          "is_scalar_nan",
+          "_single_array_device"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "print_bt",
+          "_no_grad_wrapper",
+          "save",
+          "wrapper",
+          "nested_tensor",
+          "_apply",
+          "enable_propagation",
+          "__repr__",
+          "_contains_nan",
+          "generate_single_level_function"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "scipy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "estimate_rank",
+          "__new__",
+          "_validate_array_cls",
+          "__array__",
+          "svd",
+          "empty",
+          "from_precision",
+          "_asarray_validated",
+          "estimate_spectral_norm_diff",
+          "to_numpy"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "scipy",
+          "pytorch",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_bool_arith_check",
+          "create_dataframe_from_blocks",
+          "_wrapfunc",
+          "round",
+          "diff",
+          "_liac_arff_parser",
+          "_convert_to_ndarray",
+          "aggregate",
+          "_astype_float_to_int_nansafe",
+          "read_table"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "must_retrieve": [
+          "forward",
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hits": [
+          "forward"
+        ],
+        "misses": [
+          "return_dict",
+          "BaseModelOutput"
+        ],
+        "hit_rate": 0.3333333333333333,
+        "passed": false,
+        "retrieved_functions": [
+          "forward",
+          "_forward",
+          "forward",
+          "_sticky_export",
+          "forward",
+          "forward",
+          "freeze_embeddings_and_language_adapters",
+          "_forward",
+          "forward",
+          "_forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "must_retrieve": [],
+        "hits": [],
+        "misses": [],
+        "hit_rate": null,
+        "passed": null,
+        "retrieved_functions": [
+          "_van_der_corput_permutations",
+          "check_f_contiguous_array_estimator",
+          "random_state",
+          "parametrize_with_checks",
+          "_single_array_device",
+          "check_random_state",
+          "check_estimator",
+          "check_random_state",
+          "_average",
+          "get_tags"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      }
+    ]
+  }
+}
