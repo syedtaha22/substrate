@@ -40,3 +40,12 @@ Thumbs.db
 .cache/
 *.bin
 *.safetensors
+
+# Chainlit
+.chainlit/translations/
+.files/
+flagged/
+
+# Docs, and temporary files
+paper/
+SUBSTRATE.md 
