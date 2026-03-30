@@ -1,0 +1,11 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.95">
+    <circle cx="65" cy="65" r="45" fill="hsl(38, 85%, 48%)" fill-opacity="0.2" />
+    <path d="M65 20C89.8528 20 110 40.1472 110 65C110 89.8528 89.8528 110 65 110V20Z" fill="hsl(38, 85%, 48%)" fill-opacity="0.4" />
+    <circle cx="55" cy="55" r="25" fill="hsl(38, 85%, 48%)" fill-opacity="0.7" />
+    <circle cx="55" cy="55" r="12" fill="hsl(38, 85%, 48%)" />
+  </g>
+
+  <text x="130" y="82" font-family="'DM Serif Display', serif" font-size="52" letter-spacing="-0.02em" fill="hsl(160, 20%, 12%)">Substrate</text>
+  <rect x="132" y="92" width="220" height="1" fill="hsl(160, 20%, 12%)" fill-opacity="0.2" />
+</svg>
