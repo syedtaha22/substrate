@@ -1,3 +1,13 @@
+---
+title: Substrate
+emoji: 🦀
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Substrate
 
 > Cross-repo code reasoning via advanced RAG - function-boundary chunking,
