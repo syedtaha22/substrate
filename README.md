@@ -1,8 +1,8 @@
 ---
 title: Substrate
 emoji: 🦀
-colorFrom: indigo
-colorTo: blue
+colorFrom: yellow
+colorTo: green
 sdk: docker
 app_port: 7860
 pinned: false
