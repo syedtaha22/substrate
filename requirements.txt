@@ -1,11 +1,11 @@
 # Substrate - pinned requirements
-# Resolved for: Python 3.12, CPU-only, RAGAS + sentence-transformers compatibility
+# Python 3.12, CPU-only
 
 # Core ML
 torch==2.3.1
 numpy==1.26.4
 
-# HuggingFace stack - pinned together to avoid conflicts 
+# HuggingFace stack - pinned together 
 huggingface-hub==0.24.6
 tokenizers==0.19.1
 transformers==4.43.3
@@ -27,12 +27,13 @@ gitpython==3.1.43
 # Evaluation 
 ragas==0.1.21
 
-# App + UI 
-gradio==4.39.0
+# UI - Chainlit (replaces Gradio for local use) 
+chainlit==2.10.1
+# Note: chainlit installs starlette==1.0.0 and pydantic==2.12.5
+# These are fine for chainlit but break Gradio
 
 # Utilities 
 python-dotenv==1.0.1
 pyyaml==6.0.3
 tqdm==4.66.4
 requests==2.32.3
-pydantic==2.8.2
