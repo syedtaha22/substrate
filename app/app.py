@@ -8,7 +8,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import chainlit as cl
-import requests
 import yaml
 from dotenv import load_dotenv
 load_dotenv()
@@ -31,33 +30,9 @@ with open("config.yaml") as f:
     _cfg = yaml.safe_load(f)
 
 SYSTEM_PROMPT = _cfg["generation"]["system_prompt"].strip()
-HF_TOKEN   = os.environ.get("HF_API_TOKEN", "")
 MODEL      = generator.model
-HF_URL     = "https://router.huggingface.co/v1/chat/completions"
 
-log.info("Substrate ready - model: %s", MODEL)
-
-# LLM call 
-def call_llm(messages: list[dict], max_tokens: int = 512, temp: float = 0.1) -> tuple[str, float]:
-    t0 = time.time()
-    try:
-        resp = requests.post(
-            HF_URL,
-            headers={"Authorization": f"Bearer {HF_TOKEN}",
-                     "Content-Type": "application/json"},
-            data=json.dumps({
-                "model": MODEL,
-                "messages": messages,
-                "max_tokens": max_tokens,
-                "temperature": temp,
-            }),
-            timeout=90,
-        )
-        if resp.status_code == 200:
-            return resp.json()["choices"][0]["message"]["content"].strip(), round(time.time()-t0, 1)
-        return f"API error {resp.status_code}: {resp.text[:200]}", round(time.time()-t0, 1)
-    except Exception as e:
-        return f"Error: {e}", round(time.time()-t0, 1)
+log.info("Substrate ready — model: %s (provider: %s)", MODEL, generator.provider)
 
 # Retrieval routing 
 ROUTE_PROMPT = """You are a routing assistant. Decide if the user's message requires
@@ -92,11 +67,9 @@ async def needs_retrieval(query: str, use_rag: bool) -> bool:
     q = query.lower().strip().rstrip("!?.")
     if q in OBVIOUS_NO or len(q.split()) <= 2:
         return False
-    # Ask the model
-    decision, _ = call_llm(
-        [{"role": "user", "content": ROUTE_PROMPT.format(query=query)}],
-        max_tokens=3, temp=0.0,
-    )
+    # Ask the model for routing decision
+    result = generator.generate(query=ROUTE_PROMPT.format(query=query), chunks=None)
+    decision = result.get("answer", "")
     return "YES" in decision.upper()
 
 # Format context for LLM 
@@ -117,6 +90,7 @@ def build_context(chunks: list[dict]) -> str:
 # Settings 
 @cl.on_chat_start
 async def start():
+    generator.clear_history()  # Reset history for new session
     cl.user_session.set("settings", {"use_rag": True, "method": "hybrid", "top_k": 5})
     await cl.ChatSettings([
         cl.input_widget.Switch(
@@ -169,24 +143,13 @@ async def on_message(msg: cl.Message):
                 line_e = c.get("line_end", "?")
                 step.output += f"**{fp}::{fn}** ({repo}, lines {line_s}-{line_e})\n"
 
-    # Build messages 
-    if chunks:
-        user_content = (
-            f"Retrieved source code:\n\n{build_context(chunks)}\n\n"
-            f"---\n\nQuestion: {query}"
-        )
-    else:
-        user_content = query
-
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user",   "content": user_content},
-    ]
-
-    # Generate 
+    # Generate answer via LLM (handles RAG formatting internally)
+    # Generator maintains internal conversation history
     async with cl.Step(name="Generating", type="llm") as step:
-        answer, duration = call_llm(messages, max_tokens=600, temp=0.1)
-        step.output = f"`{MODEL.split('/')[-1]}` - {duration}s"
+        result = generator.generate(query=query, chunks=chunks if do_retrieve else None, use_history=True)
+        answer = result.get("answer", "Error generating response")
+        duration = result.get("duration_s", 0)
+        step.output = f"`{MODEL.split('/')[-1]}` — {duration}s"
 
     # Source elements 
     # Element names are "[1]", "[2]" etc - Chainlit renders these as clickable
@@ -214,7 +177,7 @@ async def on_message(msg: cl.Message):
 
     # Send 
     rag_info = f"{method} · {len(chunks)} chunks" if do_retrieve else "no retrieval"
-    meta = f"\n\n---\n*{MODEL.split('/')[-1]} · {rag_info} · {duration}s*"
+    meta = f"\n\n---\n*`{MODEL.split('/')[-1]}` · {rag_info} · {duration}s*"
 
     await cl.Message(
         content=answer + meta,

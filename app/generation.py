@@ -53,6 +53,7 @@ class Generator:
     """
     LLM generation wrapper.
     Supports HF router (cloud) and Ollama (local) via config.yaml.
+    Maintains internal conversation history for multi-turn conversations.
     """
 
     def __init__(self, config_path: str = "config.yaml"):
@@ -66,6 +67,8 @@ class Generator:
         self.hf_token = os.environ.get("HF_API_TOKEN", "")
         # Load system prompt from config (single source of truth)
         self.system_prompt = gen_cfg.get("system_prompt", "You are a helpful coding assistant.")
+        # Internal conversation history
+        self.conversation_history: list[dict] = []
 
     # HF Router 
     def _call_hf_router(self, messages: list[dict], retries: int = 3, 
@@ -153,7 +156,7 @@ class Generator:
 
     # Public interface 
     def generate(self, query: str, chunks: list[dict] | None = None, 
-                 context_str: str | None = None) -> dict:
+                 context_str: str | None = None, use_history: bool = True) -> dict:
         """
         Generate an answer for a query.
 
@@ -161,6 +164,7 @@ class Generator:
             query:       The user's question
             chunks:      Retrieved chunks (optional - if None, no RAG)
             context_str: Pre-formatted context string (overrides chunks)
+            use_history: If True, include and update internal conversation history (default: True)
 
         Returns:
             dict with keys:
@@ -193,8 +197,14 @@ class Generator:
 
         messages = [
             {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": user_content},
         ]
+        
+        # Add internal conversation history if enabled
+        if use_history:
+            messages.extend(self.conversation_history)
+        
+        # Add current query
+        messages.append({"role": "user", "content": user_content})
 
         # Call provider
         if self.provider == "local":
@@ -204,6 +214,11 @@ class Generator:
 
         duration = time.time() - t0
 
+        # Update internal history if enabled
+        if use_history:
+            self.conversation_history.append({"role": "user", "content": user_content})
+            self.conversation_history.append({"role": "assistant", "content": answer or "Error: no response from model."})
+
         return {
             "answer": answer or "Error: no response from model.",
             "has_rag": has_rag,
@@ -211,3 +226,11 @@ class Generator:
             "provider": self.provider,
             "duration_s": round(duration, 2),
         }
+
+    def clear_history(self) -> None:
+        """Clear the internal conversation history."""
+        self.conversation_history = []
+
+    def get_history(self) -> list[dict]:
+        """Get the current conversation history."""
+        return self.conversation_history.copy()
