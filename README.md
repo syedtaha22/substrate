@@ -57,7 +57,7 @@ python pipeline/build_bm25.py
 ## Run the app locally
 
 ```bash
-python app/app.py
+chainlit run app/app.py --port 8000
 ```
 
 ## Deploy to Hugging Face Spaces
