@@ -1,5 +1,5 @@
 """
-app/app.py — Substrate
+app/app.py - Substrate
 Run: chainlit run app/app.py --port 8000
 """
 
@@ -35,7 +35,7 @@ HF_TOKEN   = os.environ.get("HF_API_TOKEN", "")
 MODEL      = generator.model
 HF_URL     = "https://router.huggingface.co/v1/chat/completions"
 
-log.info("Substrate ready — model: %s", MODEL)
+log.info("Substrate ready - model: %s", MODEL)
 
 # LLM call 
 def call_llm(messages: list[dict], max_tokens: int = 512, temp: float = 0.1) -> tuple[str, float]:
@@ -160,11 +160,14 @@ async def on_message(msg: cl.Message):
     if do_retrieve:
         async with cl.Step(name="Searching codebase", type="retrieval") as step:
             chunks = retriever.retrieve(query, method=method, top_k=top_k)
-            repo_counts: dict[str, int] = {}
+            step.output = ""
             for c in chunks:
-                r = c.get("repo", "?")
-                repo_counts[r] = repo_counts.get(r, 0) + 1
-            step.output = "  ".join(f"`{r}` ×{n}" for r, n in repo_counts.items())
+                repo   = c.get("repo", "?")
+                fp     = c.get("filepath", "?")
+                fn     = c.get("function_name", "?")
+                line_s = c.get("line_start", "?")
+                line_e = c.get("line_end", "?")
+                step.output += f"**{fp}::{fn}** ({repo}, lines {line_s}-{line_e})\n"
 
     # Build messages 
     if chunks:
@@ -183,10 +186,10 @@ async def on_message(msg: cl.Message):
     # Generate 
     async with cl.Step(name="Generating", type="llm") as step:
         answer, duration = call_llm(messages, max_tokens=600, temp=0.1)
-        step.output = f"`{MODEL.split('/')[-1]}` — {duration}s"
+        step.output = f"`{MODEL.split('/')[-1]}` - {duration}s"
 
     # Source elements 
-    # Element names are "[1]", "[2]" etc — Chainlit renders these as clickable
+    # Element names are "[1]", "[2]" etc - Chainlit renders these as clickable
     # links wherever the model writes [1], [2] in its answer text.
     elements: list[cl.Text] = []
     for c in chunks:
@@ -201,7 +204,7 @@ async def on_message(msg: cl.Message):
         elements.append(cl.Text(
             name=f"{fp}::{fn}",
             content=(
-                f"### `{fn}()` — {repo}\n\n"
+                f"### `{fn}()` - {repo}\n\n"
                 f"**File:** `{fp}`  \n"
                 f"**Lines:** {line_s}–{line_e}  ·  **Score:** `{score:.3f}`\n\n"
                 f"```python\n{code}\n```"
