@@ -106,9 +106,14 @@ retrieval:
 
 # Generation 
 generation:
-  provider: hf_router          # "hf_router" (cloud) or "local" (ollama)
-  model: meta-llama/Llama-3.1-8B-Instruct
-  fallback_model: mistralai/Mistral-7B-Instruct-v0.2
+  provider: local          # "hf_router" (cloud) or "local" (ollama)
+
+  # HuggingFace: meta-llama/Llama-3.1-8B-Instruct
+  # HuggingFace Fallback: mistralai/Mistral-7B-Instruct-v0.2
+  # Local: llama3.1:8b
+  # Local Fallback: mistral:v0.2
+  model: llama3.1:8b
+  fallback_model: mistral:v0.2
   max_new_tokens: 512
   temperature: 0.1             # low temp for factual code questions
   system_prompt: |
@@ -137,7 +142,7 @@ evaluation:
   test_queries_path: eval/test_queries.yaml
   results_dir: eval/results
   use_ragas: true
-  ragas_model: meta-llama/Llama-3.1-8B-Instruct
+  judge: mistral:v0.2
 
   # Retrieval-only evaluation (no LLM needed)
   retrieval_eval:
