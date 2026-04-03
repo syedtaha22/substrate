@@ -25,12 +25,12 @@ tree-sitter-python==0.21.0
 gitpython==3.1.43
 
 # Evaluation 
-ragas==0.1.21
+# I use my own implementation of
+# LLM as judge. Ragas not needed
+# ragas==0.1.21
 
-# UI - Chainlit (replaces Gradio for local use) 
+# UI 
 chainlit==2.10.1
-# Note: chainlit installs starlette==1.0.0 and pydantic==2.12.5
-# These are fine for chainlit but break Gradio
 
 # Utilities 
 python-dotenv==1.0.1
