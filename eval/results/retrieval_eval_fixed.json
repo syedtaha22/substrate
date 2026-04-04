@@ -4,12 +4,12 @@
       "method": "bm25",
       "total": 33,
       "verifiable": 33,
-      "passed": 30,
-      "failed": 3,
+      "passed": 32,
+      "failed": 1,
       "unverifiable": 0,
-      "pass_rate": 0.9090909090909091,
-      "avg_kw_score": 0.8545454545454545,
-      "avg_mr_score": 0.28205128205128205
+      "pass_rate": 0.9696969696969697,
+      "avg_kw_score": 0.9090909090909091,
+      "avg_mr_score": 0.0
     },
     "per_query": [
       {
@@ -28,35 +28,35 @@
           "out"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "clip"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "resize",
-          "ravel_multi_index",
-          "argrelextrema",
-          "take",
-          "argrelmax",
-          "argrelmin",
-          "_boolrelextrema",
-          "clip",
-          "whosmat",
-          "put"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "numpy",
-          "numpy",
           "scipy",
           "numpy",
           "scipy",
           "scipy",
           "scipy",
-          "pandas",
-          "scipy",
-          "numpy"
+          "numpy",
+          "pytorch",
+          "numpy",
+          "pytorch"
         ]
       },
       {
@@ -82,28 +82,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "clean_column_name",
-          "_xp_copy_to_numpy",
-          "amax",
-          "amin",
-          "__RandomState_ctor",
-          "_convert_to_numpy",
-          "_asarray_with_order",
-          "lazy_xp_function",
-          "xp_result_device",
-          "_clean_nans"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "numpy",
+          "numpy",
+          "numpy",
           "pandas",
-          "scipy",
-          "numpy",
-          "numpy",
           "numpy",
           "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
-          "scipy",
-          "scikit-learn"
+          "pytorch",
+          "pytorch"
         ]
       },
       {
@@ -126,27 +126,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_argcheck_rvs",
-          "broadcast_shapes",
-          "broadcast_shapes",
-          "_broadcast_shape",
-          "xp_promote",
-          "take",
-          "matmul",
-          "broadcast_symbolic_shapes",
-          "clip",
-          "expected_freq"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "numpy",
+          "scipy",
           "scipy",
           "numpy",
           "scipy",
           "numpy",
-          "scipy",
-          "pandas",
           "numpy",
           "pytorch",
-          "scikit-learn",
+          "scipy",
           "scipy"
         ]
       },
@@ -173,28 +173,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "show_options",
-          "_check_optimize_result",
-          "fallback_lbfgs_solve",
-          "fmin",
-          "brent",
-          "fmin_ncg",
-          "fminbound",
-          "fixed_point",
-          "update_converged_count",
-          "_constrained_optimization"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
           "scikit-learn",
-          "scikit-learn",
           "scipy",
           "scipy",
-          "scipy",
-          "scipy",
-          "scipy",
-          "pytorch",
-          "scikit-learn"
+          "scipy"
         ]
       },
       {
@@ -219,26 +219,26 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "set_global_backend",
-          "register_backend",
-          "_backend_from_arg",
-          "skip_backend",
-          "set_backend",
-          "prev_fast_len",
-          "fftfreq",
-          "set_workers",
-          "rfft2",
-          "rfftfreq"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scipy",
           "scipy",
+          "numpy",
           "scipy",
           "scipy",
+          "numpy",
           "scipy",
-          "scipy",
-          "scipy",
-          "scipy",
+          "numpy",
           "scipy",
           "scipy"
         ]
@@ -258,25 +258,24 @@
           "apply"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "aggregate"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "aggregate",
           "agg"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_groupby_op",
-          "_groupby_op",
-          "_groupby_and_aggregate",
-          "aggregate",
-          "_groupby_op",
-          "groupby",
-          "groupby",
-          "_groupby_op",
-          "get_resampler_for_grouping",
-          "retrieve_const_key"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -288,7 +287,7 @@
           "pandas",
           "pandas",
           "pandas",
-          "pytorch"
+          "pandas"
         ]
       },
       {
@@ -314,28 +313,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "ffill",
-          "merge_ordered",
-          "stack",
-          "fillna",
-          "bfill",
-          "construct_1d_arraylike_from_scalar",
-          "groupby",
-          "map",
-          "_sort_tuples",
-          "_drop_from_level"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
           "pandas",
+          "pytorch",
+          "pandas",
+          "pandas",
+          "pytorch",
           "pandas",
           "pandas",
           "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas"
+          "pytorch"
         ]
       },
       {
@@ -354,23 +353,23 @@
           "fit"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "fit"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "make_pipeline",
-          "fit",
-          "check_f_contiguous_array_estimator",
-          "_is_constant_feature",
-          "predict",
-          "partial_fit",
-          "fit",
-          "_patch_raw_predict",
-          "fit",
-          "fit"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -400,31 +399,31 @@
           "stratify"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "train_test_split"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "is_usable_for",
-          "evaluate",
-          "from_estimator",
-          "from_predictions",
-          "_clone_parametrized",
-          "from_estimator",
-          "train_test_split",
-          "from_estimator",
-          "from_predictions",
-          "from_predictions"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
-          "pandas",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
+          "pytorch",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
@@ -447,37 +446,36 @@
           "grad"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "step"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
-          "Adam"
+          "Adam",
+          "step"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_get_adamw_apex_fused",
-          "_register_fused_optim",
-          "set_optimizer",
-          "_get_adamw_torch",
-          "step",
-          "get_state_dict",
-          "__init__",
-          "dim",
-          "_apply_optimizer_in_backward",
-          "deepspeed_optim_sched"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scikit-learn",
           "transformers",
           "pytorch",
           "transformers",
-          "transformers",
           "pytorch",
           "pytorch",
           "pytorch",
           "pytorch",
-          "pytorch",
-          "transformers"
+          "scikit-learn",
+          "pytorch"
         ]
       },
       {
@@ -504,16 +502,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "handle_autograd_grad",
-          "_aot_stage2a_partition",
-          "recompute_mean_var",
-          "first_slice_copy_with_grad",
-          "register_autograd",
-          "get_gradient_edge",
-          "method_backward",
-          "register_autograd",
-          "check_undefined_grad_support",
-          "check"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
@@ -552,16 +550,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "add_tokens",
-          "get_missing_alphabet_tokens",
-          "from_pretrained",
-          "from_pretrained",
-          "_add_tokens",
-          "save_vocabulary",
-          "_add_tokens",
-          "vocab_size",
-          "get_vocab",
-          "save_vocabulary"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
@@ -583,44 +581,45 @@
           "transformers"
         ],
         "query": "What happens inside the forward pass of BertModel?",
-        "kw_score": 1.0,
-        "kw_passed": true,
+        "kw_score": 0.25,
+        "kw_passed": false,
         "kw_found": [
+          "forward"
+        ],
+        "kw_missed": [
           "attention",
           "hidden",
-          "encoder",
+          "encoder"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "forward"
         ],
-        "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
-          "forward"
-        ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "setup_context",
-          "clean_column_name",
-          "keys",
-          "no_sync",
-          "get_cb_kwargs",
-          "get_cb_kwargs",
-          "forward",
-          "forward",
-          "forward",
-          "forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
           "pandas",
+          "transformers",
+          "transformers",
           "pytorch",
           "pytorch",
-          "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
-          "transformers"
+          "pytorch"
         ]
       },
       {
@@ -649,27 +648,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_from_arrays",
-          "from_spmatrix",
-          "explode",
-          "_liac_arff_parser",
-          "create_dataframe_from_blocks",
-          "_pandas_arff_parser",
-          "merge",
-          "merge",
-          "load_arff_from_gzip_file",
-          "itertuples"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scikit-learn",
           "pandas",
           "pandas",
           "pandas",
           "scikit-learn",
           "pandas",
-          "scikit-learn",
           "pandas",
           "pandas",
-          "scikit-learn",
+          "pandas",
           "pandas"
         ]
       },
@@ -699,22 +698,22 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "broadcast_shapes",
-          "_get_adapter_from_container",
-          "_single_array_device",
-          "_from_arrays",
-          "get_config",
-          "fit",
-          "_asarray_with_order",
-          "raise_build_error",
-          "fit",
-          "_assert_all_finite_element_wise"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scikit-learn",
           "numpy",
           "scikit-learn",
           "scikit-learn",
-          "pandas",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
@@ -740,36 +739,36 @@
           "linalg"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "inv",
           "solve"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "solve",
-          "inv",
-          "pinv",
-          "_logpdf",
-          "_mode",
-          "vec",
-          "from_eigendecomposition",
-          "_mean",
-          "pinv",
-          "_var"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "numpy",
           "scipy",
           "numpy",
           "scipy",
           "scipy",
+          "numpy",
           "scipy",
+          "numpy",
           "scipy",
-          "scipy",
-          "scipy",
-          "scipy"
+          "numpy",
+          "pytorch"
         ]
       },
       {
@@ -780,14 +779,14 @@
           "numpy"
         ],
         "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
-        "kw_score": 0.75,
+        "kw_score": 0.5,
         "kw_passed": true,
         "kw_found": [
           "numpy",
-          "cpu",
-          "detach"
+          "cpu"
         ],
         "kw_missed": [
+          "detach",
           "contiguous"
         ],
         "mr_score": 0.0,
@@ -797,28 +796,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_to_tensor",
-          "to_numpy",
-          "process_images",
-          "process_images",
-          "process_images",
-          "as_tensor",
-          "_from_numpy_array",
-          "make_np",
-          "_get_is_as_tensor_fns",
-          "__call__"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scipy",
           "transformers",
           "transformers",
           "transformers",
+          "scikit-learn",
           "transformers",
+          "scikit-learn",
+          "numpy",
           "transformers",
-          "transformers",
-          "pytorch",
-          "pytorch",
-          "transformers",
-          "transformers"
+          "pytorch"
         ]
       },
       {
@@ -829,47 +828,45 @@
           "pytorch"
         ],
         "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "dataloader",
           "batch",
-          "sampler"
-        ],
-        "kw_missed": [
+          "sampler",
           "collate"
         ],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "get_train_dataloader"
-        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "Trainer",
-          "DataLoader"
+          "DataLoader",
+          "get_train_dataloader"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "get_train_dataloader",
-          "get_steps_per_epoch",
-          "create_rng",
-          "thread_safe_generator",
-          "num_examples",
-          "tpu_spmd_dataloader",
-          "get_worker_info",
-          "__init__",
-          "set_initial_training_values",
-          "extract_hyperparameters_from_trainer"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "transformers",
           "transformers",
-          "pytorch",
           "transformers",
           "transformers",
-          "pytorch",
-          "pytorch",
           "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
           "transformers"
         ]
       },
@@ -898,16 +895,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_groupby_op",
-          "aggregate",
-          "mean",
-          "_groupby_op",
-          "sum",
-          "std",
-          "var",
-          "quantile",
-          "aggregate",
-          "pipe"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -930,13 +927,14 @@
           "numpy"
         ],
         "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
-        "kw_score": 0.0,
-        "kw_passed": false,
-        "kw_found": [],
-        "kw_missed": [
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
           "svd",
           "components",
-          "explained_variance",
+          "explained_variance"
+        ],
+        "kw_missed": [
           "singular"
         ],
         "mr_score": 0.0,
@@ -948,16 +946,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_single_array_device",
-          "__setstate__",
-          "_assert_all_finite_element_wise",
-          "_asarray_with_order",
-          "is_usable_for",
-          "_get_adapter_from_container",
-          "check_f_contiguous_array_estimator",
-          "get_data_home",
-          "_use_interchange_protocol",
-          "get_config"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -980,15 +978,15 @@
           "numpy"
         ],
         "query": "Where does the transformers library convert between PyTorch tensors and numpy arrays for metric computation?",
-        "kw_score": 0.75,
+        "kw_score": 0.5,
         "kw_passed": true,
         "kw_found": [
           "numpy",
-          "metrics",
-          "cpu"
+          "metrics"
         ],
         "kw_missed": [
-          "predictions"
+          "predictions",
+          "cpu"
         ],
         "mr_score": 0.0,
         "mr_hits": [],
@@ -997,28 +995,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "as_tensor",
-          "_get_is_as_tensor_fns",
-          "to_cpu_and_numpy",
-          "_to_tensor",
-          "cond",
-          "fill",
-          "pairwise_distances_argmin",
-          "pdist",
-          "paired_distances",
-          "_preprocess_input"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
-          "pytorch",
-          "pytorch",
-          "scikit-learn",
           "scipy",
           "scikit-learn",
-          "transformers"
+          "transformers",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn"
         ]
       },
       {
@@ -1030,16 +1028,15 @@
           "numpy"
         ],
         "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
-        "kw_score": 0.25,
-        "kw_passed": false,
+        "kw_score": 1.0,
+        "kw_passed": true,
         "kw_found": [
-          "generate"
-        ],
-        "kw_missed": [
+          "generate",
           "sample",
           "logits",
           "beam"
         ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -1047,27 +1044,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "load_custom_generate",
-          "is_torch_array",
-          "call_function",
-          "repro_load_args",
-          "repro_common",
-          "run_load_args",
-          "call_function",
-          "_get_dict",
-          "can_generate",
-          "default_data_collator"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "scikit-learn",
-          "pytorch",
-          "pytorch",
-          "pytorch",
+          "transformers",
           "pytorch",
           "pytorch",
           "pytorch",
           "transformers",
+          "transformers",
+          "pytorch",
+          "scikit-learn",
           "transformers"
         ]
       },
@@ -1080,34 +1077,34 @@
           "scipy"
         ],
         "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
-        "kw_score": 1.0,
+        "kw_score": 0.75,
         "kw_passed": true,
         "kw_found": [
           "corr",
           "pearson",
-          "cov",
+          "cov"
+        ],
+        "kw_missed": [
           "std"
         ],
-        "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "corr"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "corr",
           "nancorr"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "corr",
-          "autocorr",
-          "corr",
-          "corr",
-          "corr",
-          "corr",
-          "corrwith",
-          "corr",
-          "corrwith",
-          "corr"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -1149,16 +1146,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "is_usable_for",
-          "set_config",
-          "_check_large_sparse",
-          "config_context",
-          "_asarray_with_order",
-          "pairwise_distances_argmin",
-          "is_valid_sparse_matrix",
-          "_fit_full",
-          "__setstate__",
-          "_assert_all_finite_element_wise"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -1181,17 +1178,16 @@
           "pytorch"
         ],
         "query": "How does HuggingFace's attention mechanism implement scaled dot-product attention at the PyTorch level?",
-        "kw_score": 0.2,
-        "kw_passed": false,
+        "kw_score": 1.0,
+        "kw_passed": true,
         "kw_found": [
-          "attention"
-        ],
-        "kw_missed": [
+          "attention",
           "query",
           "key",
           "value",
           "softmax"
         ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -1200,16 +1196,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "can_produce",
-          "enable_flash_sdp",
-          "enable_math_sdp",
-          "enable_cudnn_sdp",
-          "enable_mem_efficient_sdp",
-          "cudnn_sdp_enabled",
-          "math_sdp_enabled",
-          "flash_sdp_enabled",
-          "mem_efficient_sdp_enabled",
-          "allow_fp16_bf16_reduction_math_sdp"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
@@ -1251,25 +1247,25 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "pairwise_distances_argmin",
-          "pairwise_distances_argmin_min",
-          "__setstate__",
-          "is_usable_for",
-          "pairwise_distances",
-          "silhouette_samples",
-          "kmeans",
-          "_get_expected_failed_checks",
-          "set_config",
-          "check_f_contiguous_array_estimator"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
           "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn"
@@ -1300,27 +1296,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "set_default_dtype",
-          "fit",
-          "obj2sctype",
-          "_transform",
-          "_promote",
-          "_prep_values",
-          "_validate_array_cls",
-          "getdtype",
-          "fill_value",
-          "as_float_array"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "pytorch",
-          "scikit-learn",
           "numpy",
-          "scikit-learn",
           "scipy",
-          "pandas",
+          "scipy",
           "scipy",
           "scipy",
           "numpy",
+          "numpy",
+          "numpy",
+          "scipy",
           "scikit-learn"
         ]
       },
@@ -1346,16 +1342,16 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "set_config",
-          "parametrize_with_checks",
-          "__get__",
-          "config_context",
-          "_single_array_device",
-          "check_f_contiguous_array_estimator",
-          "__setstate__",
-          "func",
-          "is_usable_for",
-          "array"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -1367,7 +1363,7 @@
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "pandas"
+          "scikit-learn"
         ]
       },
       {
@@ -1392,27 +1388,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "print_bt",
-          "save",
-          "nested_tensor",
-          "enable_propagation",
-          "_contains_nan",
-          "guard_size_oblivious",
-          "traverse",
-          "forward",
-          "default_device",
-          "call_module"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
           "pytorch",
           "pytorch",
-          "transformers",
-          "scipy",
           "pytorch",
           "pytorch",
-          "transformers",
-          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
           "pytorch"
         ]
       },
@@ -1437,16 +1433,16 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "estimate_rank",
-          "_validate_array_cls",
-          "svd",
-          "from_precision",
-          "estimate_spectral_norm_diff",
-          "_check_scalar",
-          "interp_decomp",
-          "inv",
-          "cholesky",
-          "estimate_spectral_norm"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scipy",
@@ -1455,10 +1451,10 @@
           "scipy",
           "scipy",
           "scipy",
+          "scikit-learn",
           "scipy",
-          "numpy",
-          "numpy",
-          "scipy"
+          "scipy",
+          "scikit-learn"
         ]
       },
       {
@@ -1469,43 +1465,42 @@
           "numpy"
         ],
         "query": "What would happen to pandas DataFrame operations if numpy changed integer overflow behavior to raise exceptions instead of wrapping?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "int",
+          "overflow",
           "dtype",
           "numpy"
         ],
-        "kw_missed": [
-          "overflow"
-        ],
+        "kw_missed": [],
         "mr_score": null,
         "mr_hits": [],
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "create_dataframe_from_blocks",
-          "round",
-          "_liac_arff_parser",
-          "aggregate",
-          "read_table",
-          "maybe_prepare_scalar_for_op",
-          "astype_array_safe",
-          "_safe_indexing",
-          "_validate_array_cls",
-          "aggregate"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
           "pandas",
-          "scikit-learn",
           "pandas",
           "pandas",
           "pandas",
-          "pandas",
-          "scikit-learn",
           "scipy",
-          "pandas"
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn"
         ]
       },
       {
@@ -1525,36 +1520,35 @@
           "output"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "forward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "forward",
           "return_dict"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "forward",
-          "forward",
-          "forward",
-          "freeze_embeddings_and_language_adapters",
-          "forward",
-          "forward",
-          "jit_code_filter",
-          "get_fixed_layout_without_freezing",
-          "forward",
-          "forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "transformers",
-          "transformers",
+          "pytorch",
+          "pytorch",
           "transformers",
           "transformers",
           "transformers",
           "pytorch",
           "pytorch",
-          "transformers",
+          "pytorch",
           "transformers"
         ]
       },
@@ -1566,31 +1560,30 @@
           "numpy"
         ],
         "query": "If numpy's legacy np.random functions were removed, which scikit-learn estimators would break?",
-        "kw_score": 0.5,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "random",
-          "numpy"
-        ],
-        "kw_missed": [
           "random_state",
+          "numpy",
           "seed"
         ],
+        "kw_missed": [],
         "mr_score": null,
         "mr_hits": [],
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "parametrize_with_checks",
-          "check_f_contiguous_array_estimator",
-          "_assert_all_finite_element_wise",
-          "set_config",
-          "_single_array_device",
-          "check_estimator",
-          "config_context",
-          "decision_function",
-          "_get_expected_failed_checks",
-          "check_estimator_tags_renamed"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -1601,7 +1594,7 @@
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
+          "scipy",
           "scikit-learn"
         ]
       }
@@ -1616,8 +1609,8 @@
       "failed": 0,
       "unverifiable": 0,
       "pass_rate": 1.0,
-      "avg_kw_score": 0.9116161616161615,
-      "avg_mr_score": 0.4230769230769231
+      "avg_kw_score": 0.9191919191919191,
+      "avg_mr_score": 0.0
     },
     "per_query": [
       {
@@ -1636,35 +1629,35 @@
           "out"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "clip"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "clip",
-          "clip",
-          "_clip_with_one_bound",
-          "_check_clip_x",
-          "_sf",
-          "_call",
-          "clip",
-          "validate_clip_with_axis",
-          "_clip_with_scalar",
-          "trimmed_var"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "pandas",
-          "numpy",
-          "pandas",
-          "scipy",
-          "scipy",
-          "pytorch",
           "scikit-learn",
           "pandas",
+          "numpy",
+          "scikit-learn",
           "pandas",
-          "scipy"
+          "numpy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "pandas"
         ]
       },
       {
@@ -1690,28 +1683,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "wrap_function",
-          "__array_wrap__",
-          "_wrapfunc",
-          "wrap",
-          "wrapped",
-          "_wrap_min_count_reduction_result",
-          "_wrap_function",
-          "around",
-          "numpy_dtype",
-          "_generate_wrapped_number"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "pandas",
+          "numpy",
+          "numpy",
           "pandas",
           "numpy",
-          "scipy",
+          "numpy",
+          "numpy",
           "pytorch",
-          "pandas",
-          "scipy",
           "numpy",
-          "pandas",
-          "pytorch"
+          "numpy",
+          "scikit-learn"
         ]
       },
       {
@@ -1735,27 +1728,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "broadcast_to",
-          "broadcast_shapes",
-          "_broadcast_shape",
-          "_broadcast_arrays",
-          "broadcast_arrays",
-          "broadcast_shapes",
-          "_broadcast_array_shapes_remove_axis",
-          "_broadcast",
-          "_broadcast_shapes_remove_axis",
-          "_broadcast_to"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "numpy",
+          "numpy",
+          "scipy",
           "scikit-learn",
           "numpy",
-          "scipy",
+          "numpy",
+          "scikit-learn",
           "numpy",
           "numpy",
-          "scipy",
-          "scipy",
-          "scipy",
           "numpy"
         ]
       },
@@ -1782,28 +1775,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_check_optimize_result",
-          "__init__",
-          "fallback_lbfgs_solve",
-          "_constrained_optimization",
-          "_solve_W",
-          "_constrained_optimization",
-          "__init__",
-          "_minimize_powell",
-          "__init__",
-          "solve"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "scikit-learn",
           "scipy",
-          "scikit-learn",
-          "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scipy",
           "scipy",
           "scipy",
-          "scikit-learn"
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
         ]
       },
       {
@@ -1821,35 +1814,35 @@
           "plan"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "fft"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "fft",
-          "ifft",
-          "_fft_helper",
-          "fft_mode",
-          "hfft2",
-          "ihfft2",
-          "irfft2",
-          "_fftconv_faster",
-          "rfft2",
-          "hfft"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
           "numpy",
           "numpy",
           "scipy",
           "scipy",
-          "scipy",
-          "scipy",
-          "scipy",
-          "scipy",
-          "scipy",
-          "numpy"
+          "scipy"
         ]
       },
       {
@@ -1867,25 +1860,24 @@
           "apply"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "aggregate"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "aggregate",
           "agg"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "groupby",
-          "groupby",
-          "_wrap_aggregated_output",
-          "get_groupby",
-          "aggregate",
-          "__init__",
-          "cumsum",
-          "__iter__",
-          "aggregate",
-          "expanding"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -1907,16 +1899,15 @@
           "pandas"
         ],
         "query": "What happens to NaN values in the output of pandas merge() \u2014 are they propagated, dropped, or filled by default?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "merge",
           "NaN",
+          "join",
           "how"
         ],
-        "kw_missed": [
-          "join"
-        ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -1924,28 +1915,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "combine",
-          "na_value",
-          "_replace_nans",
-          "fillna",
-          "nancumsum",
-          "ffill",
-          "nanmedian",
-          "fillna",
-          "bfill",
-          "nansum"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
           "pandas",
           "pandas",
           "pandas",
-          "numpy",
           "pandas",
           "pandas",
           "pandas",
           "pandas",
-          "numpy"
+          "pandas",
+          "pandas"
         ]
       },
       {
@@ -1964,23 +1955,23 @@
           "fit"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "fit"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "fit",
-          "partial_fit",
-          "_is_constant_feature",
-          "fit",
-          "fit",
-          "fit",
-          "latent_mean_and_variance",
-          "fit",
-          "latent_mean_and_variance",
-          "fit"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -1988,11 +1979,11 @@
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
+          "pytorch",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
-          "scipy"
+          "scikit-learn"
         ]
       },
       {
@@ -2010,23 +2001,23 @@
           "stratify"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "train_test_split"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "split",
-          "_split",
-          "__init__",
-          "split",
-          "split",
-          "split",
-          "_split",
-          "split",
-          "train_test_split",
-          "_check_input_parameters"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -2065,27 +2056,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "sparse_adam",
-          "__init__",
-          "adam",
-          "set_optimizer",
-          "__init__",
-          "adamw",
-          "adamax",
-          "_get_adamw_torch",
-          "forward",
-          "_get_adamw_anyprecision"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "transformers",
+          "pytorch",
           "pytorch",
           "scikit-learn",
-          "pytorch",
           "transformers",
+          "pytorch",
           "scikit-learn",
-          "pytorch",
-          "pytorch",
-          "transformers",
-          "transformers",
+          "scikit-learn",
+          "scikit-learn",
           "transformers"
         ]
       },
@@ -2105,30 +2096,29 @@
           "requires_grad"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "backward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
-          "grad_fn"
+          "grad_fn",
+          "backward"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_extract_parameters_and_gradients",
-          "backward",
-          "backward",
-          "register_autograd",
-          "backward",
-          "register_autograd",
-          "_root_post_backward_final_callback",
-          "vjp_fn",
-          "vjp_fn",
-          "_track_module_params_and_buffers"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
-          "transformers",
-          "transformers",
+          "pytorch",
+          "pytorch",
           "pytorch",
           "pytorch",
           "pytorch",
@@ -2154,25 +2144,24 @@
           "token"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "tokenize"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "tokenize",
           "encode"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "add_tokens",
-          "_add_tokens",
-          "_add_tokens",
-          "tokenize",
-          "tokenize",
-          "tokenize",
-          "tokenize",
-          "tokenize",
-          "_tokenize",
-          "_wrap_decode_method_backend_tokenizer"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
@@ -2203,34 +2192,34 @@
           "forward"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "forward"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward",
-          "forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch",
           "transformers",
           "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
           "transformers"
         ]
       },
@@ -2251,26 +2240,25 @@
           "block"
         ],
         "kw_missed": [],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "array"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "NDFrame",
-          "Block"
+          "Block",
+          "array"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "array",
-          "array",
-          "array",
-          "_from_arrays",
-          "array",
-          "column_data_lengths",
-          "column_data_offsets",
-          "primitive_column_to_ndarray",
-          "to_arrays",
-          "create_dataframe"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -2280,9 +2268,9 @@
           "pandas",
           "pandas",
           "pandas",
+          "numpy",
           "pandas",
-          "pandas",
-          "scikit-learn"
+          "pandas"
         ]
       },
       {
@@ -2310,28 +2298,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "fit",
-          "_asarray_validated",
-          "fit",
-          "_validate_vector",
-          "assert_allclose",
-          "check_array_indexer",
-          "validate",
-          "check_X_y",
-          "fit",
-          "matdims"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
-          "scipy",
+          "scikit-learn",
+          "scikit-learn",
           "scikit-learn",
           "scipy",
-          "scikit-learn",
-          "pandas",
           "scipy",
           "scikit-learn",
           "scikit-learn",
-          "scipy"
+          "numpy",
+          "scikit-learn"
         ]
       },
       {
@@ -2342,47 +2330,45 @@
           "scipy"
         ],
         "query": "When scipy computes a matrix inverse, how does it use numpy's linear algebra routines?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "inv",
           "solve",
+          "lapack",
           "linalg"
         ],
-        "kw_missed": [
-          "lapack"
-        ],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "inv"
-        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "inv",
           "solve"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "inv",
-          "I",
-          "inv",
-          "dot",
-          "affine_transform",
-          "tensorinv",
-          "matdims",
-          "invpascal",
-          "transpose",
-          "_fractional_matrix_power"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "numpy",
           "numpy",
           "scipy",
-          "pandas",
+          "pytorch",
           "scipy",
           "numpy",
           "scipy",
           "scipy",
-          "scipy",
-          "scipy"
+          "numpy",
+          "numpy"
         ]
       },
       {
@@ -2393,16 +2379,15 @@
           "numpy"
         ],
         "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "numpy",
           "cpu",
-          "detach"
-        ],
-        "kw_missed": [
+          "detach",
           "contiguous"
         ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -2410,28 +2395,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_to_tensor",
-          "to_numpy_helper",
-          "numpy_to_tensor",
-          "as_tensor",
-          "_to_numpy_array",
-          "_to_numpy",
-          "_get_is_as_tensor_fns",
-          "to_numpy",
-          "as_tensor",
-          "to_py_obj"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "pytorch",
           "pytorch",
-          "transformers",
           "pytorch",
           "pytorch",
           "transformers",
           "transformers",
           "transformers",
-          "transformers"
+          "pytorch",
+          "pytorch"
         ]
       },
       {
@@ -2442,48 +2427,46 @@
           "pytorch"
         ],
         "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "dataloader",
           "batch",
-          "sampler"
-        ],
-        "kw_missed": [
+          "sampler",
           "collate"
         ],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "get_train_dataloader"
-        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "Trainer",
-          "DataLoader"
+          "DataLoader",
+          "get_train_dataloader"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "__init__",
-          "__init__",
-          "set_dataloader",
-          "__init__",
-          "get_train_dataloader",
-          "to",
-          "__init__",
-          "__next__",
-          "getstate",
-          "__init__"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
+          "transformers",
           "pytorch",
           "transformers",
           "transformers",
           "transformers",
           "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch",
-          "pytorch"
+          "transformers",
+          "transformers",
+          "transformers"
         ]
       },
       {
@@ -2511,27 +2494,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "roll",
-          "rollaxis",
-          "nunique",
-          "roll_apply",
-          "mean",
-          "count",
-          "first",
-          "sum",
-          "var",
-          "std"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
           "numpy",
-          "numpy",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
-          "pandas",
           "pandas"
         ]
       },
@@ -2543,16 +2526,15 @@
           "numpy"
         ],
         "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "svd",
           "components",
+          "explained_variance",
           "singular"
         ],
-        "kw_missed": [
-          "explained_variance"
-        ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -2562,28 +2544,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "svdvals",
-          "_solve_svd",
-          "_svds_lobpcg_doc",
-          "_get_first_singular_vectors_svd",
-          "pca_lowrank",
-          "_multi_svd_norm",
-          "_svd",
-          "svdvals",
-          "_get_first_singular_vectors_power_method",
-          "diagsvd"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "numpy",
           "scikit-learn",
-          "scipy",
+          "scikit-learn",
+          "scikit-learn",
           "scikit-learn",
           "pytorch",
-          "numpy",
           "scikit-learn",
-          "scipy",
           "scikit-learn",
-          "scipy"
+          "scikit-learn",
+          "scikit-learn",
+          "pytorch"
         ]
       },
       {
@@ -2611,28 +2593,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "to_numpy_helper",
-          "to_tvm_tensor",
-          "pre_flatten_transform",
-          "_to_tensor",
-          "_to_numpy_array",
-          "pow_by_natural",
-          "_to_numpy",
-          "to_torch_tensor",
-          "get_mm_tensors",
-          "numpy_to_tensor"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
           "pytorch",
+          "transformers",
+          "transformers",
           "pytorch",
           "transformers",
           "pytorch",
           "pytorch",
-          "pytorch",
-          "pytorch",
-          "pytorch",
-          "pytorch"
+          "transformers",
+          "transformers"
         ]
       },
       {
@@ -2644,44 +2626,45 @@
           "numpy"
         ],
         "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
-        "kw_score": 1.0,
+        "kw_score": 0.5,
         "kw_passed": true,
         "kw_found": [
-          "generate",
           "sample",
-          "logits",
+          "logits"
+        ],
+        "kw_missed": [
+          "generate",
           "beam"
         ],
-        "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "generate"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "sample",
-          "sample",
-          "_compute_rng_offsets",
-          "_initialize_parameters",
-          "init_population_random",
-          "sample_n",
-          "generate",
-          "_sample",
-          "_sample",
-          "_sample_visibles"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "scikit-learn",
-          "pytorch",
-          "pytorch",
-          "scikit-learn",
-          "scipy",
-          "pytorch",
           "transformers",
           "transformers",
           "transformers",
-          "scikit-learn"
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
         ]
       },
       {
@@ -2693,34 +2676,34 @@
           "scipy"
         ],
         "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
-        "kw_score": 1.0,
+        "kw_score": 0.75,
         "kw_passed": true,
         "kw_found": [
           "corr",
           "pearson",
-          "cov",
+          "cov"
+        ],
+        "kw_missed": [
           "std"
         ],
-        "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "corr"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "corr",
           "nancorr"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "corr",
-          "corrwith",
-          "corr",
-          "corrwith",
-          "corr",
-          "corr",
-          "corr",
-          "corrcoef",
-          "_corr",
-          "corr"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -2730,8 +2713,8 @@
           "pandas",
           "pandas",
           "pandas",
-          "numpy",
-          "scipy",
+          "pandas",
+          "pandas",
           "pandas"
         ]
       },
@@ -2744,15 +2727,16 @@
           "numpy"
         ],
         "query": "How does scikit-learn's SVM implementation use scipy's sparse matrices and what numpy operations are at the core?",
-        "kw_score": 1.0,
+        "kw_score": 0.5,
         "kw_passed": true,
         "kw_found": [
-          "svm",
           "sparse",
-          "kernel",
           "support"
         ],
-        "kw_missed": [],
+        "kw_missed": [
+          "svm",
+          "kernel"
+        ],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -2761,27 +2745,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_svds_lobpcg_doc",
-          "svds",
-          "is_valid_sparse_matrix",
-          "_sparse_fit",
-          "svdvals",
-          "_svds_propack_doc",
-          "_sparse_encode_precomputed",
-          "eye",
-          "_svds_arpack_doc",
-          "svdvals"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "scipy",
-          "scipy",
           "scikit-learn",
-          "scikit-learn",
-          "numpy",
           "scipy",
           "scikit-learn",
           "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
           "scipy",
+          "scikit-learn",
           "scipy"
         ]
       },
@@ -2803,36 +2787,36 @@
           "softmax"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "attention",
           "forward"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_unmask_unattended",
-          "_scaled_dot_product_attention_quantized",
-          "flex_attention",
-          "aten_scaled_dot_product_attention_23",
-          "sdpa_kernel",
-          "_in_projection_packed",
-          "forward",
-          "can_use_efficient_attention",
-          "attention",
-          "_attention_scale"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "transformers",
-          "pytorch",
-          "pytorch",
           "pytorch",
           "pytorch",
           "pytorch",
           "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch"
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
         ]
       },
       {
@@ -2853,31 +2837,30 @@
           "distance"
         ],
         "kw_missed": [],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "euclidean_distances"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "KMeans",
-          "_lloyd_iter"
+          "_lloyd_iter",
+          "euclidean_distances"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_kmeans",
-          "kneighbors_graph",
-          "kmeans2",
-          "paired_distances",
-          "_compute_core_distances_",
-          "_kmeans_plusplus",
-          "kmeans",
-          "euclidean_distances",
-          "_kmeans_single_elkan",
-          "radius_neighbors_graph"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "scipy",
           "scikit-learn",
           "scipy",
+          "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
@@ -2912,28 +2895,28 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "check_int_infer_dtype",
-          "default_dtypes",
-          "default_dtypes",
-          "set_default_dtype",
-          "_standardize_dtype",
-          "float_numpy_dtype",
-          "_get_dtype",
-          "_get_dtype",
-          "convert_dtypes",
-          "convert_dtypes"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
+          "pandas",
           "numpy",
-          "scikit-learn",
-          "pytorch",
           "pandas",
           "pandas",
-          "scipy",
-          "scipy",
+          "numpy",
+          "numpy",
           "pandas",
-          "pandas"
+          "pandas",
+          "numpy"
         ]
       },
       {
@@ -2958,28 +2941,28 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_bool_arith_check",
-          "_is_boolean",
-          "is_bool",
-          "is_scalar_nan",
-          "_with_pandas",
-          "is_bool_dtype",
-          "np_find_common_type",
-          "_isnan",
-          "__init__",
-          "_has_bool_dtype"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
-          "pandas",
-          "pandas",
+          "numpy",
           "scikit-learn",
-          "pytorch",
           "pandas",
           "pandas",
           "pandas",
           "pandas",
-          "pandas"
+          "pandas",
+          "pandas",
+          "numpy"
         ]
       },
       {
@@ -2990,31 +2973,30 @@
           "transformers"
         ],
         "query": "If PyTorch changed the default behavior of torch.no_grad() to not propagate to nested functions, what would break in HuggingFace transformers?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "no_grad",
           "grad",
+          "inference",
           "context"
         ],
-        "kw_missed": [
-          "inference"
-        ],
+        "kw_missed": [],
         "mr_score": null,
         "mr_hits": [],
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_no_grad_wrapper",
-          "wrapper",
-          "_apply",
-          "__repr__",
-          "generate_single_level_function",
-          "wrapped",
-          "_no_grad",
-          "forward",
-          "wrapper",
-          "_set_tensor_requires_grad"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
@@ -3023,7 +3005,7 @@
           "pytorch",
           "pytorch",
           "pytorch",
-          "pytorch",
+          "transformers",
           "pytorch",
           "pytorch",
           "pytorch"
@@ -3050,27 +3032,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "__new__",
-          "__array__",
-          "empty",
-          "_asarray_validated",
-          "to_numpy",
-          "is_numpy",
-          "matvec",
-          "__array_finalize__",
-          "array_namespace",
-          "__init_subclass__"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "numpy",
-          "pytorch",
+          "numpy",
           "numpy",
           "scipy",
-          "transformers",
-          "pytorch",
+          "scipy",
           "scipy",
           "numpy",
-          "scipy",
+          "numpy",
+          "numpy",
           "numpy"
         ]
       },
@@ -3096,28 +3078,28 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_wrapfunc",
-          "diff",
-          "_convert_to_ndarray",
-          "_astype_float_to_int_nansafe",
-          "_maybe_convert",
-          "_cast_to_stata_types",
-          "nansum",
-          "_bool_arith_check",
-          "_get_fill_value",
-          "_is_int_type"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
           "numpy",
           "pandas",
           "pandas",
           "pandas",
           "pandas",
           "pandas",
-          "numpy",
-          "pandas",
-          "pandas",
-          "scipy"
+          "numpy"
         ]
       },
       {
@@ -3138,34 +3120,33 @@
         "kw_missed": [
           "return_dict"
         ],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "forward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "forward",
           "return_dict"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_forward",
-          "_sticky_export",
-          "forward",
-          "_forward",
-          "_forward",
-          "_forward",
-          "_forward",
-          "_forward",
-          "_use_post_forward_mesh",
-          "forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "pytorch",
+          "transformers",
+          "transformers",
           "pytorch",
-          "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
+          "pytorch",
+          "pytorch",
           "transformers",
           "pytorch",
           "pytorch"
@@ -3194,27 +3175,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_average",
-          "check_estimator",
-          "_single_array_device",
-          "get_tags",
-          "_reductions",
-          "__array_ufunc__",
-          "check_f_contiguous_array_estimator",
-          "check_estimators_pickle",
-          "prod",
-          "var"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "pandas",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
           "pandas",
           "scikit-learn",
-          "scikit-learn",
-          "numpy",
           "numpy"
         ]
       }
@@ -3229,8 +3210,8 @@
       "failed": 0,
       "unverifiable": 0,
       "pass_rate": 1.0,
-      "avg_kw_score": 0.9015151515151515,
-      "avg_mr_score": 0.42948717948717946
+      "avg_kw_score": 0.9318181818181818,
+      "avg_mr_score": 0.0
     },
     "per_query": [
       {
@@ -3249,35 +3230,35 @@
           "out"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "clip"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "clip",
-          "clip",
-          "clip",
-          "resize",
-          "ravel_multi_index",
-          "argrelextrema",
-          "_clip_with_one_bound",
-          "take",
-          "_check_clip_x",
-          "argrelmax"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "pandas",
           "numpy",
           "scikit-learn",
-          "numpy",
-          "numpy",
           "scipy",
           "pandas",
           "numpy",
+          "numpy",
           "scipy",
-          "scipy"
+          "scikit-learn",
+          "scipy",
+          "pandas"
         ]
       },
       {
@@ -3303,28 +3284,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "amin",
-          "clean_column_name",
-          "wrap_function",
-          "_xp_copy_to_numpy",
-          "__array_wrap__",
-          "amax",
-          "_wrapfunc",
-          "wrap",
-          "__RandomState_ctor",
-          "wrapped"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "numpy",
-          "pandas",
-          "pandas",
-          "scipy",
+          "numpy",
+          "numpy",
+          "numpy",
+          "numpy",
           "pandas",
           "numpy",
           "numpy",
-          "scipy",
           "numpy",
-          "pytorch"
+          "numpy"
         ]
       },
       {
@@ -3347,19 +3328,18 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_broadcast_shape",
-          "broadcast_shapes",
-          "broadcast_shapes",
-          "_broadcast_shapes",
-          "tile",
-          "_argcheck_rvs",
-          "broadcast_to",
-          "broadcast_shapes",
-          "_broadcast_arrays",
-          "xp_promote"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "numpy",
           "numpy",
           "scipy",
           "scipy",
@@ -3367,8 +3347,9 @@
           "scipy",
           "numpy",
           "scikit-learn",
-          "scipy",
-          "scipy"
+          "numpy",
+          "numpy",
+          "numpy"
         ]
       },
       {
@@ -3394,24 +3375,24 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_check_optimize_result",
-          "fallback_lbfgs_solve",
-          "_constrained_optimization",
-          "_constrained_optimization",
-          "_solve_W",
-          "_solve_lbfgs",
-          "show_options",
-          "__init__",
-          "fmin",
-          "brent"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
           "scipy",
           "scipy",
           "scipy",
@@ -3433,33 +3414,33 @@
           "plan"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "fft"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "hfft2",
-          "rfft2",
-          "_fft_helper",
-          "rfftfreq",
-          "set_global_backend",
-          "fft",
-          "register_backend",
-          "ifft",
-          "_backend_from_arg",
-          "skip_backend"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "scipy",
-          "scipy",
-          "scipy",
+          "numpy",
           "scipy",
           "scipy",
           "numpy",
           "scipy",
-          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
           "scipy",
           "scipy"
         ]
@@ -3479,25 +3460,24 @@
           "apply"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "aggregate"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "aggregate",
           "agg"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "groupby",
-          "groupby",
-          "aggregate",
-          "_groupby_op",
-          "cumsum",
-          "_groupby_op",
-          "_groupby_op",
-          "_groupby_and_aggregate",
-          "_wrap_aggregated_output",
-          "get_groupby"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -3528,23 +3508,23 @@
           "how"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "merge"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "fillna",
-          "bfill",
-          "merge",
-          "ffill",
-          "combine",
-          "merge_ordered",
-          "na_value",
-          "stack",
-          "_replace_nans",
-          "fillna"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -3553,7 +3533,7 @@
           "pandas",
           "pandas",
           "pandas",
-          "pandas",
+          "pytorch",
           "pandas",
           "pandas",
           "pandas"
@@ -3575,23 +3555,23 @@
           "fit"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "fit"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "fit",
-          "_is_constant_feature",
-          "partial_fit",
-          "fit",
-          "fit",
-          "fit",
-          "fit",
-          "make_pipeline",
-          "check_f_contiguous_array_estimator",
-          "predict"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -3603,7 +3583,7 @@
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn"
+          "pytorch"
         ]
       },
       {
@@ -3621,29 +3601,29 @@
           "stratify"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "train_test_split"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "train_test_split",
-          "is_usable_for",
-          "split",
-          "evaluate",
-          "_split",
-          "from_estimator",
-          "__init__",
-          "from_predictions",
-          "split",
-          "_clone_parametrized"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "pandas",
+          "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
@@ -3668,34 +3648,33 @@
           "grad"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "step"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
-          "Adam"
+          "Adam",
+          "step"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "set_optimizer",
-          "_get_adamw_torch",
-          "_get_adamw_anyprecision",
-          "_get_adamw_apex_fused",
-          "sparse_adam",
-          "_register_fused_optim",
-          "__init__",
-          "adam",
-          "step",
-          "__init__"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "transformers",
-          "transformers",
-          "transformers",
+          "scikit-learn",
           "pytorch",
           "pytorch",
           "scikit-learn",
+          "pytorch",
           "pytorch",
           "pytorch",
           "scikit-learn"
@@ -3717,31 +3696,30 @@
           "requires_grad"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "backward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
-          "grad_fn"
+          "grad_fn",
+          "backward"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "register_autograd",
-          "register_autograd",
-          "backward",
-          "backward",
-          "_track_module_params_and_buffers",
-          "stage_backward",
-          "_wrap_tensor_autograd_backward",
-          "handle_autograd_grad",
-          "_extract_parameters_and_gradients",
-          "_aot_stage2a_partition"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
           "pytorch",
-          "transformers",
-          "transformers",
+          "pytorch",
+          "pytorch",
           "pytorch",
           "pytorch",
           "pytorch",
@@ -3766,25 +3744,24 @@
           "token"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "tokenize"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "tokenize",
           "encode"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "add_tokens",
-          "_add_tokens",
-          "_add_tokens",
-          "get_vocab",
-          "get_missing_alphabet_tokens",
-          "from_pretrained",
-          "from_pretrained",
-          "tokenize",
-          "tokenize",
-          "save_vocabulary"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
@@ -3816,34 +3793,34 @@
         "kw_missed": [
           "encoder"
         ],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "forward"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "setup_context",
-          "forward",
-          "clean_column_name",
-          "forward",
-          "keys",
-          "forward",
-          "no_sync",
-          "forward",
-          "get_cb_kwargs",
-          "forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
           "transformers",
-          "pandas",
-          "pytorch",
-          "pytorch",
-          "pytorch",
-          "pytorch",
           "pytorch",
           "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pandas",
           "transformers"
         ]
       },
@@ -3864,30 +3841,29 @@
           "block"
         ],
         "kw_missed": [],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "array"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "NDFrame",
-          "Block"
+          "Block",
+          "array"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_from_arrays",
-          "create_dataframe_from_blocks",
-          "array",
-          "from_spmatrix",
-          "array",
-          "explode",
-          "array",
-          "_liac_arff_parser",
-          "array",
-          "_pandas_arff_parser"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
-          "pandas",
+          "scikit-learn",
           "pandas",
           "pandas",
           "pandas",
@@ -3895,7 +3871,7 @@
           "pandas",
           "scikit-learn",
           "pandas",
-          "scikit-learn"
+          "pandas"
         ]
       },
       {
@@ -3906,16 +3882,15 @@
           "scikit-learn"
         ],
         "query": "How does scikit-learn validate that input arrays are numpy-compatible before fitting?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
+          "check_array",
           "dtype",
           "ndarray",
           "validate"
         ],
-        "kw_missed": [
-          "check_array"
-        ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -3924,27 +3899,27 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "fit",
-          "fit",
-          "fit",
-          "_single_array_device",
-          "fit",
-          "broadcast_shapes",
-          "_get_adapter_from_container",
-          "_asarray_validated",
-          "_from_arrays",
-          "_validate_vector"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
           "numpy",
           "scikit-learn",
-          "scipy",
-          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
           "scipy"
         ]
       },
@@ -3965,36 +3940,36 @@
           "linalg"
         ],
         "kw_missed": [],
-        "mr_score": 1.0,
-        "mr_hits": [
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
           "inv",
           "solve"
         ],
-        "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "inv",
-          "inv",
-          "pinv",
-          "inv",
-          "solve",
-          "I",
-          "_logpdf",
-          "dot",
-          "_mode",
-          "affine_transform"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scipy",
-          "numpy",
-          "numpy",
           "scipy",
           "numpy",
           "numpy",
+          "numpy",
+          "pytorch",
           "scipy",
-          "pandas",
-          "scipy",
-          "scipy"
+          "numpy",
+          "numpy",
+          "numpy"
         ]
       },
       {
@@ -4005,16 +3980,15 @@
           "numpy"
         ],
         "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "numpy",
           "cpu",
-          "detach"
-        ],
-        "kw_missed": [
+          "detach",
           "contiguous"
         ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -4022,28 +3996,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_to_tensor",
-          "to_numpy",
-          "as_tensor",
-          "_get_is_as_tensor_fns",
-          "to_py_obj",
-          "_from_numpy_array",
-          "make_np",
-          "to_numpy_helper",
-          "process_images",
-          "numpy_to_tensor"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
-          "transformers",
-          "pytorch",
-          "pytorch",
+          "scipy",
           "pytorch",
           "transformers",
-          "pytorch"
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "transformers"
         ]
       },
       {
@@ -4054,36 +4028,34 @@
           "pytorch"
         ],
         "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "dataloader",
           "batch",
-          "sampler"
-        ],
-        "kw_missed": [
+          "sampler",
           "collate"
         ],
-        "mr_score": 0.3333333333333333,
-        "mr_hits": [
-          "get_train_dataloader"
-        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
           "Trainer",
-          "DataLoader"
+          "DataLoader",
+          "get_train_dataloader"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "get_train_dataloader",
-          "__init__",
-          "get_steps_per_epoch",
-          "__init__",
-          "create_rng",
-          "set_dataloader",
-          "thread_safe_generator",
-          "__init__",
-          "num_examples",
-          "tpu_spmd_dataloader"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
@@ -4092,7 +4064,7 @@
           "transformers",
           "transformers",
           "transformers",
-          "pytorch",
+          "transformers",
           "transformers",
           "transformers",
           "transformers"
@@ -4123,16 +4095,16 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "mean",
-          "sum",
-          "std",
-          "var",
-          "expanding",
-          "_groupby_op",
-          "roll",
-          "aggregate",
-          "rollaxis",
-          "nunique"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -4141,9 +4113,9 @@
           "pandas",
           "pandas",
           "pandas",
-          "numpy",
           "pandas",
-          "numpy",
+          "pandas",
+          "pandas",
           "pandas"
         ]
       },
@@ -4155,16 +4127,15 @@
           "numpy"
         ],
         "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
-        "kw_score": 0.75,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "svd",
           "components",
+          "explained_variance",
           "singular"
         ],
-        "kw_missed": [
-          "explained_variance"
-        ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -4174,28 +4145,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_single_array_device",
-          "svdvals",
-          "__setstate__",
-          "_solve_svd",
-          "_assert_all_finite_element_wise",
-          "_svds_lobpcg_doc",
-          "_asarray_with_order",
-          "_get_first_singular_vectors_svd",
-          "is_usable_for",
-          "pca_lowrank"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
-          "numpy",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "scipy",
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "pytorch"
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
         ]
       },
       {
@@ -4206,15 +4177,15 @@
           "numpy"
         ],
         "query": "Where does the transformers library convert between PyTorch tensors and numpy arrays for metric computation?",
-        "kw_score": 0.5,
+        "kw_score": 0.75,
         "kw_passed": true,
         "kw_found": [
           "numpy",
+          "metrics",
           "cpu"
         ],
         "kw_missed": [
-          "predictions",
-          "metrics"
+          "predictions"
         ],
         "mr_score": 0.0,
         "mr_hits": [],
@@ -4223,28 +4194,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_to_tensor",
-          "as_tensor",
-          "to_numpy_helper",
-          "_get_is_as_tensor_fns",
-          "to_tvm_tensor",
-          "to_cpu_and_numpy",
-          "pre_flatten_transform",
-          "cond",
-          "_to_numpy_array",
-          "fill"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "transformers",
           "pytorch",
+          "scipy",
+          "pytorch",
+          "scikit-learn",
           "transformers",
+          "scikit-learn",
           "pytorch",
-          "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch",
-          "pytorch"
+          "scikit-learn"
         ]
       },
       {
@@ -4256,16 +4227,15 @@
           "numpy"
         ],
         "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
-        "kw_score": 0.5,
+        "kw_score": 1.0,
         "kw_passed": true,
         "kw_found": [
           "generate",
-          "sample"
-        ],
-        "kw_missed": [
+          "sample",
           "logits",
           "beam"
         ],
+        "kw_missed": [],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -4273,28 +4243,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "load_custom_generate",
-          "sample",
-          "is_torch_array",
-          "sample",
-          "call_function",
-          "_compute_rng_offsets",
-          "repro_load_args",
-          "_initialize_parameters",
-          "repro_common",
-          "init_population_random"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
-          "scikit-learn",
-          "scikit-learn",
+          "transformers",
+          "transformers",
+          "transformers",
           "pytorch",
+          "transformers",
           "pytorch",
+          "transformers",
           "pytorch",
-          "pytorch",
-          "scikit-learn",
-          "pytorch",
-          "scipy"
+          "transformers"
         ]
       },
       {
@@ -4306,34 +4276,34 @@
           "scipy"
         ],
         "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
-        "kw_score": 1.0,
+        "kw_score": 0.75,
         "kw_passed": true,
         "kw_found": [
           "corr",
           "pearson",
-          "cov",
+          "cov"
+        ],
+        "kw_missed": [
           "std"
         ],
-        "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "corr"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "corr",
           "nancorr"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "corr",
-          "corr",
-          "corr",
-          "corrwith",
-          "corrwith",
-          "autocorr",
-          "corr",
-          "corr",
-          "corr",
-          "corr"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
@@ -4357,15 +4327,16 @@
           "numpy"
         ],
         "query": "How does scikit-learn's SVM implementation use scipy's sparse matrices and what numpy operations are at the core?",
-        "kw_score": 1.0,
+        "kw_score": 0.5,
         "kw_passed": true,
         "kw_found": [
-          "svm",
           "sparse",
-          "kernel",
           "support"
         ],
-        "kw_missed": [],
+        "kw_missed": [
+          "svm",
+          "kernel"
+        ],
         "mr_score": 0.0,
         "mr_hits": [],
         "mr_misses": [
@@ -4374,28 +4345,28 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "is_valid_sparse_matrix",
-          "is_usable_for",
-          "_svds_lobpcg_doc",
-          "set_config",
-          "svds",
-          "_check_large_sparse",
-          "config_context",
-          "_sparse_fit",
-          "_asarray_with_order",
-          "svdvals"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
           "scipy",
           "scikit-learn",
           "scipy",
           "scikit-learn",
           "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
-          "numpy"
+          "scipy"
         ]
       },
       {
@@ -4416,36 +4387,35 @@
           "softmax"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "forward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
-          "attention"
+          "attention",
+          "forward"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_scaled_dot_product_attention_quantized",
-          "sdpa_kernel",
-          "flex_attention",
-          "forward",
-          "can_produce",
-          "_unmask_unattended",
-          "enable_flash_sdp",
-          "enable_math_sdp",
-          "enable_cudnn_sdp",
-          "aten_scaled_dot_product_attention_23"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
           "pytorch",
           "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
           "transformers",
           "pytorch",
           "transformers",
-          "pytorch",
-          "pytorch",
-          "pytorch",
           "pytorch"
         ]
       },
@@ -4476,26 +4446,26 @@
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "_kmeans",
-          "kmeans",
-          "compute_optics_graph",
-          "pairwise_distances_argmin",
-          "pairwise_distances_argmin_min",
-          "kneighbors_graph",
-          "__setstate__",
-          "kmeans2",
-          "is_usable_for",
-          "paired_distances"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
+          "scikit-learn",
           "scipy",
-          "scipy",
-          "scikit-learn",
-          "scikit-learn",
-          "scikit-learn",
           "scikit-learn",
           "scikit-learn",
           "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
           "scikit-learn",
           "scikit-learn"
         ]
@@ -4525,27 +4495,27 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "set_default_dtype",
-          "check_int_infer_dtype",
-          "fit",
-          "default_dtypes",
-          "obj2sctype",
-          "default_dtypes",
-          "_transform",
-          "_promote",
-          "_standardize_dtype",
-          "_prep_values"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
-          "pytorch",
+          "numpy",
+          "numpy",
           "pandas",
-          "scikit-learn",
-          "numpy",
-          "numpy",
-          "scikit-learn",
-          "scikit-learn",
           "scipy",
           "pandas",
+          "scipy",
+          "scipy",
+          "pandas",
+          "scipy",
           "pandas"
         ]
       },
@@ -4571,28 +4541,28 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_use_interchange_protocol",
-          "set_config",
-          "_bool_arith_check",
-          "parametrize_with_checks",
-          "_is_boolean",
-          "__get__",
-          "is_bool",
-          "config_context",
-          "is_scalar_nan",
-          "_single_array_device"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
           "scikit-learn",
           "pandas",
           "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
           "pandas",
           "scikit-learn",
-          "pandas",
-          "scikit-learn",
-          "scikit-learn",
-          "scikit-learn"
+          "pandas"
         ]
       },
       {
@@ -4618,16 +4588,16 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "print_bt",
-          "_no_grad_wrapper",
-          "save",
-          "wrapper",
-          "nested_tensor",
-          "_apply",
-          "enable_propagation",
-          "__repr__",
-          "_contains_nan",
-          "generate_single_level_function"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pytorch",
@@ -4636,9 +4606,9 @@
           "pytorch",
           "pytorch",
           "pytorch",
-          "transformers",
           "pytorch",
-          "scipy",
+          "pytorch",
+          "pytorch",
           "pytorch"
         ]
       },
@@ -4663,28 +4633,28 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "estimate_rank",
-          "__new__",
-          "_validate_array_cls",
-          "__array__",
-          "svd",
-          "empty",
-          "from_precision",
-          "_asarray_validated",
-          "estimate_spectral_norm_diff",
-          "to_numpy"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scipy",
+          "scipy",
+          "scipy",
           "numpy",
           "scipy",
-          "pytorch",
-          "scipy",
+          "numpy",
           "numpy",
           "scipy",
           "scipy",
-          "scipy",
-          "transformers"
+          "scipy"
         ]
       },
       {
@@ -4710,26 +4680,26 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "_bool_arith_check",
-          "create_dataframe_from_blocks",
-          "_wrapfunc",
-          "round",
-          "diff",
-          "_liac_arff_parser",
-          "_convert_to_ndarray",
-          "aggregate",
-          "_astype_float_to_int_nansafe",
-          "read_table"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "pandas",
           "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
           "numpy",
-          "pandas",
-          "pandas",
-          "scikit-learn",
-          "pandas",
-          "pandas",
           "pandas",
           "pandas"
         ]
@@ -4751,37 +4721,36 @@
           "output"
         ],
         "kw_missed": [],
-        "mr_score": 0.5,
-        "mr_hits": [
-          "forward"
-        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
         "mr_misses": [
+          "forward",
           "return_dict"
         ],
         "anti_hits": [],
         "retrieved_functions": [
-          "forward",
-          "_forward",
-          "forward",
-          "_sticky_export",
-          "forward",
-          "forward",
-          "freeze_embeddings_and_language_adapters",
-          "_forward",
-          "forward",
-          "_forward"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "transformers",
           "transformers",
-          "transformers",
+          "pytorch",
+          "pytorch",
           "pytorch",
           "transformers",
-          "pytorch",
           "transformers",
           "transformers",
           "transformers",
-          "transformers"
+          "pytorch"
         ]
       },
       {
@@ -4807,16 +4776,16 @@
         "mr_misses": [],
         "anti_hits": [],
         "retrieved_functions": [
-          "check_estimator",
-          "_single_array_device",
-          "check_f_contiguous_array_estimator",
-          "parametrize_with_checks",
-          "_average",
-          "_assert_all_finite_element_wise",
-          "set_config",
-          "get_tags",
-          "_reductions",
-          "__array_ufunc__"
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
         ],
         "retrieved_repos": [
           "scikit-learn",
@@ -4827,8 +4796,8 @@
           "scikit-learn",
           "scikit-learn",
           "scikit-learn",
-          "pandas",
-          "pandas"
+          "scikit-learn",
+          "scikit-learn"
         ]
       }
     ]
