@@ -407,7 +407,7 @@ def parse_fixed(repo_name: str, cfg: dict) -> dict:
 
     duration = time.time() - t0
     size_mb = out_path.stat().st_size / (1024 * 1024)
-    log.info("  %d chunks → %s (%.1f MB) in %.1fs",
+    log.info("  %d chunks -> %s (%.1f MB) in %.1fs",
              total_chunks, out_path.name, size_mb, duration)
 
     return {
@@ -482,7 +482,7 @@ def parse_recursive(repo_name: str, cfg: dict) -> dict:
 
     duration = time.time() - t0
     size_mb = out_path.stat().st_size / (1024 * 1024)
-    log.info("  %d chunks → %s (%.1f MB) in %.1fs",
+    log.info("  %d chunks -> %s (%.1f MB) in %.1fs",
              total_chunks, out_path.name, size_mb, duration)
 
     return {
