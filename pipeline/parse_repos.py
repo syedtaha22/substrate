@@ -381,11 +381,11 @@ def parse_fixed(repo_name: str, cfg: dict) -> dict:
             rel_path = str(filepath.relative_to(repo_root))
             raw_chunks = chunk_fixed(text, chunk_size, chunk_overlap)
 
-            for line_start, line_end, chunk_text in raw_chunks:
+            for chunk_idx, (line_start, line_end, chunk_text) in enumerate(raw_chunks):
                 if not chunk_text.strip():
                     continue
                 line_count = line_end - line_start + 1
-                chunk_id = f"{repo_name}::{rel_path}::fixed::{line_start}"
+                chunk_id = f"{repo_name}::{rel_path}::fixed::{chunk_idx}"
 
                 chunk = Chunk(
                     chunk_id=chunk_id,
@@ -456,11 +456,11 @@ def parse_recursive(repo_name: str, cfg: dict) -> dict:
             rel_path = str(filepath.relative_to(repo_root))
             raw_chunks = chunk_recursive(text, chunk_size, chunk_overlap, separators)
 
-            for line_start, line_end, chunk_text in raw_chunks:
+            for chunk_idx, (line_start, line_end, chunk_text) in enumerate(raw_chunks):
                 if not chunk_text.strip():
                     continue
                 line_count = line_end - line_start + 1
-                chunk_id = f"{repo_name}::{rel_path}::recursive::{line_start}"
+                chunk_id = f"{repo_name}::{rel_path}::recursive::{chunk_idx}"
 
                 chunk = Chunk(
                     chunk_id=chunk_id,
