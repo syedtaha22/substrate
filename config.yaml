@@ -40,7 +40,7 @@ profiles:
     rag_enabled: true
 
   A5:
-    description: "Function-level chunking + hybrid retrieval + reranking (BEST)"
+    description: "Function-level chunking + hybrid retrieval + reranking"
     chunking: function
     retrieval: hybrid
     rag_enabled: true
