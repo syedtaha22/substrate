@@ -1,7 +1,7 @@
 """
 app/retrieval.py
 
-Reusable retrieval module used by both eval scripts and the Gradio app.
+Reusable retrieval module used by both eval scripts and the main app.
 Loads all indexes once at startup, exposes a clean retrieve() interface.
 
 Usage:
@@ -45,9 +45,10 @@ class Retriever:
     Designed to be instantiated once at app startup.
     """
 
-    def __init__(self, config_path: str = "config.yaml"):
+    def __init__(self, config_path: str = "config.yaml", strategy: str = "function"):
         self.cfg = load_config(config_path)
         self.ret_cfg = self.cfg["retrieval"]
+        self.strategy = strategy
         self._bm25 = None
         self._bm25_chunks = None
         self._collection = None
@@ -65,7 +66,7 @@ class Retriever:
         return self
 
     def _load_bm25(self):
-        path = Path(self.cfg["bm25"]["index_path"].format(chunking="function"))
+        path = Path(self.cfg["bm25"]["index_path"].format(chunking=self.strategy))
         log.info("  Loading BM25 from %s...", path)
         with path.open("rb") as f:
             payload = pickle.load(f)
@@ -77,7 +78,7 @@ class Retriever:
         import chromadb
         cfg = self.cfg["vector_store"]["chroma"]
         persist_dir = cfg["persist_directory"]
-        name = cfg["collection_name"].format(chunking="function")
+        name = cfg["collection_name"].format(chunking=self.strategy)
         client = chromadb.PersistentClient(path=persist_dir)
         self._collection = client.get_collection(name)
         log.info("  ChromaDB '%s' ready (%d vectors)", name, self._collection.count())
@@ -106,7 +107,7 @@ class Retriever:
 
     def _dense_search(self, query: str, top_k: int) -> list[dict]:
         emb = self._embed_model.encode(
-            query, normalize_embeddings=True, convert_to_numpy=True
+            query, normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True
         ).tolist()
         res = self._collection.query(
             query_embeddings=[emb],
@@ -154,7 +155,7 @@ class Retriever:
             reranker = CrossEncoder(model_name)
             pairs = [(query, c.get("raw_code", c.get("_text", ""))[:512])
                      for c in chunks]
-            scores = reranker.predict(pairs)
+            scores = reranker.predict(pairs, show_progress_bar=False)
             ranked = sorted(zip(scores, chunks), key=lambda x: -x[0])
             result = []
             for score, c in ranked[:top_k]:
