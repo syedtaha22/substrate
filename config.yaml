@@ -158,7 +158,7 @@ evaluation:
 # Repos 
 repos:
   data_dir: data/repos
-  chunks_dir: data/chunks
+  chunks_dir: data/chunks_{chunking}
   names:
     - numpy
     - scipy
@@ -169,6 +169,6 @@ repos:
 
 # Sampling (Pinecone free tier cap) 
 sampling:
-  enabled: true
+  enabled: false
   max_vectors: 80000
   strategy: stratified    # keeps proportions across repos
