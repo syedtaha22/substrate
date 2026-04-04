@@ -17,6 +17,7 @@ meaningful signal for a corpus of 81k chunks.
 
 Usage:
     python eval/eval_retrieval.py                      # all queries, all methods
+    python eval/eval_retrieval.py --strategy fixed     # test different chunking strategies
     python eval/eval_retrieval.py --method hybrid      # one method only
     python eval/eval_retrieval.py --tier 2             # cross-repo queries only
     python eval/eval_retrieval.py --query T2-001       # single query
@@ -54,19 +55,19 @@ def load_test_queries(path: str = "eval/test_queries.yaml") -> list[dict]:
     return data["queries"]
 
 # Load indexes 
-def load_bm25(cfg: dict) -> tuple:
-    path = Path(cfg["bm25"]["index_path"].format(chunking="function"))
+def load_bm25(cfg: dict, strategy: str = "function") -> tuple:
+    path = Path(cfg["bm25"]["index_path"].format(chunking=strategy))
     log.info("Loading BM25 index from %s...", path)
     with path.open("rb") as f:
         payload = pickle.load(f)
     log.info("  BM25 index ready (%d documents)", len(payload["chunks"]))
     return payload["bm25"], payload["chunks"]
 
-def load_chroma(cfg: dict):
+def load_chroma(cfg: dict, strategy: str = "function"):
     import chromadb
     persist_dir = cfg["vector_store"]["chroma"]["persist_directory"]
     collection_name = cfg["vector_store"]["chroma"]["collection_name"].format(
-        chunking="function"
+        chunking=strategy
     )
     client = chromadb.PersistentClient(path=persist_dir)
     collection = client.get_collection(collection_name)
@@ -109,7 +110,7 @@ def retrieve_dense(
     top_k: int = 10,
 ) -> list[dict]:
     query_embedding = model.encode(
-        query, normalize_embeddings=True, convert_to_numpy=True
+        query, normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True
     ).tolist()
 
     results = collection.query(
@@ -330,9 +331,9 @@ def print_report(method, query_results, verbose=False, retrieval_details=None) -
     }
 
 
-def save_results(results, output_dir):
+def save_results(results, output_dir, strategy: str = "function"):
     output_dir.mkdir(parents=True, exist_ok=True)
-    path = output_dir / "retrieval_eval.json"
+    path = output_dir / f"retrieval_eval_{strategy}.json"
     with path.open("w") as f:
         json.dump(results, f, indent=2, default=str)
     log.info("Saved to %s", path)
@@ -340,6 +341,13 @@ def save_results(results, output_dir):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--strategy",
+        type=str,
+        choices=["function", "fixed", "recursive"],
+        default="function",
+        help="Chunking strategy (default: function)",
+    )
     parser.add_argument("--method", choices=["bm25","dense","hybrid","all"], default="all")
     parser.add_argument("--tier", type=int, default=None)
     parser.add_argument("--query", type=str, default=None)
@@ -361,11 +369,11 @@ def main():
         log.error("No queries matched.")
         sys.exit(1)
 
-    log.info("Eval: %d queries | top_k=%d | kw_threshold=%.1f",
-             len(queries), args.top_k, args.kw_threshold)
+    log.info("Eval: %d queries | strategy=%s | top_k=%d | kw_threshold=%.1f",
+             len(queries), args.strategy, args.top_k, args.kw_threshold)
 
-    bm25, bm25_chunks = load_bm25(cfg)
-    collection = load_chroma(cfg)
+    bm25, bm25_chunks = load_bm25(cfg, args.strategy)
+    collection = load_chroma(cfg, args.strategy)
     model = load_embed_model(cfg)
 
     methods = ["bm25","dense","hybrid"] if args.method == "all" else [args.method]
@@ -373,7 +381,7 @@ def main():
     output = {}
 
     for method in methods:
-        log.info("\nRunning: %s", method)
+        log.info("Running: %s", method)
         results = []
         details = {}
         t0 = time.time()
@@ -411,9 +419,7 @@ def main():
                      100*s["pass_rate"], s["avg_kw_score"], s["avg_mr_score"])
         log.info("=" * 70)
 
-    save_results(output, Path(cfg["evaluation"]["results_dir"]))
-    log.info("\nNext: python eval/eval_baseline.py")
-
+    save_results(output, Path(cfg["evaluation"]["results_dir"]), args.strategy)
 
 if __name__ == "__main__":
     main()
