@@ -109,7 +109,7 @@ def main() -> None:
         log.error("No chunks loaded. Run parse_functions.py first.")
         return
 
-    log.info("\nTotal chunks: %d", len(all_chunks))
+    log.info("Total chunks: %d", len(all_chunks))
 
     # Build texts + tokenize
     log.info("Building texts and tokenizing...")
@@ -142,7 +142,7 @@ def main() -> None:
     log.info("- BM25 index saved: %.1f MB", size_mb)
 
     # Quick sanity check
-    log.info("\nSanity check - querying 'numpy dtype float64':")
+    log.info("Sanity check - querying 'numpy dtype float64':")
     test_tokens = tokenize("numpy dtype float64")
     scores = bm25.get_scores(test_tokens)
     top_idx = scores.argsort()[-5:][::-1]
@@ -153,7 +153,7 @@ def main() -> None:
             scores[idx], c["repo"], c["filepath"], c["function_name"]
         )
 
-    log.info("\nDone. Next step: python pipeline/eval_retrieval.py")
+    log.info("Done. Next step: python pipeline/eval_retrieval.py")
 
 if __name__ == "__main__":
     main()
