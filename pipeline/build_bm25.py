@@ -1,15 +1,15 @@
 """
 pipeline/build_bm25.py
 
-Builds a BM25 index over all function chunks and serializes it to disk.
+Builds a BM25 index over all chunks and serializes it to disk.
 The BM25 index is the keyword-search component of our hybrid retrieval.
 
 One index is built per chunking strategy (function / fixed / recursive).
-The active strategy is read from config.yaml (active_profile).
 
 Usage:
-    python pipeline/build_bm25.py
-    python pipeline/build_bm25.py --profile A3
+    python pipeline/build_bm25.py --strategy function
+    python pipeline/build_bm25.py --strategy fixed
+    python pipeline/build_bm25.py --strategy recursive
 """
 
 import argparse
@@ -58,38 +58,41 @@ def build_text(chunk: dict, template: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build BM25 index for hybrid retrieval")
-    parser.add_argument("--profile", type=str, default=None)
+    parser.add_argument(
+        "--strategy",
+        type=str,
+        choices=["function", "fixed", "recursive"],
+        required=True,
+        help="Chunking strategy (required)",
+    )
     args = parser.parse_args()
 
     cfg = load_config()
-    profile_name = args.profile or cfg["active_profile"]
-    profile = cfg["profiles"][profile_name]
-    chunking = profile.get("chunking", "function")
+    chunking = args.strategy
 
     embed_cfg = cfg["embedding"]
     template = embed_cfg["text_template"]
-    chunks_dir = Path(cfg["repos"]["chunks_dir"])
     repo_names = cfg["repos"]["names"]
 
     # Output path - one BM25 index per chunking strategy
     bm25_path_template = cfg["bm25"]["index_path"]
-    bm25_path = Path(bm25_path_template.format(chunking=chunking or "none"))
+    bm25_path = Path(bm25_path_template.format(chunking=chunking))
     bm25_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Resolve chunks directory using the chunking strategy
+    chunks_dir_template = cfg["repos"]["chunks_dir"]
+    chunks_dir = Path(chunks_dir_template.format(chunking=chunking))
 
     log.info("=" * 60)
     log.info("Substrate - BM25 Index Builder")
-    log.info("Profile  : %s (%s)", profile_name, profile["description"])
-    log.info("Chunking : %s", chunking)
+    log.info("Strategy : %s", chunking)
     log.info("Output   : %s", bm25_path)
     log.info("=" * 60)
 
     # Load all chunks
     all_chunks = []
     for repo in repo_names:
-        if chunking == "function":
-            jsonl_path = chunks_dir / f"{repo}.jsonl"
-        else:
-            jsonl_path = chunks_dir / f"{repo}_{chunking}.jsonl"
+        jsonl_path = chunks_dir / f"{repo}.jsonl"
 
         if not jsonl_path.exists():
             log.warning("Missing: %s - skipping", jsonl_path)
@@ -112,8 +115,8 @@ def main() -> None:
     log.info("Building texts and tokenizing...")
     t0 = time.time()
 
-    texts = [build_text(c, template) for c in tqdm(all_chunks, desc="Building texts", unit="chunk")]
-    tokenized = [tokenize(t) for t in tqdm(texts, desc="Tokenizing", unit="chunk")]
+    texts = [build_text(c, template) for c in tqdm(all_chunks, desc="Building texts", unit="chunk", leave=False)]
+    tokenized = [tokenize(t) for t in tqdm(texts, desc="Tokenizing", unit="chunk", leave=False)]
 
     log.info("Tokenized in %.1fs", time.time() - t0)
 
@@ -130,7 +133,6 @@ def main() -> None:
         "chunks": all_chunks,
         "texts": texts,
         "tokenized": tokenized,
-        "profile": profile_name,
         "chunking": chunking,
     }
     with bm25_path.open("wb") as f:
