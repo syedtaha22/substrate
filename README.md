@@ -106,7 +106,3 @@ The Chainlit app provides an interactive interface to test queries against the A
 chainlit run app/app.py --port 8000
 # Open http://localhost:8000 in your browser
 ```
-
-## Research
-
-See `paper/paper.pdf` for the full paper including ablation study results and LLM-as-Judge evaluation methodology.
