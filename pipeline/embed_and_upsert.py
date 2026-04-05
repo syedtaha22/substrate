@@ -5,10 +5,11 @@ Embeds all function chunks and upserts to ChromaDB (local) or Pinecone (cloud).
 Backend is controlled by config.yaml (vector_store.backend)
 
 Usage:
-    python pipeline/embed_and_upsert.py                  # uses active_profile from config.yaml
-    python pipeline/embed_and_upsert.py --profile A3     # override profile
-    python pipeline/embed_and_upsert.py --backend pinecone
-    python pipeline/embed_and_upsert.py --dry-run        # embed only, don't upsert
+    python pipeline/embed_and_upsert.py --strategy function
+    python pipeline/embed_and_upsert.py --strategy fixed
+    python pipeline/embed_and_upsert.py --strategy recursive
+    python pipeline/embed_and_upsert.py --strategy fixed --backend pinecone
+    python pipeline/embed_and_upsert.py --strategy function --dry-run
 """
 
 import argparse
@@ -17,6 +18,7 @@ import logging
 import pickle
 import time
 from pathlib import Path
+from dotenv import load_dotenv
 
 import numpy as np
 import yaml
@@ -36,13 +38,6 @@ def load_config(path: str = "config.yaml") -> dict:
     with open(path) as f:
         return yaml.safe_load(f)
 
-
-def get_profile(cfg: dict, profile_name: str | None = None) -> dict:
-    name = profile_name or cfg["active_profile"]
-    profile = cfg["profiles"][name]
-    log.info("Active profile: %s - %s", name, profile["description"])
-    return profile, name
-
 # Text builder 
 def build_text(chunk: dict, template: str) -> str:
     """
@@ -59,31 +54,26 @@ def build_text(chunk: dict, template: str) -> str:
     ).strip()
 
 # Data loading 
-def load_chunks(cfg: dict, profile_name: str) -> list[dict]:
+def load_chunks(cfg: dict, chunking_strategy: str) -> list[dict]:
     """Load all chunks from JSONL files."""
-    chunks_dir = Path(cfg["repos"]["chunks_dir"])
     repo_names = cfg["repos"]["names"]
 
-    # For fixed/recursive chunking profiles, use different chunk files
-    chunking_strategy = cfg["profiles"][profile_name].get("chunking", "function")
+    # Directory depends on strategy:
+    #   function  -> data/chunks_function/{repo}.jsonl
+    #   fixed     -> data/chunks_fixed/{repo}.jsonl
+    #   recursive -> data/chunks_recursive/{repo}.jsonl
+    chunks_dir_template = cfg["repos"]["chunks_dir"]
+    chunks_dir = Path(chunks_dir_template.format(chunking=chunking_strategy))
 
     all_chunks = []
     for repo in repo_names:
-        # function-level chunks always come from {repo}.jsonl
-        # fixed/recursive chunks come from {repo}_{strategy}.jsonl
-        if chunking_strategy == "function":
-            jsonl_path = chunks_dir / f"{repo}.jsonl"
-        else:
-            jsonl_path = chunks_dir / f"{repo}_{chunking_strategy}.jsonl"
+        jsonl_path = chunks_dir / f"{repo}.jsonl"
 
         if not jsonl_path.exists():
-            if chunking_strategy == "function":
-                log.error("Missing: %s - run parse_functions.py first", jsonl_path)
-            else:
-                log.warning(
-                    "Missing: %s - run parse_chunks_fixed.py or parse_chunks_recursive.py",
-                    jsonl_path
-                )
+            log.warning(
+                "Missing: %s - run parse_chunks.py --strategy %s first",
+                jsonl_path, chunking_strategy or "function"
+            )
             continue
 
         count = 0
@@ -133,15 +123,12 @@ def embed_chunks(
     Embed all chunks.
     Returns: (ids, texts, embeddings_as_list)
     """
-    log.info("Loading embedding model: %s", model_name)
     model = SentenceTransformer(model_name)
 
     ids = [c["chunk_id"] for c in chunks]
     texts = [build_text(c, template) for c in chunks]
 
-    log.info("Embedding %d chunks in batches of %d (CPU - this will take a while)...",
-             len(chunks), batch_size)
-    log.info("Estimated time: ~%.0f minutes", len(chunks) / batch_size / 3)
+    log.info("Embedding %d chunks with batch size %d...", len(chunks), batch_size)
 
     t0 = time.time()
     embeddings = model.encode(
@@ -153,11 +140,9 @@ def embed_chunks(
     )
     duration = time.time() - t0
 
-    log.info(
-        "- Embedded %d chunks in %.1fs (%.0f chunks/sec)",
-        len(chunks), duration, len(chunks) / duration
-    )
-    log.info("Embedding matrix shape: %s", embeddings.shape)
+    throughput = len(chunks) / duration
+    log.info("Embedded %d chunks in %.1fs (%.0f chunks/sec)", len(chunks), duration, throughput)
+    log.info("  Embedding matrix shape: %s", embeddings.shape)
 
     return ids, texts, embeddings
 
@@ -169,15 +154,14 @@ def upsert_chroma(
     texts: list[str],
     embeddings: np.ndarray,
     cfg: dict,
-    profile_name: str,
+    chunking_strategy: str,
 ) -> None:
     import chromadb
 
     chroma_cfg = cfg["vector_store"]["chroma"]
     persist_dir = chroma_cfg["persist_directory"]
     # One collection per chunking strategy
-    chunking = cfg["profiles"][profile_name].get("chunking", "function") or "none"
-    collection_name = chroma_cfg["collection_name"].format(chunking=chunking)
+    collection_name = chroma_cfg["collection_name"].format(chunking=chunking_strategy)
 
     log.info("Connecting to ChromaDB at: %s", persist_dir)
     client = chromadb.PersistentClient(path=persist_dir)
@@ -198,7 +182,7 @@ def upsert_chroma(
     total = len(chunks)
     log.info("Upserting %d vectors to collection '%s'...", total, collection_name)
 
-    for i in tqdm(range(0, total, BATCH), desc="Upserting", unit="batch"):
+    for i in tqdm(range(0, total, BATCH), desc="Upserting", unit="batch", leave=False):
         batch_ids       = ids[i:i+BATCH]
         batch_texts     = texts[i:i+BATCH]
         batch_embeddings = embeddings[i:i+BATCH].tolist()
@@ -254,7 +238,7 @@ def upsert_pinecone(
     total = len(chunks)
     log.info("Upserting %d vectors to Pinecone index '%s'...", total, index_name)
 
-    for i in tqdm(range(0, total, BATCH), desc="Upserting", unit="batch"):
+    for i in tqdm(range(0, total, BATCH), desc="Upserting", unit="batch", leave=False):
         batch_ids       = ids[i:i+BATCH]
         batch_embeddings = embeddings[i:i+BATCH].tolist()
         batch_chunks    = chunks[i:i+BATCH]
@@ -289,13 +273,13 @@ def save_embeddings_cache(
     ids: list[str],
     texts: list[str],
     embeddings: np.ndarray,
-    profile_name: str,
+    chunking_strategy: str,
 ) -> None:
     """Save embeddings + chunk data to disk so we don't re-embed during eval."""
     cache_dir = Path("data/embeddings")
     cache_dir.mkdir(parents=True, exist_ok=True)
 
-    cache_path = cache_dir / f"embeddings_{profile_name}.pkl"
+    cache_path = cache_dir / f"embeddings_{chunking_strategy}.pkl"
     payload = {
         "ids": ids,
         "texts": texts,
@@ -309,11 +293,57 @@ def save_embeddings_cache(
     log.info("- Saved embedding cache: %s (%.1f MB)", cache_path, size_mb)
 
 
+# Sanity check (query from database)
+def sanity_check_chroma(
+    cfg: dict,
+    chunking_strategy: str,
+    model_name: str,
+) -> None:
+    """Query ChromaDB collection to verify data was upserted correctly."""
+    import chromadb
+
+    chroma_cfg = cfg["vector_store"]["chroma"]
+    persist_dir = chroma_cfg["persist_directory"]
+    collection_name = chroma_cfg["collection_name"].format(chunking=chunking_strategy)
+
+    log.info("Sanity check - querying ChromaDB collection '%s':", collection_name)
+    
+    client = chromadb.PersistentClient(path=persist_dir)
+    collection = client.get_collection(name=collection_name)
+
+    # Embed query
+    model = SentenceTransformer(model_name)
+    query_text = "numpy dtype float64"
+    query_emb = model.encode(query_text, normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True)
+
+    # Query collection
+    results = collection.query(
+        query_embeddings=[query_emb.tolist()],
+        n_results=5,
+    )
+
+    if results and results["ids"] and len(results["ids"]) > 0:
+        for i, (id_, dist) in enumerate(zip(results["ids"][0], results["distances"][0])):
+            meta = results["metadatas"][0][i] if results["metadatas"] else {}
+            log.info(
+                "  [%.3f] %s::%s::%s",
+                1 - dist,  # chromadb returns distance, convert to similarity
+                meta.get("repo", "?"),
+                meta.get("filepath", "?"),
+                meta.get("function_name", "?")
+            )
+
+
 # Main 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Embed chunks and upsert to vector store")
-    parser.add_argument("--profile", type=str, default=None,
-                        help="Ablation profile to use (A1–A5 or baseline). Default: from config.yaml")
+    parser.add_argument(
+        "--strategy",
+        type=str,
+        choices=["function", "fixed", "recursive"],
+        required=True,
+        help="Chunking strategy (required)",
+    )
     parser.add_argument("--backend", type=str, default=None,
                         choices=["chroma", "pinecone"],
                         help="Vector store backend. Default: from config.yaml")
@@ -324,29 +354,24 @@ def main() -> None:
     args = parser.parse_args()
 
     # Load config + env
-    from dotenv import load_dotenv
     load_dotenv()
 
     cfg = load_config()
-    profile, profile_name = get_profile(cfg, args.profile)
-
-    if profile.get("chunking") is None and profile_name != "baseline":
-        log.error("Profile '%s' has no chunking strategy - nothing to embed.", profile_name)
-        return
+    chunking_strategy = args.strategy
 
     backend = args.backend or cfg["vector_store"]["backend"]
     embed_cfg = cfg["embedding"]
 
     log.info("=" * 65)
     log.info("Substrate - Embed & Upsert")
-    log.info("Profile : %s", profile_name)
+    log.info("Strategy : %s", chunking_strategy)
     log.info("Backend : %s", backend)
     log.info("Model   : %s", embed_cfg["model"])
     log.info("=" * 65)
 
     # 1. Load chunks
-    log.info("\nLoading chunks...")
-    chunks = load_chunks(cfg, profile_name)
+    log.info("Loading chunks...")
+    chunks = load_chunks(cfg, chunking_strategy)
     if not chunks:
         log.error("No chunks loaded. Aborting.")
         return
@@ -366,7 +391,7 @@ def main() -> None:
 
     # 4. Save cache
     if not args.no_cache:
-        save_embeddings_cache(chunks, ids, texts, embeddings, profile_name)
+        save_embeddings_cache(chunks, ids, texts, embeddings, chunking_strategy)
 
     if args.dry_run:
         log.info("Dry run - skipping upsert.")
@@ -374,13 +399,10 @@ def main() -> None:
 
     # 5. Upsert
     if backend == "chroma":
-        upsert_chroma(chunks, ids, texts, embeddings, cfg, profile_name)
+        upsert_chroma(chunks, ids, texts, embeddings, cfg, chunking_strategy)
+        sanity_check_chroma(cfg, chunking_strategy, embed_cfg["model"])
     elif backend == "pinecone":
         upsert_pinecone(chunks, ids, embeddings, cfg)
-
-    log.info("")
-    log.info("Done. Next step: python pipeline/build_bm25.py")
-
 
 if __name__ == "__main__":
     main()

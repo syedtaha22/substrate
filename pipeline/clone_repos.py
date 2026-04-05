@@ -23,32 +23,32 @@ REPOS = [
     {
         "name": "numpy",
         "url": "https://github.com/numpy/numpy.git",
-        "description": "Bedrock - everything depends on it",
+        "description": "Fundamental numerical computing library",
     },
     {
         "name": "scipy",
         "url": "https://github.com/scipy/scipy.git",
-        "description": "Deep numpy coupling, scientific correctness",
+        "description": "Scientific computing library built on numpy",
     },
     {
         "name": "pandas",
         "url": "https://github.com/pandas-dev/pandas.git",
-        "description": "Heavy numpy consumer, complex dtype logic",
+        "description": "Data manipulation and analysis library",
     },
     {
         "name": "scikit-learn",
         "url": "https://github.com/scikit-learn/scikit-learn.git",
-        "description": "numpy + scipy consumer, large API surface",
+        "description": "Machine learning library for data analysis",
     },
     {
         "name": "pytorch",
         "url": "https://github.com/pytorch/pytorch.git",
-        "description": "Gravity center of modern ML",
+        "description": "Deep learning framework",
     },
     {
         "name": "transformers",
         "url": "https://github.com/huggingface/transformers.git",
-        "description": "Top of the stack, touches everything",
+        "description": "Transformer models library from Hugging Face",
     },
 ]
 

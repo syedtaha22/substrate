@@ -1,0 +1,4836 @@
+{
+  "bm25": {
+    "summary": {
+      "method": "bm25",
+      "total": 33,
+      "verifiable": 33,
+      "passed": 30,
+      "failed": 3,
+      "unverifiable": 0,
+      "pass_rate": 0.9090909090909091,
+      "avg_kw_score": 0.8545454545454545,
+      "avg_mr_score": 0.28205128205128205
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy implement the clip function and what are its boundary conditions?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "clip",
+          "min",
+          "max",
+          "out"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "clip"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "resize",
+          "ravel_multi_index",
+          "argrelextrema",
+          "take",
+          "argrelmax",
+          "argrelmin",
+          "_boolrelextrema",
+          "clip",
+          "whosmat",
+          "put"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "What is the purpose of numpy's _wrapreduction function and when is it called?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "reduction",
+          "axis",
+          "ufunc",
+          "dtype"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "_wrapreduction"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "clean_column_name",
+          "_xp_copy_to_numpy",
+          "amin",
+          "amax",
+          "__RandomState_ctor",
+          "_convert_to_numpy",
+          "_asarray_with_order",
+          "lazy_xp_function",
+          "xp_result_device",
+          "_clean_nans"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "scipy",
+          "numpy",
+          "numpy",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy handle broadcasting when array shapes are incompatible?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "broadcast",
+          "shape",
+          "dimension"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_argcheck_rvs",
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_broadcast_shape",
+          "xp_promote",
+          "take",
+          "matmul",
+          "broadcast_symbolic_shapes",
+          "clip",
+          "expected_freq"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "numpy",
+          "pytorch",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "How does scipy.optimize.minimize handle convergence criteria internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tol",
+          "maxiter",
+          "convergence",
+          "optimize"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "minimize"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "show_options",
+          "_check_optimize_result",
+          "fallback_lbfgs_solve",
+          "fmin",
+          "brent",
+          "fmin_ncg",
+          "fminbound",
+          "fixed_point",
+          "update_converged_count",
+          "_constrained_optimization"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "pytorch",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "What is the implementation of scipy's fft and how does it differ from numpy's fft?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "fft",
+          "workers",
+          "plan"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "fft"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "set_global_backend",
+          "register_backend",
+          "_backend_from_arg",
+          "skip_backend",
+          "set_backend",
+          "prev_fast_len",
+          "fftfreq",
+          "set_workers",
+          "rfft2",
+          "rfftfreq"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "How does pandas implement groupby aggregation internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "groupby",
+          "aggregate",
+          "apply"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "aggregate"
+        ],
+        "mr_misses": [
+          "agg"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_groupby_op",
+          "_groupby_op",
+          "_groupby_and_aggregate",
+          "aggregate",
+          "_groupby_op",
+          "groupby",
+          "groupby",
+          "_groupby_op",
+          "get_resampler_for_grouping",
+          "retrieve_const_key"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "What happens to NaN values in the output of pandas merge() \u2014 are they propagated, dropped, or filled by default?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "merge",
+          "NaN",
+          "join",
+          "how"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "merge"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "ffill",
+          "merge_ordered",
+          "stack",
+          "fillna",
+          "bfill",
+          "construct_1d_arraylike_from_scalar",
+          "groupby",
+          "map",
+          "_sort_tuples",
+          "_drop_from_level"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn's StandardScaler compute mean and variance during fit()?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "mean",
+          "var",
+          "scale",
+          "fit"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "fit"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "make_pipeline",
+          "fit",
+          "check_f_contiguous_array_estimator",
+          "_is_constant_feature",
+          "predict",
+          "partial_fit",
+          "fit",
+          "_patch_raw_predict",
+          "fit",
+          "fit"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "What is the implementation of train_test_split in scikit-learn?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "train_test_split",
+          "shuffle",
+          "stratify"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "train_test_split"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "is_usable_for",
+          "evaluate",
+          "from_estimator",
+          "from_predictions",
+          "_clone_parametrized",
+          "from_estimator",
+          "train_test_split",
+          "from_estimator",
+          "from_predictions",
+          "from_predictions"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does PyTorch implement the Adam optimizer update step?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "adam",
+          "lr",
+          "beta",
+          "grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "step"
+        ],
+        "mr_misses": [
+          "Adam"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_get_adamw_apex_fused",
+          "_register_fused_optim",
+          "set_optimizer",
+          "_get_adamw_torch",
+          "step",
+          "get_state_dict",
+          "__init__",
+          "dim",
+          "_apply_optimizer_in_backward",
+          "deepspeed_optim_sched"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does torch.autograd track gradients through operations?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "grad",
+          "backward",
+          "autograd",
+          "requires_grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "grad_fn",
+          "backward"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "handle_autograd_grad",
+          "_aot_stage2a_partition",
+          "recompute_mean_var",
+          "first_slice_copy_with_grad",
+          "register_autograd",
+          "get_gradient_edge",
+          "method_backward",
+          "register_autograd",
+          "check_undefined_grad_support",
+          "check"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "How does the HuggingFace tokenizer handle out-of-vocabulary tokens?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tokenize",
+          "unk",
+          "vocab",
+          "token"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "tokenize",
+          "encode"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "add_tokens",
+          "get_missing_alphabet_tokens",
+          "from_pretrained",
+          "from_pretrained",
+          "_add_tokens",
+          "save_vocabulary",
+          "_add_tokens",
+          "vocab_size",
+          "get_vocab",
+          "save_vocabulary"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "What happens inside the forward pass of BertModel?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "attention",
+          "hidden",
+          "encoder",
+          "forward"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "setup_context",
+          "clean_column_name",
+          "keys",
+          "no_sync",
+          "get_cb_kwargs",
+          "get_cb_kwargs",
+          "forward",
+          "forward",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pandas",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "query": "How does pandas use numpy arrays internally to store DataFrame column data?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "ndarray",
+          "dtype",
+          "numpy",
+          "block"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "NDFrame",
+          "Block",
+          "array"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_from_arrays",
+          "from_spmatrix",
+          "explode",
+          "_liac_arff_parser",
+          "create_dataframe_from_blocks",
+          "_pandas_arff_parser",
+          "merge",
+          "merge",
+          "load_arff_from_gzip_file",
+          "itertuples"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn validate that input arrays are numpy-compatible before fitting?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "dtype",
+          "ndarray",
+          "validate"
+        ],
+        "kw_missed": [
+          "check_array"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "broadcast_shapes",
+          "_get_adapter_from_container",
+          "_single_array_device",
+          "_from_arrays",
+          "get_config",
+          "_asarray_with_order",
+          "fit",
+          "raise_build_error",
+          "fit",
+          "_assert_all_finite_element_wise"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "When scipy computes a matrix inverse, how does it use numpy's linear algebra routines?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "inv",
+          "solve",
+          "lapack",
+          "linalg"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "inv",
+          "solve"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "solve",
+          "inv",
+          "pinv",
+          "_logpdf",
+          "_mode",
+          "vec",
+          "from_eigendecomposition",
+          "_mean",
+          "pinv",
+          "_var"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "cpu",
+          "detach"
+        ],
+        "kw_missed": [
+          "contiguous"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "numpy"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_to_tensor",
+          "to_numpy",
+          "process_images",
+          "process_images",
+          "process_images",
+          "as_tensor",
+          "_from_numpy_array",
+          "make_np",
+          "_get_is_as_tensor_fns",
+          "__call__"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "dataloader",
+          "batch",
+          "sampler"
+        ],
+        "kw_missed": [
+          "collate"
+        ],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "get_train_dataloader"
+        ],
+        "mr_misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "get_train_dataloader",
+          "get_steps_per_epoch",
+          "create_rng",
+          "thread_safe_generator",
+          "num_examples",
+          "tpu_spmd_dataloader",
+          "get_worker_info",
+          "__init__",
+          "set_initial_training_values",
+          "extract_hyperparameters_from_trainer"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "How does pandas rolling() use numpy operations under the hood?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "rolling",
+          "window",
+          "apply",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "Rolling",
+          "apply"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_groupby_op",
+          "aggregate",
+          "mean",
+          "_groupby_op",
+          "sum",
+          "std",
+          "var",
+          "quantile",
+          "aggregate",
+          "pipe"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
+        "kw_score": 0.0,
+        "kw_passed": false,
+        "kw_found": [],
+        "kw_missed": [
+          "svd",
+          "components",
+          "explained_variance",
+          "singular"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_single_array_device",
+          "__setstate__",
+          "_assert_all_finite_element_wise",
+          "_asarray_with_order",
+          "is_usable_for",
+          "_get_adapter_from_container",
+          "check_f_contiguous_array_estimator",
+          "get_data_home",
+          "_use_interchange_protocol",
+          "get_config"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "query": "Where does the transformers library convert between PyTorch tensors and numpy arrays for metric computation?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "metrics",
+          "cpu"
+        ],
+        "kw_missed": [
+          "predictions"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "compute_metrics"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "as_tensor",
+          "_get_is_as_tensor_fns",
+          "to_cpu_and_numpy",
+          "_to_tensor",
+          "cond",
+          "fill",
+          "pairwise_distances_argmin",
+          "pdist",
+          "paired_distances",
+          "_preprocess_input"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
+        "kw_score": 0.25,
+        "kw_passed": false,
+        "kw_found": [
+          "generate"
+        ],
+        "kw_missed": [
+          "sample",
+          "logits",
+          "beam"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "generate"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "load_custom_generate",
+          "is_torch_array",
+          "repro_load_args",
+          "call_function",
+          "repro_common",
+          "run_load_args",
+          "call_function",
+          "_get_dict",
+          "can_generate",
+          "default_data_collator"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "corr",
+          "pearson",
+          "cov",
+          "std"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "corr"
+        ],
+        "mr_misses": [
+          "nancorr"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "corr",
+          "autocorr",
+          "corr",
+          "corr",
+          "corr",
+          "corr",
+          "corrwith",
+          "corr",
+          "corrwith",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's SVM implementation use scipy's sparse matrices and what numpy operations are at the core?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "sparse",
+          "support"
+        ],
+        "kw_missed": [
+          "svm",
+          "kernel"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "SVC",
+          "fit"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "is_usable_for",
+          "set_config",
+          "_check_large_sparse",
+          "config_context",
+          "_asarray_with_order",
+          "pairwise_distances_argmin",
+          "is_valid_sparse_matrix",
+          "_fit_full",
+          "__setstate__",
+          "_assert_all_finite_element_wise"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's attention mechanism implement scaled dot-product attention at the PyTorch level?",
+        "kw_score": 0.2,
+        "kw_passed": false,
+        "kw_found": [
+          "attention"
+        ],
+        "kw_missed": [
+          "query",
+          "key",
+          "value",
+          "softmax"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "attention",
+          "forward"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "can_produce",
+          "enable_flash_sdp",
+          "enable_math_sdp",
+          "enable_cudnn_sdp",
+          "enable_mem_efficient_sdp",
+          "cudnn_sdp_enabled",
+          "flash_sdp_enabled",
+          "math_sdp_enabled",
+          "mem_efficient_sdp_enabled",
+          "is_ck_sdpa_available"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "query": "Trace how scikit-learn's KMeans uses numpy and scipy for distance computation.",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "kmeans",
+          "euclidean",
+          "centroid",
+          "distance"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "pairwise_distances_argmin",
+          "pairwise_distances_argmin_min",
+          "__setstate__",
+          "is_usable_for",
+          "pairwise_distances",
+          "silhouette_samples",
+          "kmeans",
+          "_get_expected_failed_checks",
+          "set_config",
+          "check_f_contiguous_array_estimator"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "What functions in transformers would break if numpy changed the default dtype of np.float_ from float64 to float32?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "float64",
+          "float32",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "set_default_dtype",
+          "fit",
+          "obj2sctype",
+          "_transform",
+          "_promote",
+          "_prep_values",
+          "_validate_array_cls",
+          "getdtype",
+          "fill_value",
+          "as_float_array"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "pandas",
+          "scipy",
+          "scipy",
+          "numpy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "If numpy deprecated np.bool (alias for Python bool), which pandas and scikit-learn functions would be affected?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "bool",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "set_config",
+          "parametrize_with_checks",
+          "__get__",
+          "config_context",
+          "_single_array_device",
+          "check_f_contiguous_array_estimator",
+          "__setstate__",
+          "func",
+          "is_usable_for",
+          "array"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "query": "If PyTorch changed the default behavior of torch.no_grad() to not propagate to nested functions, what would break in HuggingFace transformers?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "no_grad",
+          "grad",
+          "inference",
+          "context"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "print_bt",
+          "save",
+          "nested_tensor",
+          "enable_propagation",
+          "_contains_nan",
+          "guard_size_oblivious",
+          "traverse",
+          "default_device",
+          "forward",
+          "call_module"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "scipy",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "transformers",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "If numpy removed the np.matrix class entirely, which scipy functions would need to be updated?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "matrix",
+          "ndarray",
+          "scipy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "estimate_rank",
+          "_validate_array_cls",
+          "svd",
+          "from_precision",
+          "estimate_spectral_norm_diff",
+          "_check_scalar",
+          "interp_decomp",
+          "inv",
+          "cholesky",
+          "estimate_spectral_norm"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "What would happen to pandas DataFrame operations if numpy changed integer overflow behavior to raise exceptions instead of wrapping?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "int",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [
+          "overflow"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "create_dataframe_from_blocks",
+          "round",
+          "_liac_arff_parser",
+          "aggregate",
+          "read_table",
+          "maybe_prepare_scalar_for_op",
+          "astype_array_safe",
+          "_safe_indexing",
+          "_validate_array_cls",
+          "aggregate"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "scipy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "If HuggingFace removed the return_dict parameter from model forward() calls, what downstream code would break?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "return_dict",
+          "forward",
+          "output"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [
+          "return_dict"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "forward",
+          "forward",
+          "forward",
+          "freeze_embeddings_and_language_adapters",
+          "forward",
+          "forward",
+          "get_fixed_layout_without_freezing",
+          "jit_code_filter",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "If numpy's legacy np.random functions were removed, which scikit-learn estimators would break?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "random",
+          "numpy"
+        ],
+        "kw_missed": [
+          "random_state",
+          "seed"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "parametrize_with_checks",
+          "check_f_contiguous_array_estimator",
+          "_assert_all_finite_element_wise",
+          "set_config",
+          "_single_array_device",
+          "check_estimator",
+          "config_context",
+          "decision_function",
+          "_get_expected_failed_checks",
+          "check_estimator_tags_renamed"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      }
+    ]
+  },
+  "dense": {
+    "summary": {
+      "method": "dense",
+      "total": 33,
+      "verifiable": 33,
+      "passed": 33,
+      "failed": 0,
+      "unverifiable": 0,
+      "pass_rate": 1.0,
+      "avg_kw_score": 0.9116161616161615,
+      "avg_mr_score": 0.40384615384615385
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy implement the clip function and what are its boundary conditions?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "clip",
+          "min",
+          "max",
+          "out"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "clip"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "clip",
+          "clip",
+          "_clip_with_one_bound",
+          "_check_clip_x",
+          "_sf",
+          "_call",
+          "clip",
+          "validate_clip_with_axis",
+          "_clip_with_scalar",
+          "trimmed_var"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "numpy",
+          "pandas",
+          "scipy",
+          "scipy",
+          "pytorch",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "What is the purpose of numpy's _wrapreduction function and when is it called?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "reduction",
+          "axis",
+          "ufunc",
+          "dtype"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "_wrapreduction"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "wrap_function",
+          "__array_wrap__",
+          "_wrapfunc",
+          "wrap",
+          "wrapped",
+          "_wrap_min_count_reduction_result",
+          "_wrap_function",
+          "numpy_dtype",
+          "_generate_wrapped_number",
+          "prod"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "numpy",
+          "scipy",
+          "pytorch",
+          "pandas",
+          "scipy",
+          "pandas",
+          "pytorch",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy handle broadcasting when array shapes are incompatible?",
+        "kw_score": 0.6666666666666666,
+        "kw_passed": true,
+        "kw_found": [
+          "broadcast",
+          "shape"
+        ],
+        "kw_missed": [
+          "dimension"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "broadcast_to",
+          "broadcast_shapes",
+          "_broadcast_shape",
+          "_broadcast_arrays",
+          "broadcast_arrays",
+          "broadcast_shapes",
+          "_broadcast_array_shapes_remove_axis",
+          "_broadcast",
+          "_broadcast_shapes_remove_axis",
+          "_broadcast_to"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "numpy",
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "How does scipy.optimize.minimize handle convergence criteria internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tol",
+          "maxiter",
+          "convergence",
+          "optimize"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "minimize"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_check_optimize_result",
+          "__init__",
+          "fallback_lbfgs_solve",
+          "_constrained_optimization",
+          "_solve_W",
+          "_constrained_optimization",
+          "__init__",
+          "_minimize_powell",
+          "__init__",
+          "solve"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "What is the implementation of scipy's fft and how does it differ from numpy's fft?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "fft",
+          "workers",
+          "plan"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "fft"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fft",
+          "ifft",
+          "_fft_helper",
+          "fft_mode",
+          "hfft2",
+          "ihfft2",
+          "irfft2",
+          "_fftconv_faster",
+          "rfft2",
+          "hfft"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "How does pandas implement groupby aggregation internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "groupby",
+          "aggregate",
+          "apply"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "aggregate"
+        ],
+        "mr_misses": [
+          "agg"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "groupby",
+          "groupby",
+          "_wrap_aggregated_output",
+          "get_groupby",
+          "aggregate",
+          "__init__",
+          "cumsum",
+          "__iter__",
+          "aggregate",
+          "expanding"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "What happens to NaN values in the output of pandas merge() \u2014 are they propagated, dropped, or filled by default?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "merge",
+          "NaN",
+          "how"
+        ],
+        "kw_missed": [
+          "join"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "merge"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "combine",
+          "na_value",
+          "_replace_nans",
+          "fillna",
+          "nancumsum",
+          "ffill",
+          "nanmedian",
+          "fillna",
+          "bfill",
+          "nansum"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn's StandardScaler compute mean and variance during fit()?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "mean",
+          "var",
+          "scale",
+          "fit"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "fit"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fit",
+          "partial_fit",
+          "_is_constant_feature",
+          "fit",
+          "fit",
+          "fit",
+          "latent_mean_and_variance",
+          "fit",
+          "latent_mean_and_variance",
+          "fit"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "What is the implementation of train_test_split in scikit-learn?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "train_test_split",
+          "shuffle",
+          "stratify"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "train_test_split"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "split",
+          "_split",
+          "__init__",
+          "split",
+          "split",
+          "split",
+          "_split",
+          "split",
+          "train_test_split",
+          "_check_input_parameters"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does PyTorch implement the Adam optimizer update step?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "adam",
+          "lr",
+          "beta",
+          "grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "Adam",
+          "step"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "sparse_adam",
+          "__init__",
+          "adam",
+          "set_optimizer",
+          "__init__",
+          "adamw",
+          "adamax",
+          "_get_adamw_torch",
+          "_get_adamw_anyprecision",
+          "_get_stable_adamw"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "transformers",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does torch.autograd track gradients through operations?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "grad",
+          "backward",
+          "autograd",
+          "requires_grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "backward"
+        ],
+        "mr_misses": [
+          "grad_fn"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_extract_parameters_and_gradients",
+          "backward",
+          "backward",
+          "register_autograd",
+          "backward",
+          "register_autograd",
+          "_root_post_backward_final_callback",
+          "vjp_fn",
+          "vjp_fn",
+          "_track_module_params_and_buffers"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "How does the HuggingFace tokenizer handle out-of-vocabulary tokens?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tokenize",
+          "unk",
+          "vocab",
+          "token"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "tokenize"
+        ],
+        "mr_misses": [
+          "encode"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "add_tokens",
+          "_add_tokens",
+          "_add_tokens",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "tokenize",
+          "_tokenize",
+          "_wrap_decode_method_backend_tokenizer"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "What happens inside the forward pass of BertModel?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "attention",
+          "hidden",
+          "encoder",
+          "forward"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "query": "How does pandas use numpy arrays internally to store DataFrame column data?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "ndarray",
+          "dtype",
+          "numpy",
+          "block"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "array"
+        ],
+        "mr_misses": [
+          "NDFrame",
+          "Block"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "array",
+          "array",
+          "array",
+          "_from_arrays",
+          "array",
+          "column_data_lengths",
+          "column_data_offsets",
+          "primitive_column_to_ndarray",
+          "to_arrays",
+          "create_dataframe"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn validate that input arrays are numpy-compatible before fitting?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "check_array",
+          "dtype",
+          "ndarray",
+          "validate"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fit",
+          "_asarray_validated",
+          "fit",
+          "_validate_vector",
+          "assert_allclose",
+          "check_array_indexer",
+          "validate",
+          "check_X_y",
+          "fit",
+          "matdims"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "pandas",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "When scipy computes a matrix inverse, how does it use numpy's linear algebra routines?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "inv",
+          "solve",
+          "linalg"
+        ],
+        "kw_missed": [
+          "lapack"
+        ],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "inv"
+        ],
+        "mr_misses": [
+          "solve"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "inv",
+          "I",
+          "inv",
+          "dot",
+          "affine_transform",
+          "tensorinv",
+          "matdims",
+          "invpascal",
+          "transpose",
+          "_fractional_matrix_power"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "cpu",
+          "detach"
+        ],
+        "kw_missed": [
+          "contiguous"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "numpy"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_to_tensor",
+          "to_numpy_helper",
+          "numpy_to_tensor",
+          "as_tensor",
+          "_to_numpy_array",
+          "_to_numpy",
+          "_get_is_as_tensor_fns",
+          "to_numpy",
+          "as_tensor",
+          "to_py_obj"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "dataloader",
+          "batch",
+          "sampler"
+        ],
+        "kw_missed": [
+          "collate"
+        ],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "get_train_dataloader"
+        ],
+        "mr_misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "__init__",
+          "__init__",
+          "set_dataloader",
+          "__init__",
+          "get_train_dataloader",
+          "to",
+          "__next__",
+          "getstate",
+          "__init__",
+          "get_steps_per_epoch"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "How does pandas rolling() use numpy operations under the hood?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "rolling",
+          "window",
+          "apply",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "Rolling",
+          "apply"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "roll",
+          "rollaxis",
+          "nunique",
+          "roll_apply",
+          "mean",
+          "count",
+          "first",
+          "sum",
+          "var",
+          "std"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "svd",
+          "components",
+          "singular"
+        ],
+        "kw_missed": [
+          "explained_variance"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "svdvals",
+          "_solve_svd",
+          "_svds_lobpcg_doc",
+          "_get_first_singular_vectors_svd",
+          "pca_lowrank",
+          "_multi_svd_norm",
+          "_svd",
+          "svdvals",
+          "_get_first_singular_vectors_power_method",
+          "diagsvd"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "pytorch",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "query": "Where does the transformers library convert between PyTorch tensors and numpy arrays for metric computation?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "cpu"
+        ],
+        "kw_missed": [
+          "predictions",
+          "metrics"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "compute_metrics"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "to_numpy_helper",
+          "to_tvm_tensor",
+          "pre_flatten_transform",
+          "_to_tensor",
+          "_rebuild_device_tensor_from_numpy",
+          "_to_numpy_array",
+          "pow_by_natural",
+          "_to_numpy",
+          "_encode_tensor",
+          "to_torch_tensor"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "generate",
+          "sample",
+          "logits",
+          "beam"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "generate"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "sample",
+          "sample",
+          "_compute_rng_offsets",
+          "_initialize_parameters",
+          "init_population_random",
+          "sample_n",
+          "generate",
+          "_sample",
+          "_sample",
+          "_sample_visibles"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "scipy",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "corr",
+          "pearson",
+          "cov",
+          "std"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "corr"
+        ],
+        "mr_misses": [
+          "nancorr"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "corr",
+          "corrwith",
+          "corr",
+          "corrwith",
+          "corr",
+          "corr",
+          "corr",
+          "corrcoef",
+          "_corr",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "scipy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's SVM implementation use scipy's sparse matrices and what numpy operations are at the core?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "svm",
+          "sparse",
+          "kernel",
+          "support"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "SVC",
+          "fit"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_svds_lobpcg_doc",
+          "svds",
+          "is_valid_sparse_matrix",
+          "_sparse_fit",
+          "svdvals",
+          "_svds_propack_doc",
+          "_sparse_encode_precomputed",
+          "eye",
+          "_svds_arpack_doc",
+          "svdvals"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's attention mechanism implement scaled dot-product attention at the PyTorch level?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "attention",
+          "query",
+          "key",
+          "value",
+          "softmax"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "attention"
+        ],
+        "mr_misses": [
+          "forward"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_unmask_unattended",
+          "_scaled_dot_product_attention_quantized",
+          "flex_attention",
+          "aten_scaled_dot_product_attention_23",
+          "sdpa_kernel",
+          "_in_projection_packed",
+          "can_use_efficient_attention",
+          "attention",
+          "_attention_scale",
+          "_scaled_dot_product_efficient_attention_backward_cp_strategy"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "query": "Trace how scikit-learn's KMeans uses numpy and scipy for distance computation.",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "kmeans",
+          "euclidean",
+          "centroid",
+          "distance"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "euclidean_distances"
+        ],
+        "mr_misses": [
+          "KMeans",
+          "_lloyd_iter"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_kmeans",
+          "kneighbors_graph",
+          "kmeans2",
+          "paired_distances",
+          "_compute_core_distances_",
+          "_kmeans_plusplus",
+          "kmeans",
+          "euclidean_distances",
+          "_kmeans_single_elkan",
+          "radius_neighbors_graph"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "What functions in transformers would break if numpy changed the default dtype of np.float_ from float64 to float32?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "float64",
+          "float32",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "check_int_infer_dtype",
+          "default_dtypes",
+          "default_dtypes",
+          "set_default_dtype",
+          "_standardize_dtype",
+          "float_numpy_dtype",
+          "_get_dtype",
+          "_get_dtype",
+          "convert_dtypes",
+          "convert_dtypes"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "numpy",
+          "scikit-learn",
+          "pytorch",
+          "pandas",
+          "pandas",
+          "scipy",
+          "scipy",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "If numpy deprecated np.bool (alias for Python bool), which pandas and scikit-learn functions would be affected?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "bool",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_bool_arith_check",
+          "_is_boolean",
+          "is_bool",
+          "is_scalar_nan",
+          "_with_pandas",
+          "is_bool_dtype",
+          "np_find_common_type",
+          "_isnan",
+          "__init__",
+          "_has_bool_dtype"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pytorch",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "query": "If PyTorch changed the default behavior of torch.no_grad() to not propagate to nested functions, what would break in HuggingFace transformers?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "no_grad",
+          "grad",
+          "context"
+        ],
+        "kw_missed": [
+          "inference"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_no_grad_wrapper",
+          "wrapper",
+          "_apply",
+          "__repr__",
+          "generate_single_level_function",
+          "wrapped",
+          "_no_grad",
+          "forward",
+          "wrapper",
+          "_set_tensor_requires_grad"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "If numpy removed the np.matrix class entirely, which scipy functions would need to be updated?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "matrix",
+          "ndarray",
+          "scipy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "__new__",
+          "__array__",
+          "empty",
+          "_asarray_validated",
+          "to_numpy",
+          "is_numpy",
+          "matvec",
+          "__array_finalize__",
+          "array_namespace",
+          "__init_subclass__"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "pytorch",
+          "numpy",
+          "scipy",
+          "transformers",
+          "pytorch",
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "What would happen to pandas DataFrame operations if numpy changed integer overflow behavior to raise exceptions instead of wrapping?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "int",
+          "overflow",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_wrapfunc",
+          "diff",
+          "_convert_to_ndarray",
+          "_maybe_convert",
+          "_cast_to_stata_types",
+          "nansum",
+          "_bool_arith_check",
+          "_get_fill_value",
+          "_is_int_type",
+          "astype_float_to_int_nansafe"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "pandas",
+          "scipy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "If HuggingFace removed the return_dict parameter from model forward() calls, what downstream code would break?",
+        "kw_score": 0.6666666666666666,
+        "kw_passed": true,
+        "kw_found": [
+          "forward",
+          "output"
+        ],
+        "kw_missed": [
+          "return_dict"
+        ],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [
+          "return_dict"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_forward",
+          "_sticky_export",
+          "forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_forward",
+          "_use_post_forward_mesh",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "If numpy's legacy np.random functions were removed, which scikit-learn estimators would break?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "random",
+          "random_state",
+          "numpy"
+        ],
+        "kw_missed": [
+          "seed"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_average",
+          "check_estimator",
+          "_single_array_device",
+          "get_tags",
+          "_reductions",
+          "__array_ufunc__",
+          "check_f_contiguous_array_estimator",
+          "check_estimators_pickle",
+          "prod",
+          "var"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy",
+          "numpy"
+        ]
+      }
+    ]
+  },
+  "hybrid": {
+    "summary": {
+      "method": "hybrid",
+      "total": 33,
+      "verifiable": 33,
+      "passed": 32,
+      "failed": 1,
+      "unverifiable": 0,
+      "pass_rate": 0.9696969696969697,
+      "avg_kw_score": 0.8863636363636364,
+      "avg_mr_score": 0.41025641025641024
+    },
+    "per_query": [
+      {
+        "query_id": "T1-001",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy implement the clip function and what are its boundary conditions?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "clip",
+          "min",
+          "max",
+          "out"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "clip"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "clip",
+          "clip",
+          "clip",
+          "resize",
+          "ravel_multi_index",
+          "argrelextrema",
+          "_clip_with_one_bound",
+          "take",
+          "_check_clip_x",
+          "argrelmax"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "scikit-learn",
+          "numpy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "numpy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-002",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "What is the purpose of numpy's _wrapreduction function and when is it called?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "reduction",
+          "axis",
+          "ufunc",
+          "dtype"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "_wrapreduction"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "clean_column_name",
+          "wrap_function",
+          "_xp_copy_to_numpy",
+          "__array_wrap__",
+          "amin",
+          "_wrapfunc",
+          "amax",
+          "wrap",
+          "__RandomState_ctor",
+          "wrapped"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "scipy",
+          "pandas",
+          "numpy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-003",
+        "tier": 1,
+        "repos": [
+          "numpy"
+        ],
+        "query": "How does numpy handle broadcasting when array shapes are incompatible?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "broadcast",
+          "shape",
+          "dimension"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_broadcast_shape",
+          "broadcast_shapes",
+          "broadcast_shapes",
+          "_broadcast_shapes",
+          "tile",
+          "_argcheck_rvs",
+          "broadcast_to",
+          "broadcast_shapes",
+          "_broadcast_arrays",
+          "xp_promote"
+        ],
+        "retrieved_repos": [
+          "numpy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-004",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "How does scipy.optimize.minimize handle convergence criteria internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tol",
+          "maxiter",
+          "convergence",
+          "optimize"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "minimize"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_check_optimize_result",
+          "fallback_lbfgs_solve",
+          "_constrained_optimization",
+          "_constrained_optimization",
+          "_solve_W",
+          "_solve_lbfgs",
+          "show_options",
+          "__init__",
+          "fmin",
+          "brent"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-005",
+        "tier": 1,
+        "repos": [
+          "scipy"
+        ],
+        "query": "What is the implementation of scipy's fft and how does it differ from numpy's fft?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "fft",
+          "workers",
+          "plan"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "fft"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "hfft2",
+          "rfft2",
+          "_fft_helper",
+          "rfftfreq",
+          "set_global_backend",
+          "fft",
+          "register_backend",
+          "ifft",
+          "_backend_from_arg",
+          "skip_backend"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T1-006",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "How does pandas implement groupby aggregation internally?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "groupby",
+          "aggregate",
+          "apply"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "aggregate"
+        ],
+        "mr_misses": [
+          "agg"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "groupby",
+          "groupby",
+          "aggregate",
+          "_groupby_op",
+          "cumsum",
+          "_groupby_op",
+          "_groupby_op",
+          "_groupby_and_aggregate",
+          "_wrap_aggregated_output",
+          "get_groupby"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-007",
+        "tier": 1,
+        "repos": [
+          "pandas"
+        ],
+        "query": "What happens to NaN values in the output of pandas merge() \u2014 are they propagated, dropped, or filled by default?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "merge",
+          "NaN",
+          "join",
+          "how"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "merge"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fillna",
+          "bfill",
+          "merge",
+          "ffill",
+          "combine",
+          "merge_ordered",
+          "na_value",
+          "stack",
+          "_replace_nans",
+          "fillna"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T1-008",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn's StandardScaler compute mean and variance during fit()?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "mean",
+          "var",
+          "scale",
+          "fit"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "fit"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fit",
+          "_is_constant_feature",
+          "partial_fit",
+          "fit",
+          "fit",
+          "fit",
+          "fit",
+          "make_pipeline",
+          "check_f_contiguous_array_estimator",
+          "predict"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-009",
+        "tier": 1,
+        "repos": [
+          "scikit-learn"
+        ],
+        "query": "What is the implementation of train_test_split in scikit-learn?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "train_test_split",
+          "shuffle",
+          "stratify"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "train_test_split"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "train_test_split",
+          "is_usable_for",
+          "split",
+          "evaluate",
+          "_split",
+          "from_estimator",
+          "__init__",
+          "from_predictions",
+          "split",
+          "_clone_parametrized"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-010",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does PyTorch implement the Adam optimizer update step?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "adam",
+          "lr",
+          "beta",
+          "grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "step"
+        ],
+        "mr_misses": [
+          "Adam"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "set_optimizer",
+          "_get_adamw_torch",
+          "_get_adamw_anyprecision",
+          "_get_adamw_apex_fused",
+          "sparse_adam",
+          "_register_fused_optim",
+          "__init__",
+          "adam",
+          "step",
+          "__init__"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T1-011",
+        "tier": 1,
+        "repos": [
+          "pytorch"
+        ],
+        "query": "How does torch.autograd track gradients through operations?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "grad",
+          "backward",
+          "autograd",
+          "requires_grad"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "backward"
+        ],
+        "mr_misses": [
+          "grad_fn"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "register_autograd",
+          "register_autograd",
+          "backward",
+          "backward",
+          "_track_module_params_and_buffers",
+          "stage_backward",
+          "_wrap_tensor_autograd_backward",
+          "handle_autograd_grad",
+          "_extract_parameters_and_gradients",
+          "_aot_stage2a_partition"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T1-012",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "How does the HuggingFace tokenizer handle out-of-vocabulary tokens?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "tokenize",
+          "unk",
+          "vocab",
+          "token"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "tokenize"
+        ],
+        "mr_misses": [
+          "encode"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "add_tokens",
+          "_add_tokens",
+          "_add_tokens",
+          "get_vocab",
+          "get_missing_alphabet_tokens",
+          "from_pretrained",
+          "from_pretrained",
+          "tokenize",
+          "tokenize",
+          "save_vocabulary"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T1-013",
+        "tier": 1,
+        "repos": [
+          "transformers"
+        ],
+        "query": "What happens inside the forward pass of BertModel?",
+        "kw_score": 0.25,
+        "kw_passed": false,
+        "kw_found": [
+          "forward"
+        ],
+        "kw_missed": [
+          "attention",
+          "hidden",
+          "encoder"
+        ],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "setup_context",
+          "forward",
+          "clean_column_name",
+          "forward",
+          "keys",
+          "forward",
+          "no_sync",
+          "forward",
+          "get_cb_kwargs",
+          "forward"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pandas",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-001",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "pandas"
+        ],
+        "query": "How does pandas use numpy arrays internally to store DataFrame column data?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "ndarray",
+          "dtype",
+          "numpy",
+          "block"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "array"
+        ],
+        "mr_misses": [
+          "NDFrame",
+          "Block"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_from_arrays",
+          "create_dataframe_from_blocks",
+          "array",
+          "from_spmatrix",
+          "array",
+          "explode",
+          "array",
+          "_liac_arff_parser",
+          "array",
+          "_pandas_arff_parser"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T2-002",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scikit-learn"
+        ],
+        "query": "How does scikit-learn validate that input arrays are numpy-compatible before fitting?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "dtype",
+          "ndarray",
+          "validate"
+        ],
+        "kw_missed": [
+          "check_array"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "check_array",
+          "validate_data"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "fit",
+          "fit",
+          "fit",
+          "fit",
+          "broadcast_shapes",
+          "_get_adapter_from_container",
+          "_asarray_validated",
+          "_single_array_device",
+          "_from_arrays",
+          "_validate_vector"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "pandas",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-003",
+        "tier": 2,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "When scipy computes a matrix inverse, how does it use numpy's linear algebra routines?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "inv",
+          "solve",
+          "lapack",
+          "linalg"
+        ],
+        "kw_missed": [],
+        "mr_score": 1.0,
+        "mr_hits": [
+          "inv",
+          "solve"
+        ],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "inv",
+          "inv",
+          "pinv",
+          "inv",
+          "solve",
+          "I",
+          "_logpdf",
+          "dot",
+          "_mode",
+          "affine_transform"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "numpy",
+          "numpy",
+          "scipy",
+          "pandas",
+          "scipy",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T2-004",
+        "tier": 2,
+        "repos": [
+          "pytorch",
+          "numpy"
+        ],
+        "query": "How does PyTorch's tensor.numpy() method convert a tensor to a numpy array and what are the constraints?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "cpu",
+          "detach"
+        ],
+        "kw_missed": [
+          "contiguous"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "numpy"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_to_tensor",
+          "to_numpy",
+          "as_tensor",
+          "_get_is_as_tensor_fns",
+          "to_py_obj",
+          "_from_numpy_array",
+          "make_np",
+          "to_numpy_helper",
+          "process_images",
+          "numpy_to_tensor"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-005",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's Trainer class use PyTorch DataLoader for batching?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "dataloader",
+          "batch",
+          "sampler"
+        ],
+        "kw_missed": [
+          "collate"
+        ],
+        "mr_score": 0.3333333333333333,
+        "mr_hits": [
+          "get_train_dataloader"
+        ],
+        "mr_misses": [
+          "Trainer",
+          "DataLoader"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "get_train_dataloader",
+          "__init__",
+          "get_steps_per_epoch",
+          "__init__",
+          "create_rng",
+          "set_dataloader",
+          "thread_safe_generator",
+          "__init__",
+          "num_examples",
+          "tpu_spmd_dataloader"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T2-006",
+        "tier": 2,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "How does pandas rolling() use numpy operations under the hood?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "rolling",
+          "window",
+          "apply",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "Rolling",
+          "apply"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "mean",
+          "sum",
+          "std",
+          "var",
+          "expanding",
+          "_groupby_op",
+          "roll",
+          "aggregate",
+          "rollaxis",
+          "nunique"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "numpy",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T2-007",
+        "tier": 2,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's PCA implementation use numpy's SVD?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "svd",
+          "components",
+          "singular"
+        ],
+        "kw_missed": [
+          "explained_variance"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "PCA",
+          "fit",
+          "_fit_full"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_single_array_device",
+          "svdvals",
+          "__setstate__",
+          "_solve_svd",
+          "_assert_all_finite_element_wise",
+          "_svds_lobpcg_doc",
+          "_asarray_with_order",
+          "_get_first_singular_vectors_svd",
+          "is_usable_for",
+          "pca_lowrank"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T2-008",
+        "tier": 2,
+        "repos": [
+          "transformers",
+          "numpy"
+        ],
+        "query": "Where does the transformers library convert between PyTorch tensors and numpy arrays for metric computation?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "numpy",
+          "cpu"
+        ],
+        "kw_missed": [
+          "predictions",
+          "metrics"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "compute_metrics"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_to_tensor",
+          "as_tensor",
+          "to_numpy_helper",
+          "_get_is_as_tensor_fns",
+          "to_tvm_tensor",
+          "to_cpu_and_numpy",
+          "pre_flatten_transform",
+          "cond",
+          "_rebuild_device_tensor_from_numpy",
+          "fill"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-001",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "What sampling strategies does HuggingFace model.generate() use and how does it call into PyTorch operations?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "generate",
+          "sample"
+        ],
+        "kw_missed": [
+          "logits",
+          "beam"
+        ],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "generate"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "load_custom_generate",
+          "sample",
+          "is_torch_array",
+          "sample",
+          "repro_load_args",
+          "_compute_rng_offsets",
+          "call_function",
+          "_initialize_parameters",
+          "repro_common",
+          "init_population_random"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "scikit-learn",
+          "scikit-learn",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "scikit-learn",
+          "pytorch",
+          "scipy"
+        ]
+      },
+      {
+        "query_id": "T3-002",
+        "tier": 3,
+        "repos": [
+          "pandas",
+          "numpy",
+          "scipy"
+        ],
+        "query": "How does pandas.DataFrame.corr() ultimately compute correlation \u2014 trace through to the underlying math?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "corr",
+          "pearson",
+          "cov",
+          "std"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "corr"
+        ],
+        "mr_misses": [
+          "nancorr"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "corr",
+          "corr",
+          "corr",
+          "corrwith",
+          "corrwith",
+          "autocorr",
+          "corr",
+          "corr",
+          "corr",
+          "corr"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T3-003",
+        "tier": 3,
+        "repos": [
+          "scikit-learn",
+          "scipy",
+          "numpy"
+        ],
+        "query": "How does scikit-learn's SVM implementation use scipy's sparse matrices and what numpy operations are at the core?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "svm",
+          "sparse",
+          "kernel",
+          "support"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "SVC",
+          "fit"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "is_valid_sparse_matrix",
+          "is_usable_for",
+          "_svds_lobpcg_doc",
+          "set_config",
+          "svds",
+          "_check_large_sparse",
+          "config_context",
+          "_sparse_fit",
+          "_asarray_with_order",
+          "svdvals"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "numpy"
+        ]
+      },
+      {
+        "query_id": "T3-004",
+        "tier": 3,
+        "repos": [
+          "transformers",
+          "pytorch"
+        ],
+        "query": "How does HuggingFace's attention mechanism implement scaled dot-product attention at the PyTorch level?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "attention",
+          "query",
+          "key",
+          "value",
+          "softmax"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "attention",
+          "forward"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_scaled_dot_product_attention_quantized",
+          "sdpa_kernel",
+          "flex_attention",
+          "can_produce",
+          "_unmask_unattended",
+          "enable_flash_sdp",
+          "enable_math_sdp",
+          "enable_cudnn_sdp",
+          "aten_scaled_dot_product_attention_23",
+          "enable_mem_efficient_sdp"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T3-005",
+        "tier": 3,
+        "repos": [
+          "numpy",
+          "scipy",
+          "scikit-learn"
+        ],
+        "query": "Trace how scikit-learn's KMeans uses numpy and scipy for distance computation.",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "kmeans",
+          "euclidean",
+          "centroid",
+          "distance"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.0,
+        "mr_hits": [],
+        "mr_misses": [
+          "KMeans",
+          "_lloyd_iter",
+          "euclidean_distances"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_kmeans",
+          "kmeans",
+          "compute_optics_graph",
+          "pairwise_distances_argmin",
+          "pairwise_distances_argmin_min",
+          "kneighbors_graph",
+          "__setstate__",
+          "kmeans2",
+          "is_usable_for",
+          "paired_distances"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-001",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "transformers",
+          "pytorch",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "What functions in transformers would break if numpy changed the default dtype of np.float_ from float64 to float32?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "float64",
+          "float32",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "set_default_dtype",
+          "check_int_infer_dtype",
+          "fit",
+          "default_dtypes",
+          "obj2sctype",
+          "default_dtypes",
+          "_transform",
+          "_promote",
+          "_standardize_dtype",
+          "_prep_values"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pandas",
+          "scikit-learn",
+          "numpy",
+          "numpy",
+          "scikit-learn",
+          "scikit-learn",
+          "scipy",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-002",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "query": "If numpy deprecated np.bool (alias for Python bool), which pandas and scikit-learn functions would be affected?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "bool",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_use_interchange_protocol",
+          "set_config",
+          "_bool_arith_check",
+          "parametrize_with_checks",
+          "_is_boolean",
+          "__get__",
+          "is_bool",
+          "config_context",
+          "is_scalar_nan",
+          "_single_array_device"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn"
+        ]
+      },
+      {
+        "query_id": "T4-003",
+        "tier": 4,
+        "repos": [
+          "pytorch",
+          "transformers"
+        ],
+        "query": "If PyTorch changed the default behavior of torch.no_grad() to not propagate to nested functions, what would break in HuggingFace transformers?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "no_grad",
+          "grad",
+          "context"
+        ],
+        "kw_missed": [
+          "inference"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "print_bt",
+          "_no_grad_wrapper",
+          "save",
+          "wrapper",
+          "nested_tensor",
+          "_apply",
+          "enable_propagation",
+          "__repr__",
+          "_contains_nan",
+          "generate_single_level_function"
+        ],
+        "retrieved_repos": [
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "scipy",
+          "pytorch"
+        ]
+      },
+      {
+        "query_id": "T4-004",
+        "tier": 4,
+        "repos": [
+          "numpy",
+          "scipy"
+        ],
+        "query": "If numpy removed the np.matrix class entirely, which scipy functions would need to be updated?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "matrix",
+          "ndarray",
+          "scipy"
+        ],
+        "kw_missed": [],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "estimate_rank",
+          "__new__",
+          "_validate_array_cls",
+          "__array__",
+          "svd",
+          "empty",
+          "from_precision",
+          "_asarray_validated",
+          "estimate_spectral_norm_diff",
+          "to_numpy"
+        ],
+        "retrieved_repos": [
+          "scipy",
+          "numpy",
+          "scipy",
+          "pytorch",
+          "scipy",
+          "numpy",
+          "scipy",
+          "scipy",
+          "scipy",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-005",
+        "tier": 4,
+        "repos": [
+          "pandas",
+          "numpy"
+        ],
+        "query": "What would happen to pandas DataFrame operations if numpy changed integer overflow behavior to raise exceptions instead of wrapping?",
+        "kw_score": 0.75,
+        "kw_passed": true,
+        "kw_found": [
+          "int",
+          "dtype",
+          "numpy"
+        ],
+        "kw_missed": [
+          "overflow"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "_bool_arith_check",
+          "create_dataframe_from_blocks",
+          "_wrapfunc",
+          "round",
+          "diff",
+          "_liac_arff_parser",
+          "_convert_to_ndarray",
+          "aggregate",
+          "_maybe_convert",
+          "read_table"
+        ],
+        "retrieved_repos": [
+          "pandas",
+          "pandas",
+          "numpy",
+          "pandas",
+          "pandas",
+          "scikit-learn",
+          "pandas",
+          "pandas",
+          "pandas",
+          "pandas"
+        ]
+      },
+      {
+        "query_id": "T4-006",
+        "tier": 4,
+        "repos": [
+          "transformers",
+          "pytorch",
+          "numpy"
+        ],
+        "query": "If HuggingFace removed the return_dict parameter from model forward() calls, what downstream code would break?",
+        "kw_score": 1.0,
+        "kw_passed": true,
+        "kw_found": [
+          "return_dict",
+          "forward",
+          "output"
+        ],
+        "kw_missed": [],
+        "mr_score": 0.5,
+        "mr_hits": [
+          "forward"
+        ],
+        "mr_misses": [
+          "return_dict"
+        ],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "forward",
+          "_forward",
+          "forward",
+          "_sticky_export",
+          "forward",
+          "forward",
+          "freeze_embeddings_and_language_adapters",
+          "_forward",
+          "forward",
+          "_forward"
+        ],
+        "retrieved_repos": [
+          "transformers",
+          "transformers",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "pytorch",
+          "transformers",
+          "transformers",
+          "transformers",
+          "transformers"
+        ]
+      },
+      {
+        "query_id": "T4-007",
+        "tier": 4,
+        "repos": [
+          "scikit-learn",
+          "numpy"
+        ],
+        "query": "If numpy's legacy np.random functions were removed, which scikit-learn estimators would break?",
+        "kw_score": 0.5,
+        "kw_passed": true,
+        "kw_found": [
+          "random",
+          "numpy"
+        ],
+        "kw_missed": [
+          "random_state",
+          "seed"
+        ],
+        "mr_score": null,
+        "mr_hits": [],
+        "mr_misses": [],
+        "anti_hits": [],
+        "retrieved_functions": [
+          "check_estimator",
+          "_single_array_device",
+          "check_f_contiguous_array_estimator",
+          "parametrize_with_checks",
+          "_average",
+          "_assert_all_finite_element_wise",
+          "set_config",
+          "get_tags",
+          "_reductions",
+          "__array_ufunc__"
+        ],
+        "retrieved_repos": [
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "scikit-learn",
+          "pandas",
+          "pandas"
+        ]
+      }
+    ]
+  }
+}
