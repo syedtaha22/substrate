@@ -19,9 +19,6 @@ build/
 venv/
 env/
 
-# BM25 index (rebuilt from data)
-app/bm25_index.pkl
-
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
@@ -48,4 +45,5 @@ flagged/
 
 # Docs, and temporary files
 paper/
-SUBSTRATE.md 
+SUBSTRATE.md
+.temp/
