@@ -75,7 +75,7 @@ embedding:
 
 # Vector store 
 vector_store:
-  backend: chroma          # "chroma" for local, "pinecone" for cloud
+  backend: pinecone          # "chroma" for local, "pinecone" for cloud
   chroma:
     persist_directory: data/chroma_db
     collection_name: substrate-{chunking}   # one collection per chunking strategy
