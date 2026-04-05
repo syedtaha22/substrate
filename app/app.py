@@ -67,8 +67,8 @@ async def needs_retrieval(query: str, use_rag: bool) -> bool:
     q = query.lower().strip().rstrip("!?.")
     if q in OBVIOUS_NO or len(q.split()) <= 2:
         return False
-    # Ask the model for routing decision
-    result = generator.generate(query=ROUTE_PROMPT.format(query=query), chunks=None)
+    # Ask the model for routing decision (don't store in history)
+    result = generator.generate(query=ROUTE_PROMPT.format(query=query), chunks=None, use_history=False)
     decision = result.get("answer", "")
     return "YES" in decision.upper()
 
@@ -152,8 +152,6 @@ async def on_message(msg: cl.Message):
         step.output = f"`{MODEL.split('/')[-1]}` — {duration}s"
 
     # Source elements 
-    # Element names are "[1]", "[2]" etc - Chainlit renders these as clickable
-    # links wherever the model writes [1], [2] in its answer text.
     elements: list[cl.Text] = []
     for c in chunks:
         repo   = c.get("repo", "?")
@@ -169,7 +167,7 @@ async def on_message(msg: cl.Message):
             content=(
                 f"### `{fn}()` - {repo}\n\n"
                 f"**File:** `{fp}`  \n"
-                f"**Lines:** {line_s}–{line_e}  ·  **Score:** `{score:.3f}`\n\n"
+                f"**Lines:** {line_s}-{line_e}  ·  **Score:** `{score:.3f}`\n\n"
                 f"```python\n{code}\n```"
             ),
             display="side",

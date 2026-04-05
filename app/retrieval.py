@@ -211,17 +211,17 @@ class Retriever:
     def format_context(self, chunks: list[dict], max_chars: int = 4000) -> str:
         """
         Format retrieved chunks into a context string for the LLM prompt.
-        Includes source citations.
+        Format: filepath::functionname (matches system prompt expectations)
         """
         parts = []
         total = 0
-        for i, c in enumerate(chunks, 1):
-            repo = c.get("repo", "?")
+        for c in chunks:
             filepath = c.get("filepath", "?")
             fn = c.get("function_name", "?")
             code = c.get("raw_code", c.get("_text", ""))
 
-            header = f"[{i}] {repo}/{filepath} :: {fn}"
+            # Use filepath::functionname format as specified in system prompt
+            header = f"{filepath}::{fn}"
             block = f"{header}\n```python\n{code}\n```"
 
             if total + len(block) > max_chars:
