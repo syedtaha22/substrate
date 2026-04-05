@@ -92,6 +92,7 @@ def build_context(chunks: list[dict]) -> str:
 async def start():
     generator.clear_history()  # Reset history for new session
     cl.user_session.set("settings", {"use_rag": True, "method": "hybrid", "top_k": 5})
+    cl.user_session.set("retrieved_chunks", {})  # Accumulate chunks across conversation
     await cl.ChatSettings([
         cl.input_widget.Switch(
             id="use_rag", label="Enable RAG", initial=True,
@@ -142,6 +143,13 @@ async def on_message(msg: cl.Message):
                 line_s = c.get("line_start", "?")
                 line_e = c.get("line_end", "?")
                 step.output += f"**{fp}::{fn}** ({repo}, lines {line_s}-{line_e})\n"
+            
+            # Accumulate chunks in session (use filepath::fn as key to avoid duplicates)
+            accumulated = cl.user_session.get("retrieved_chunks", {})
+            for c in chunks:
+                key = f"{c.get('filepath', '?')}::{c.get('function_name', '?')}"
+                accumulated[key] = c
+            cl.user_session.set("retrieved_chunks", accumulated)
 
     # Generate answer via LLM (handles RAG formatting internally)
     # Generator maintains internal conversation history
@@ -151,9 +159,11 @@ async def on_message(msg: cl.Message):
         duration = result.get("duration_s", 0)
         step.output = f"`{MODEL.split('/')[-1]}` — {duration}s"
 
-    # Source elements 
+    # Source elements - use ALL accumulated chunks, not just current retrieval
+    # This way, if the model cites a chunk from earlier, it's still available
+    accumulated = cl.user_session.get("retrieved_chunks", {})
     elements: list[cl.Text] = []
-    for c in chunks:
+    for key, c in accumulated.items():
         repo   = c.get("repo", "?")
         fp     = c.get("filepath", "?")
         fn     = c.get("function_name", "?")
