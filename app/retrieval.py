@@ -4,13 +4,19 @@ app/retrieval.py
 Reusable retrieval module used by both eval scripts and the main app.
 Loads all indexes once at startup, exposes a clean retrieve() interface.
 
+Supports both ChromaDB (local) and Pinecone (cloud) for dense search.
+
 Usage:
     from app.retrieval import Retriever
-    r = Retriever()          # loads BM25 + ChromaDB + embed model
+    r = Retriever()          # loads BM25 + vector store (ChromaDB or Pinecone) + embed model
     chunks = r.retrieve("how does numpy clip work?", method="hybrid", top_k=5)
+
+Environment variables for Pinecone:
+    PINECONE_API_KEY  - Required when using Pinecone backend
 """
 
 import logging
+import os
 import pickle
 import re
 from pathlib import Path
@@ -52,14 +58,21 @@ class Retriever:
         self._bm25 = None
         self._bm25_chunks = None
         self._collection = None
+        self._pinecone_index = None
         self._embed_model = None
         self._loaded = False
+        self._vector_backend = self.cfg["vector_store"]["backend"]  # "chroma" or "pinecone"
 
     def load(self) -> "Retriever":
         """Load all indexes. Call once at startup."""
         log.info("Loading retrieval indexes...")
         self._load_bm25()
-        self._load_chroma()
+        
+        if self._vector_backend == "pinecone":
+            self._load_pinecone()
+        else:
+            self._load_chroma()
+        
         self._load_embed_model()
         self._loaded = True
         log.info("Retriever ready.")
@@ -82,6 +95,24 @@ class Retriever:
         client = chromadb.PersistentClient(path=persist_dir)
         self._collection = client.get_collection(name)
         log.info("  ChromaDB '%s' ready (%d vectors)", name, self._collection.count())
+
+    def _load_pinecone(self):
+        """Initialize Pinecone client. Requires PINECONE_API_KEY env var."""
+        try:
+            from pinecone import Pinecone
+        except ImportError:
+            raise ImportError("pinecone package not installed. Install with: pip install pinecone-client")
+        
+        api_key = os.getenv("PINECONE_API_KEY")
+        if not api_key:
+            raise ValueError("PINECONE_API_KEY env variable not set")
+        
+        cfg = self.cfg["vector_store"]["pinecone"]
+        index_name = cfg["index_name"]
+        
+        pc = Pinecone(api_key=api_key)
+        self._pinecone_index = pc.Index(index_name)
+        log.info("  Pinecone index '%s' ready", index_name)
 
     def _load_embed_model(self):
         model_name = self.cfg["embedding"]["model"]
@@ -109,6 +140,14 @@ class Retriever:
         emb = self._embed_model.encode(
             query, normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True
         ).tolist()
+        
+        if self._vector_backend == "pinecone":
+            return self._dense_search_pinecone(emb, top_k)
+        else:
+            return self._dense_search_chroma(emb, top_k)
+    
+    def _dense_search_chroma(self, emb: list[float], top_k: int) -> list[dict]:
+        """Query ChromaDB for dense search results."""
         res = self._collection.query(
             query_embeddings=[emb],
             n_results=top_k,
@@ -121,6 +160,26 @@ class Retriever:
             c["_score"] = 1.0 - res["distances"][0][i]
             c["_method"] = "dense"
             c["_text"] = res["documents"][0][i]
+            chunks.append(c)
+        return chunks
+    
+    def _dense_search_pinecone(self, emb: list[float], top_k: int) -> list[dict]:
+        """Query Pinecone for dense search results."""
+        # Query Pinecone vector index
+        results = self._pinecone_index.query(
+            vector=emb,
+            top_k=top_k,
+            include_metadata=True
+        )
+        
+        chunks = []
+        for match in results.get("matches", []):
+            meta = match.get("metadata", {})
+            c = dict(meta)
+            c["chunk_id"] = match["id"]
+            c["_score"] = match["score"]  # Pinecone returns similarity score directly
+            c["_method"] = "dense"
+            # Note: Pinecone metadata should include raw_code if stored during upsert
             chunks.append(c)
         return chunks
 
