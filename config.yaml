@@ -106,13 +106,13 @@ retrieval:
 
 # Generation 
 generation:
-  provider: local          # "hf_router" (cloud) or "local" (ollama)
+  provider: hf_router          # "hf_router" (cloud) or "local" (ollama)
 
   # HuggingFace: meta-llama/Llama-3.1-8B-Instruct
   # HuggingFace Fallback: mistralai/Mistral-7B-Instruct-v0.2
   # Local: llama3.1:8b
   # Local Fallback: mistral:v0.2
-  model: llama3.1:8b
+  model: meta-llama/Llama-3.1-8B-Instruct
   max_new_tokens: 512
   temperature: 0.1             # low temp for factual code questions
   system_prompt: |
