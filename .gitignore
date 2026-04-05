@@ -5,7 +5,9 @@
 .env.*
 
 # Data - repos are large, never commit them
-data/
+data/chunks*/
+data/embeddings/
+data/repos/
 
 # Python
 __pycache__/
